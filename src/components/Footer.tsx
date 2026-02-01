@@ -39,9 +39,9 @@ const Footer = () => {
                     <div className="footer-col">
                         <h4>Contact Us</h4>
                         <ul className="footer-contact">
+                            <li>📍 {contact.address}</li>
                             <li>📞 {contact.phone}</li>
-                            <li>📧 info@vishwakalpa.com</li>
-                            <li>🌐 {contact.socialMedia}</li>
+                            <li>📧 {contact.email}</li>
                         </ul>
                     </div>
 

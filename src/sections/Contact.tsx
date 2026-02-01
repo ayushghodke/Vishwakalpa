@@ -25,14 +25,16 @@ const Contact = () => {
                         ))}
                     </div>
 
-                    <div className="presence-highlights">
-                        {globalPresence.highlights.slice(0, 3).map((highlight, index) => (
-                            <div key={index} className="highlight-item">
-                                <span className="highlight-bullet">•</span>
-                                <p>{highlight}</p>
-                            </div>
-                        ))}
-                    </div>
+                    {globalPresence.highlights.length > 0 && (
+                        <div className="presence-highlights">
+                            {globalPresence.highlights.slice(0, 3).map((highlight, index) => (
+                                <div key={index} className="highlight-item">
+                                    <span className="highlight-bullet">•</span>
+                                    <p>{highlight}</p>
+                                </div>
+                            ))}
+                        </div>
+                    )}
                 </div>
 
                 {/* Contact Information */}
@@ -52,6 +54,14 @@ const Contact = () => {
                             <h3>Get in Touch</h3>
 
                             <div className="contact-item">
+                                <div className="contact-icon">📍</div>
+                                <div>
+                                    <p className="contact-label">Address</p>
+                                    <p className="contact-value">{company.contact.address}</p>
+                                </div>
+                            </div>
+
+                            <div className="contact-item">
                                 <div className="contact-icon">📞</div>
                                 <div>
                                     <p className="contact-label">Phone</p>
@@ -65,19 +75,13 @@ const Contact = () => {
                                 <div className="contact-icon">📧</div>
                                 <div>
                                     <p className="contact-label">Email</p>
-                                    <a href="mailto:info@vishwakalpa.com" className="contact-value">
-                                        info@vishwakalpa.com
+                                    <a href={`mailto:${company.contact.email}`} className="contact-value">
+                                        {company.contact.email}
                                     </a>
                                 </div>
                             </div>
 
-                            <div className="contact-item">
-                                <div className="contact-icon">🌐</div>
-                                <div>
-                                    <p className="contact-label">Social Media</p>
-                                    <p className="contact-value">{company.contact.socialMedia}</p>
-                                </div>
-                            </div>
+
                         </div>
 
                         {/* CTA Card */}
@@ -89,11 +93,6 @@ const Contact = () => {
                             <button className="btn btn-primary btn-lg">
                                 Start Your Project
                             </button>
-                            <div className="cta-taglines">
-                                <p className="text-sm text-gray">
-                                    From Vision to Delivery • Technology-led Practice
-                                </p>
-                            </div>
                         </div>
                     </div>
                 </div>

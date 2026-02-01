@@ -8,8 +8,8 @@ const Services = () => {
         'architecture-design': '🏗️',
         'planning-master-planning': '📐',
         'project-management': '📊',
-        'sustainability': '🌿',
-        'mep-services': '⚡'
+        'bim-3d-modeling': '🖥️',
+        'structural-mep': '⚡'
     };
 
     return (
@@ -23,7 +23,7 @@ const Services = () => {
                 <div className="section-header text-center">
                     <h2 className="mb-4">Our <span className="gold-gradient">Services</span></h2>
                     <p className="text-gray mb-8">
-                        Comprehensive solutions for every aspect of your project
+                        End-to-End Planning, Design & Project Management for All-Scale Developments.
                     </p>
                 </div>
 

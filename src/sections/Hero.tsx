@@ -22,7 +22,7 @@ const Hero = () => {
                         Let's Build Lasting <span className="gold-gradient">Spaces</span> Together
                     </h1>
                     <p className="hero-subtitle animate-fade-in-up">
-                        Technology-led Practice, Sustainable by Industry
+                        Designed with Innovation
                     </p>
                     <div className="hero-cta animate-fade-in">
                         <button className="btn btn-primary btn-lg" onClick={scrollToPortfolio}>

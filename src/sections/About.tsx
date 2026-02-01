@@ -57,16 +57,20 @@ const About = () => {
                 {/* Statistics or Highlights */}
                 <div className="highlights-grid">
                     <div className="highlight-card glass-panel">
-                        <div className="highlight-number gold-gradient">15+</div>
+                        <div className="highlight-number gold-gradient">8+</div>
                         <p className="highlight-label">Years of Excellence</p>
                     </div>
                     <div className="highlight-card glass-panel">
-                        <div className="highlight-number gold-gradient">100+</div>
-                        <p className="highlight-label">Projects Delivered</p>
+                        <div className="highlight-number gold-gradient">10,00,000+</div>
+                        <p className="highlight-label">Sq.ft Built-up Area Designed</p>
+                    </div>
+                    <div className="highlight-card glass-panel">
+                        <div className="highlight-number gold-gradient">1000+</div>
+                        <p className="highlight-label">Acres Site Area</p>
                     </div>
                     <div className="highlight-card glass-panel">
                         <div className="highlight-number gold-gradient">3</div>
-                        <p className="highlight-label">Countries</p>
+                        <p className="highlight-label">Continents</p>
                     </div>
                 </div>
             </div>

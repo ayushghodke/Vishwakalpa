@@ -7,9 +7,11 @@
             "From Vision to Delivery",
             "Voices of Success"
         ],
-        "mission": "Let's Transform Your Business into a Successful Business",
+        "mission": "Driving development through sustainable principles, coordinated design, and practical outcomes.",
         "contact": {
-            "phone": "+44 (0)20 789 898 1",
+            "phone": "+91 75761066",
+            "address": "Vishwakalpa Building, Mula Nagar, Sangavi, Pune, Maharashtra, India, 411027",
+            "email": "info@vishwakalpa.com",
             "socialMedia": "Connect with your audience through social media"
         }
     },
@@ -31,8 +33,8 @@
         {
             "id": "architecture-design",
             "title": "Architecture & Design",
-            "description": "Modern, functional, and aesthetic architectural solutions",
-            "details": "Transcending traditional boundaries to create iconic structures that stand the test of time"
+            "description": "Modern, functional, and sustainable architectural solutions",
+            "details": "Creating iconic structures with environmental stewardship and timeless design"
         },
         {
             "id": "planning-master-planning",
@@ -47,21 +49,16 @@
             "details": "Overseeing execution from concept to delivery with precision"
         },
         {
-            "id": "sustainability",
-            "title": "Sustainability",
-            "description": "Eco-friendly designs with environmental stewardship focus",
-            "details": "Redefining luxury through the lens of environmental stewardship"
+            "id": "bim-3d-modeling",
+            "title": "BIM, 3D Modeling and Visualization",
+            "description": "Advanced Building Information Modeling and 3D visualization services",
+            "details": "Bringing designs to life with cutting-edge technology and immersive visualizations"
         },
         {
-            "id": "mep-services",
-            "title": "MEP Services",
-            "description": "Mechanical, Electrical, and Plumbing engineering",
-            "subServices": [
-                "Campus Planning & Design",
-                "Multi-level Building Systems",
-                "Electrical Panels & Power Distribution",
-                "Integrated Infrastructure Planning"
-            ]
+            "id": "structural-mep",
+            "title": "Structural & MEP Design",
+            "description": "Structural engineering and MEP (Mechanical, Electrical, Plumbing) systems",
+            "details": "Bringing designs to life with cutting-edge technology and immersive visualizations"
         }
     ],
     "portfolio": {
@@ -154,17 +151,11 @@
     "globalPresence": {
         "title": "Our Global Presence",
         "description": "India as International Business Hub",
-        "highlights": [
-            "Strategic connection to Indian Ocean trade routes",
-            "Global project capabilities",
-            "International business operations",
-            "Cross-border project experience",
-            "Strategic geographic positioning"
-        ],
+        "highlights": [],
         "regions": [
-            "India (primary base)",
-            "Ethiopia (Industrial projects)",
-            "Peru (Urban planning)"
+            "India",
+            "Africa",
+            "USA"
         ]
     },
     "designPhilosophy": {
