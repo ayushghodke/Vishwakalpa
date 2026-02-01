@@ -1,0 +1,210 @@
+{
+    "company": {
+        "name": "Vishwakalpa Design Planning & Management Pvt Ltd",
+        "taglines": [
+            "Let's Build Lasting Spaces Together",
+            "Technology-led Practice, Sustainable by Industry",
+            "From Vision to Delivery",
+            "Voices of Success"
+        ],
+        "mission": "Let's Transform Your Business into a Successful Business",
+        "contact": {
+            "phone": "+44 (0)20 789 898 1",
+            "socialMedia": "Connect with your audience through social media"
+        }
+    },
+    "coreValues": [
+        {
+            "title": "Technology-led Practice",
+            "description": "Sustainable by Industry"
+        },
+        {
+            "title": "From Vision to Delivery",
+            "description": "Commitment to sustainability and environmental responsibility"
+        },
+        {
+            "title": "Modern Architectural Approach",
+            "description": "Building illustration against clear sky representing our values"
+        }
+    ],
+    "services": [
+        {
+            "id": "architecture-design",
+            "title": "Architecture & Design",
+            "description": "Modern, functional, and aesthetic architectural solutions",
+            "details": "Transcending traditional boundaries to create iconic structures that stand the test of time"
+        },
+        {
+            "id": "planning-master-planning",
+            "title": "Planning & Master Planning",
+            "description": "Comprehensive urban planning and large-scale development layouts",
+            "details": "Weaving communities together with thoughtful, data-driven master planning"
+        },
+        {
+            "id": "project-management",
+            "title": "Project Management",
+            "description": "End-to-end project oversight from concept to delivery",
+            "details": "Overseeing execution from concept to delivery with precision"
+        },
+        {
+            "id": "sustainability",
+            "title": "Sustainability",
+            "description": "Eco-friendly designs with environmental stewardship focus",
+            "details": "Redefining luxury through the lens of environmental stewardship"
+        },
+        {
+            "id": "mep-services",
+            "title": "MEP Services",
+            "description": "Mechanical, Electrical, and Plumbing engineering",
+            "subServices": [
+                "Campus Planning & Design",
+                "Multi-level Building Systems",
+                "Electrical Panels & Power Distribution",
+                "Integrated Infrastructure Planning"
+            ]
+        }
+    ],
+    "portfolio": {
+        "categories": [
+            {
+                "id": "mixed-use",
+                "title": "Mixed-Use Developments",
+                "description": "Multifunctional spaces combining residential and commercial",
+                "projects": [
+                    {
+                        "name": "Modern Curved Facade Development",
+                        "features": [
+                            "Modern curved facade design",
+                            "Large windows for natural light integration",
+                            "White and gray exterior color scheme",
+                            "Green roof with planted vegetation",
+                            "Sustainable green roof technology",
+                            "Natural light optimization through strategic window placement"
+                        ],
+                        "highlights": [
+                            "Contemporary glass and concrete construction",
+                            "Multifunctional design",
+                            "Urban setting with nature integration"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "residential",
+                "title": "Residential Complexes",
+                "description": "Large-scale housing and hillside developments",
+                "projects": [
+                    {
+                        "name": "Hillside Residential Complex",
+                        "type": "Large-scale residential development",
+                        "features": [
+                            "Buildings situated on hillside terrain",
+                            "White and gray building exteriors",
+                            "Green roofs adding environmental value",
+                            "Comprehensive site planning",
+                            "Integration with natural topography"
+                        ],
+                        "deliverables": [
+                            "Aerial view planning",
+                            "Location mapping",
+                            "Terrain-integrated design"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "industrial",
+                "title": "Industrial Parks",
+                "description": "Large-scale industrial planning and development",
+                "projects": [
+                    {
+                        "name": "Kitimo Industrial Park",
+                        "location": "Addis Ababa, Ethiopia",
+                        "area": "1,000 square meters",
+                        "features": [
+                            "Modern industrial architecture",
+                            "Glass facade design",
+                            "Large-scale industrial planning",
+                            "Modern construction techniques",
+                            "International project experience"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "urban-planning",
+                "title": "Urban Planning",
+                "description": "Municipal corporation proposals and city-wide development",
+                "projects": [
+                    {
+                        "name": "PIMP/Phuenca Municipal Corporation Proposal",
+                        "location": "Pimpur-Chichwadhwa, Peru",
+                        "type": "Urban Planning & Development",
+                        "deliverables": [
+                            "Comprehensive area mapping",
+                            "Municipal corporation development proposal",
+                            "Strategic urban planning layout",
+                            "City-wide development integration"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "globalPresence": {
+        "title": "Our Global Presence",
+        "description": "India as International Business Hub",
+        "highlights": [
+            "Strategic connection to Indian Ocean trade routes",
+            "Global project capabilities",
+            "International business operations",
+            "Cross-border project experience",
+            "Strategic geographic positioning"
+        ],
+        "regions": [
+            "India (primary base)",
+            "Ethiopia (Industrial projects)",
+            "Peru (Urban planning)"
+        ]
+    },
+    "designPhilosophy": {
+        "colorPalette": {
+            "primary": "Blue (branding)",
+            "secondary": "White and Gray (building exteriors)",
+            "accent": "Green (sustainability elements, roofs)",
+            "background": "Clear sky blue"
+        },
+        "architecturalStyle": [
+            "Modern curved and dynamic forms",
+            "Glass facades and contemporary materials",
+            "Green roofs and sustainability integration",
+            "Natural light optimization",
+            "Clean lines and geometric shapes"
+        ],
+        "keyFeatures": [
+            "Glass windows and facades",
+            "Curved roof designs",
+            "Green roofs with vegetation",
+            "Multi-level structures",
+            "Hillside integration",
+            "Natural light maximization"
+        ]
+    },
+    "websiteRecommendations": {
+        "hero": {
+            "headline": "Let's Build Lasting Spaces Together",
+            "subheadline": "Technology-led Practice, Sustainable by Industry",
+            "imageDescription": "Curved white building with green roof and glass facades"
+        },
+        "about": {
+            "sectionTitle": "What We Stand For",
+            "keyMessage": "From Vision to Delivery",
+            "focus": "Environmental responsibility and sustainability"
+        },
+        "cta": [
+            "Ready to build the extraordinary?",
+            "Let's turn your blueprint into a landmark",
+            "Start your journey with Vishwakalpa today"
+        ]
+    }
+}
