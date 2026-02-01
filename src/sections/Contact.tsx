@@ -2,41 +2,11 @@ import './Contact.css';
 import contentData from '../assets/content.json';
 
 const Contact = () => {
-    const { company, globalPresence } = contentData;
+    const { company } = contentData;
 
     return (
         <section id="contact" className="section-lg contact-section">
             <div className="container">
-                {/* Global Presence */}
-                <div className="global-presence-wrapper">
-                    <div className="section-header text-center mb-16">
-                        <h2 className="mb-4">
-                            Our <span className="gold-gradient">Global Presence</span>
-                        </h2>
-                        <p className="text-gray">{globalPresence.description}</p>
-                    </div>
-
-                    <div className="regions-grid">
-                        {globalPresence.regions.map((region, index) => (
-                            <div key={index} className="region-card glass-card">
-                                <div className="region-icon">🌍</div>
-                                <p className="region-name">{region}</p>
-                            </div>
-                        ))}
-                    </div>
-
-                    {globalPresence.highlights.length > 0 && (
-                        <div className="presence-highlights">
-                            {globalPresence.highlights.slice(0, 3).map((highlight, index) => (
-                                <div key={index} className="highlight-item">
-                                    <span className="highlight-bullet">•</span>
-                                    <p>{highlight}</p>
-                                </div>
-                            ))}
-                        </div>
-                    )}
-                </div>
-
                 {/* Contact Information */}
                 <div className="contact-wrapper">
                     <div className="section-header text-center mb-12">

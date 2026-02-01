@@ -2,7 +2,7 @@ import './About.css';
 import contentData from '../assets/content.json';
 
 const About = () => {
-    const { company, coreValues, websiteRecommendations } = contentData;
+    const { company, coreValues, websiteRecommendations, globalPresence } = contentData;
 
     const valueIcons: Record<string, string> = {
         'Technology-led Practice': '💻',
@@ -57,20 +57,39 @@ const About = () => {
                 {/* Statistics or Highlights */}
                 <div className="highlights-grid">
                     <div className="highlight-card glass-panel">
+                        <div className="highlight-number gold-gradient">10,00,000+ Sq.ft</div>
+                        <p className="highlight-label">Built-up Area Designed</p>
+                    </div>
+                    <div className="highlight-card glass-panel">
+                        <div className="highlight-number gold-gradient">1000+ Acres</div>
+                        <p className="highlight-label">Site Area</p>
+                    </div>
+                    <div className="highlight-card glass-panel">
                         <div className="highlight-number gold-gradient">8+</div>
                         <p className="highlight-label">Years of Excellence</p>
                     </div>
                     <div className="highlight-card glass-panel">
-                        <div className="highlight-number gold-gradient">10,00,000+</div>
-                        <p className="highlight-label">Sq.ft Built-up Area Designed</p>
-                    </div>
-                    <div className="highlight-card glass-panel">
-                        <div className="highlight-number gold-gradient">1000+</div>
-                        <p className="highlight-label">Acres Site Area</p>
-                    </div>
-                    <div className="highlight-card glass-panel">
                         <div className="highlight-number gold-gradient">3</div>
                         <p className="highlight-label">Continents</p>
+                    </div>
+                </div>
+
+                {/* Global Presence */}
+                <div className="global-presence-wrapper">
+                    <div className="section-header text-center mb-16">
+                        <h2 className="mb-4">
+                            Our <span className="gold-gradient">Global Presence</span>
+                        </h2>
+                        <p className="text-gray">{globalPresence.description}</p>
+                    </div>
+
+                    <div className="regions-grid">
+                        {globalPresence.regions.map((region, index) => (
+                            <div key={index} className="region-card glass-card">
+                                <div className="region-icon">🌍</div>
+                                <p className="region-name">{region}</p>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>

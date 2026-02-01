@@ -197,4 +197,45 @@
         flex-direction: row;
         text-align: left;
     }
+
+    .regions-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Global Presence */
+.global-presence-wrapper {
+    margin-top: var(--space-32);
+    padding-top: var(--space-16);
+}
+
+.regions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-6);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.region-card {
+    padding: var(--space-6);
+    text-align: center;
+    transition: all var(--transition-base);
+}
+
+.region-card:hover {
+    transform: translateY(-4px);
+}
+
+.region-icon {
+    font-size: 3rem;
+    margin-bottom: var(--space-4);
+}
+
+.region-name {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--color-primary);
+    margin: 0;
 }
