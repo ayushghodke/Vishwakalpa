@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './Portfolio.css';
 import contentData from '../assets/content.json';
 
-type Category = 'all' | 'mixed-use' | 'residential' | 'industrial';
+type Category = 'all' | 'mixed-use' | 'residential' | 'industrial' | 'urban-planning';
 
 const Portfolio = () => {
     const [activeCategory, setActiveCategory] = useState<Category>('all');
@@ -24,7 +24,8 @@ const Portfolio = () => {
     const projectImages: Record<string, string> = {
         'mixed-use': '/images/portfolio/portfolio-primary.jpg',
         'residential': '/images/portfolio/portfolio-primary.jpg',
-        'industrial': '/images/portfolio/ethiopia-pharma.jpg'
+        'industrial': '/images/portfolio/ethiopia-pharma.jpg',
+        'urban-planning': '/images/portfolio/portfolio-primary.jpg'
     };
 
     return (
@@ -63,6 +64,12 @@ const Portfolio = () => {
                     >
                         Industrial
                     </button>
+                    <button
+                        className={`filter-btn ${activeCategory === 'urban-planning' ? 'active' : ''}`}
+                        onClick={() => setActiveCategory('urban-planning')}
+                    >
+                        Urban Planning
+                    </button>
                 </div>
 
                 {/* Portfolio Grid */}
@@ -81,7 +88,7 @@ const Portfolio = () => {
                                         <h3>{project.name}</h3>
                                         {project.location && <p className="project-location">📍 {project.location}</p>}
                                         <div className="project-features">
-                                            {project.features?.slice(0, 3).map((feature, i) => (
+                                            {((project as any).features || (project as any).deliverables)?.slice(0, 3).map((feature: string, i: number) => (
                                                 <span key={i} className="feature-tag">{feature}</span>
                                             ))}
                                         </div>
