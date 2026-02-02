@@ -1,13 +1,14 @@
 import './About.css';
 import contentData from '../assets/content.json';
+import { Cpu, Target, Building2, CheckCircle2, Globe2 } from 'lucide-react';
 
 const About = () => {
     const { company, coreValues, websiteRecommendations, globalPresence } = contentData;
 
-    const valueIcons: Record<string, string> = {
-        'Technology-led Practice': '💻',
-        'From Vision to Delivery': '🎯',
-        'Modern Architectural Approach': '🏛️'
+    const valueIcons: Record<string, React.ReactNode> = {
+        'Technology-led Practice': <Cpu size={48} className="text-accent" />,
+        'From Vision to Delivery': <Target size={48} className="text-accent" />,
+        'Modern Architectural Approach': <Building2 size={48} className="text-accent" />
     };
 
     return (
@@ -34,7 +35,7 @@ const About = () => {
                     {coreValues.map((value, index) => (
                         <div key={index} className="value-card glass-card animate-fade-in">
                             <div className="value-icon">
-                                {valueIcons[value.title as keyof typeof valueIcons]}
+                                {valueIcons[value.title]}
                             </div>
                             <h4>{value.title}</h4>
                             <p>{value.description}</p>
@@ -47,7 +48,7 @@ const About = () => {
                     <div className="tagline-grid">
                         {company.taglines.slice(0, 3).map((tagline, index) => (
                             <div key={index} className="tagline-item">
-                                <span className="tagline-accent">✓</span>
+                                <span className="tagline-accent"><CheckCircle2 size={24} /></span>
                                 <p>{tagline}</p>
                             </div>
                         ))}
@@ -86,7 +87,7 @@ const About = () => {
                     <div className="regions-grid">
                         {globalPresence.regions.map((region, index) => (
                             <div key={index} className="region-card glass-card">
-                                <div className="region-icon">🌍</div>
+                                <div className="region-icon"><Globe2 size={40} className="text-accent" /></div>
                                 <p className="region-name">{region}</p>
                             </div>
                         ))}

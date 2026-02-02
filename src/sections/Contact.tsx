@@ -1,5 +1,6 @@
 import './Contact.css';
 import contentData from '../assets/content.json';
+import { MapPin, Phone, Mail } from 'lucide-react';
 
 const Contact = () => {
     const { company } = contentData;
@@ -24,7 +25,7 @@ const Contact = () => {
                             <h3>Get in Touch</h3>
 
                             <div className="contact-item">
-                                <div className="contact-icon">📍</div>
+                                <div className="contact-icon"><MapPin className="text-accent" size={24} /></div>
                                 <div>
                                     <p className="contact-label">Address</p>
                                     <p className="contact-value">{company.contact.address}</p>
@@ -32,7 +33,7 @@ const Contact = () => {
                             </div>
 
                             <div className="contact-item">
-                                <div className="contact-icon">📞</div>
+                                <div className="contact-icon"><Phone className="text-accent" size={24} /></div>
                                 <div>
                                     <p className="contact-label">Phone</p>
                                     <a href={`tel:${company.contact.phone}`} className="contact-value">
@@ -42,7 +43,7 @@ const Contact = () => {
                             </div>
 
                             <div className="contact-item">
-                                <div className="contact-icon">📧</div>
+                                <div className="contact-icon"><Mail className="text-accent" size={24} /></div>
                                 <div>
                                     <p className="contact-label">Email</p>
                                     <a href={`mailto:${company.contact.email}`} className="contact-value">

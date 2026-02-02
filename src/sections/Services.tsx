@@ -1,15 +1,16 @@
 import './Services.css';
 import contentData from '../assets/content.json';
+import { Building2, Map, ClipboardList, Cuboid, Zap } from 'lucide-react';
 
 const Services = () => {
     const services = contentData.services;
 
-    const serviceIcons: Record<string, string> = {
-        'architecture-design': '🏗️',
-        'planning-master-planning': '📐',
-        'project-management': '📊',
-        'bim-3d-modeling': '🖥️',
-        'structural-mep': '⚡'
+    const serviceIcons: Record<string, React.ReactNode> = {
+        'architecture-design': <Building2 size={64} className="text-accent" />,
+        'planning-master-planning': <Map size={64} className="text-accent" />,
+        'project-management': <ClipboardList size={64} className="text-accent" />,
+        'bim-3d-modeling': <Cuboid size={64} className="text-accent" />,
+        'structural-mep': <Zap size={64} className="text-accent" />
     };
 
     return (
@@ -31,7 +32,7 @@ const Services = () => {
                     {services.map((service) => (
                         <div key={service.id} className="service-card glass-card-gold">
                             <div className="service-icon">
-                                {serviceIcons[service.id as keyof typeof serviceIcons]}
+                                {serviceIcons[service.id]}
                             </div>
                             <h3>{service.title}</h3>
                             <p className="service-description">{service.description}</p>
