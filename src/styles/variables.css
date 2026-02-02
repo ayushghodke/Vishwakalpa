@@ -5,12 +5,12 @@
 
 :root {
   /* ========== PRIMARY COLORS - ROYAL BLUE ==========*/
-  --color-primary: #1e3a8a;
-  /* Royal Blue - Headers, Main Text */
-  --color-primary-light: #475569;
+  --color-primary: #172554;
+  /* Deep Royal Blue - Headers, Main Text */
+  --color-primary-light: #334155;
   /* Slate Blue - Secondary Text */
-  --color-primary-dark: #172554;
-  /* Deep Blue - Footer, Backgrounds */
+  --color-primary-dark: #020617;
+  /* Almost Black - Footer, Backgrounds */
 
   /* ========== ACCENT COLORS - ORANGE ========== */
   --color-accent: #f97316;
