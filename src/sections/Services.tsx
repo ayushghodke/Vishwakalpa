@@ -38,9 +38,9 @@ const Services = () => {
                             {service.details && (
                                 <p className="service-details">{service.details}</p>
                             )}
-                            {service.subServices && (
+                            {(service as any).subServices && (
                                 <ul className="service-sub-list">
-                                    {service.subServices.slice(0, 3).map((sub, index) => (
+                                    {(service as any).subServices.slice(0, 3).map((sub: string, index: number) => (
                                         <li key={index}>{sub}</li>
                                     ))}
                                 </ul>

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './Portfolio.css';
 import contentData from '../assets/content.json';
 
-type Category = 'all' | 'mixed-use' | 'residential' | 'industrial' | 'urban-planning';
+type Category = 'all' | 'mixed-use' | 'residential' | 'industrial' | 'urban-planning' | 'institutional';
 
 const Portfolio = () => {
     const [activeCategory, setActiveCategory] = useState<Category>('all');
@@ -25,7 +25,8 @@ const Portfolio = () => {
         'mixed-use': '/images/portfolio/portfolio-primary.jpg',
         'residential': '/images/portfolio/portfolio-primary.jpg',
         'industrial': '/images/portfolio/ethiopia-pharma.jpg',
-        'urban-planning': '/images/portfolio/portfolio-primary.jpg'
+        'urban-planning': '/images/portfolio/portfolio-primary.jpg',
+        'institutional': '/images/portfolio/institutional.jpg'
     };
 
     return (
@@ -70,6 +71,12 @@ const Portfolio = () => {
                     >
                         Urban Planning
                     </button>
+                    <button
+                        className={`filter-btn ${activeCategory === 'institutional' ? 'active' : ''}`}
+                        onClick={() => setActiveCategory('institutional')}
+                    >
+                        Institutional
+                    </button>
                 </div>
 
                 {/* Portfolio Grid */}
@@ -86,7 +93,7 @@ const Portfolio = () => {
                                     <div className="portfolio-content">
                                         <span className="portfolio-category">{project.categoryTitle}</span>
                                         <h3>{project.name}</h3>
-                                        {project.location && <p className="project-location">📍 {project.location}</p>}
+                                        {(project as any).location && <p className="project-location">📍 {(project as any).location}</p>}
                                         <div className="project-features">
                                             {((project as any).features || (project as any).deliverables)?.slice(0, 3).map((feature: string, i: number) => (
                                                 <span key={i} className="feature-tag">{feature}</span>

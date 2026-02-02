@@ -145,6 +145,30 @@
                         ]
                     }
                 ]
+            },
+            {
+                "id": "institutional",
+                "title": "Institutional Buildings",
+                "description": "Educational, healthcare, and public institutional facilities",
+                "projects": [
+                    {
+                        "name": "Modern Institutional Complex",
+                        "type": "Institutional Building",
+                        "features": [
+                            "Dramatic curved glass facade",
+                            "Multi-level terraced design with integrated greenery",
+                            "Sustainable architecture with green roof technology",
+                            "Contemporary organic forms",
+                            "Natural light optimization",
+                            "Seamless indoor-outdoor flow"
+                        ],
+                        "highlights": [
+                            "Iconic curved architecture",
+                            "Biophilic design integration",
+                            "Modern glass and concrete construction"
+                        ]
+                    }
+                ]
             }
         ]
     },
