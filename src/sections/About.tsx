@@ -16,7 +16,7 @@ const About = () => {
                 {/* Section Header */}
                 <div className="section-header text-center">
                     <h2 className="mb-4">
-                        What We <span className="gold-gradient">Stand For</span>
+                        What We <span className="accent-gradient-text">Stand For</span>
                     </h2>
                     <p className="text-gray mb-12">
                         {websiteRecommendations.about.keyMessage}
@@ -57,19 +57,19 @@ const About = () => {
                 {/* Statistics or Highlights */}
                 <div className="highlights-grid">
                     <div className="highlight-card glass-panel">
-                        <div className="highlight-number gold-gradient">10,00,000+ Sq.ft</div>
+                        <div className="highlight-number accent-gradient-text">10,00,000+ Sq.ft</div>
                         <p className="highlight-label">Built-up Area Designed</p>
                     </div>
                     <div className="highlight-card glass-panel">
-                        <div className="highlight-number gold-gradient">1000+ Acres</div>
+                        <div className="highlight-number accent-gradient-text">1000+ Acres</div>
                         <p className="highlight-label">Site Area</p>
                     </div>
                     <div className="highlight-card glass-panel">
-                        <div className="highlight-number gold-gradient">8+</div>
+                        <div className="highlight-number accent-gradient-text">8+</div>
                         <p className="highlight-label">Years of Excellence</p>
                     </div>
                     <div className="highlight-card glass-panel">
-                        <div className="highlight-number gold-gradient">3</div>
+                        <div className="highlight-number accent-gradient-text">3</div>
                         <p className="highlight-label">Continents</p>
                     </div>
                 </div>
@@ -78,7 +78,7 @@ const About = () => {
                 <div className="global-presence-wrapper">
                     <div className="section-header text-center mb-16">
                         <h2 className="mb-4">
-                            Our <span className="gold-gradient">Global Presence</span>
+                            Our <span className="accent-gradient-text">Global Presence</span>
                         </h2>
                         <p className="text-gray">{globalPresence.description}</p>
                     </div>

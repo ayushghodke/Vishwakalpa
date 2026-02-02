@@ -49,7 +49,7 @@
 .service-icon {
     font-size: 4rem;
     margin-bottom: var(--space-6);
-    filter: drop-shadow(0 4px 8px rgba(212, 175, 55, 0.3));
+    filter: drop-shadow(0 4px 8px rgba(249, 115, 22, 0.3));
 }
 
 .service-card h3 {
@@ -81,7 +81,7 @@
     padding: var(--space-2) 0;
     font-size: var(--text-sm);
     color: var(--color-primary-light);
-    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    border-bottom: 1px solid rgba(249, 115, 22, 0.2);
 }
 
 .service-sub-list li:last-child {

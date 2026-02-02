@@ -19,7 +19,7 @@ const Hero = () => {
             <div className="hero-content">
                 <div className="container">
                     <h1 className="hero-title animate-fade-in-up">
-                        Let's Build Lasting <span className="gold-gradient">Spaces</span> Together
+                        Let's Build Lasting <span className="accent-gradient-text">Spaces</span> Together
                     </h1>
                     <p className="hero-subtitle animate-fade-in-up">
                         Designed with Innovation

@@ -134,6 +134,78 @@
     color: var(--color-white);
 }
 
+/* Image Carousel Navigation */
+.image-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--color-primary);
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-md);
+}
+
+.portfolio-card:hover .image-nav-btn {
+    opacity: 1;
+}
+
+.image-nav-btn:hover {
+    background: var(--color-accent);
+    color: var(--color-white);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.image-nav-btn.prev {
+    left: 16px;
+}
+
+.image-nav-btn.next {
+    right: 16px;
+}
+
+/* Image Indicators */
+.image-indicators {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.indicator:hover {
+    background: rgba(255, 255, 255, 0.8);
+    transform: scale(1.2);
+}
+
+.indicator.active {
+    background: var(--color-accent);
+    width: 24px;
+    border-radius: 4px;
+}
+
 @media (max-width: 1024px) {
     .portfolio-grid {
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));

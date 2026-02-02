@@ -64,12 +64,12 @@
     "portfolio": {
         "categories": [
             {
-                "id": "mixed-use",
-                "title": "Mixed-Use Developments",
-                "description": "Multifunctional spaces combining residential and commercial",
+                "id": "commercial",
+                "title": "Commercial",
+                "description": "Multifunctional spaces combining retail, office and commercial developments",
                 "projects": [
                     {
-                        "name": "Modern Curved Facade Development",
+                        "name": "Modern Commercial Complex",
                         "features": [
                             "Modern curved facade design",
                             "Large windows for natural light integration",
@@ -89,22 +89,39 @@
             {
                 "id": "residential",
                 "title": "Residential Complexes",
-                "description": "Large-scale housing and hillside developments",
+                "description": "Large-scale housing and residential developments",
                 "projects": [
                     {
-                        "name": "Hillside Residential Complex",
-                        "type": "Large-scale residential development",
+                        "name": "Residential Building Complex 1",
+                        "type": "Multi-story residential development",
+                        "features": [
+                            "Modern residential architecture",
+                            "Multi-level structures",
+                            "Contemporary design elements",
+                            "Comprehensive site planning",
+                            "Optimized living spaces"
+                        ]
+                    },
+                    {
+                        "name": "Residential Building Complex 2",
+                        "type": "Hillside residential development",
                         "features": [
                             "Buildings situated on hillside terrain",
                             "White and gray building exteriors",
                             "Green roofs adding environmental value",
-                            "Comprehensive site planning",
-                            "Integration with natural topography"
-                        ],
-                        "deliverables": [
-                            "Aerial view planning",
-                            "Location mapping",
-                            "Terrain-integrated design"
+                            "Integration with natural topography",
+                            "Sustainable design approach"
+                        ]
+                    },
+                    {
+                        "name": "Luxury Bungalow Development",
+                        "type": "Premium residential villas",
+                        "features": [
+                            "Modern luxury bungalow design",
+                            "High-end interior finishes",
+                            "Premium residential amenities",
+                            "Contemporary architectural style",
+                            "Spacious layouts with natural light"
                         ]
                     }
                 ]
@@ -115,14 +132,26 @@
                 "description": "Large-scale industrial planning and development",
                 "projects": [
                     {
-                        "name": "Kitimo Industrial Park",
-                        "location": "Addis Ababa, Ethiopia",
-                        "area": "1,000 square meters",
+                        "name": "Industrial Development 1",
+                        "type": "Industrial facility",
                         "features": [
                             "Modern industrial architecture",
-                            "Glass facade design",
                             "Large-scale industrial planning",
+                            "Efficient workflow design",
                             "Modern construction techniques",
+                            "Industrial infrastructure integration"
+                        ]
+                    },
+                    {
+                        "name": "Pharmaceutical Manufacturing Complex",
+                        "location": "Addis Ababa, Ethiopia",
+                        "type": "Pharma industrial facility",
+                        "features": [
+                            "State-of-the-art pharmaceutical facility",
+                            "Clean room laboratory design",
+                            "Modern cleanroom technology",
+                            "GMP-compliant infrastructure",
+                            "Advanced HVAC and MEP systems",
                             "International project experience"
                         ]
                     }
@@ -134,14 +163,26 @@
                 "description": "Municipal corporation proposals and city-wide development",
                 "projects": [
                     {
-                        "name": "PIMP/Phuenca Municipal Corporation Proposal",
-                        "location": "Pimpur-Chichwadhwa, Peru",
-                        "type": "Urban Planning & Development",
-                        "deliverables": [
+                        "name": "Area Development Project",
+                        "type": "Large-scale area development",
+                        "features": [
                             "Comprehensive area mapping",
-                            "Municipal corporation development proposal",
-                            "Strategic urban planning layout",
-                            "City-wide development integration"
+                            "Municipal development planning",
+                            "Strategic urban layout design",
+                            "Integrated infrastructure planning",
+                            "Sustainable urban development approach"
+                        ]
+                    },
+                    {
+                        "name": "Transport Design - Sai Chowk",
+                        "location": "Sai Chowk, Pune",
+                        "type": "Transportation infrastructure design",
+                        "features": [
+                            "Traffic flow optimization",
+                            "Modern transportation hub design",
+                            "Pedestrian-friendly infrastructure",
+                            "Integrated public transport planning",
+                            "Smart city infrastructure integration"
                         ]
                     }
                 ]

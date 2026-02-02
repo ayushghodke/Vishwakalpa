@@ -11,7 +11,7 @@ const Contact = () => {
                 <div className="contact-wrapper">
                     <div className="section-header text-center mb-12">
                         <h2 className="mb-4">
-                            Let's <span className="gold-gradient">Connect</span>
+                            Let's <span className="accent-gradient-text">Connect</span>
                         </h2>
                         <p className="text-gray mb-8">
                             Ready to build something extraordinary together?

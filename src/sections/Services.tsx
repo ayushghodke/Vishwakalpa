@@ -21,7 +21,7 @@ const Services = () => {
 
             <div className="container">
                 <div className="section-header text-center">
-                    <h2 className="mb-4">Our <span className="gold-gradient">Services</span></h2>
+                    <h2 className="mb-4">Our <span className="accent-gradient-text">Services</span></h2>
                     <p className="text-gray mb-8">
                         End-to-End Planning, Design & Project Management for All-Scale Developments.
                     </p>
