@@ -21,12 +21,40 @@ const Portfolio = () => {
         ? projects
         : projects.filter(p => p.category === activeCategory);
 
-    const projectImages: Record<string, string> = {
-        'mixed-use': '/images/portfolio/portfolio-primary.jpg',
-        'residential': '/images/portfolio/portfolio-primary.jpg',
-        'industrial': '/images/portfolio/ethiopia-pharma.jpg',
-        'urban-planning': '/images/portfolio/portfolio-primary.jpg',
-        'institutional': '/images/portfolio/institutional.jpg'
+    // Multiple images per category for variety
+    const categoryImages: Record<string, string[]> = {
+        'mixed-use': ['/images/portfolio/portfolio-primary.jpg'],
+        'residential': [
+            '/images/portfolio/residential/building-1.jpg',
+            '/images/portfolio/residential/building-2.jpg',
+            '/images/portfolio/residential/dallas-1.jpg',
+            '/images/portfolio/residential/dallas-2.jpg',
+            '/images/portfolio/residential/dallas-3.jpg',
+            '/images/portfolio/residential/bungalow-concept.jpg'
+        ],
+        'industrial': [
+            '/images/portfolio/industrial/pharma-2.jpg',
+            '/images/portfolio/industrial/pharma-3.jpg',
+            '/images/portfolio/industrial/pharma-4.jpg',
+            '/images/portfolio/industrial/pharma-5.jpg',
+            '/images/portfolio/industrial/pharma-external.jpg',
+            '/images/portfolio/industrial/industry-1.jpg'
+        ],
+        'urban-planning': [
+            '/images/portfolio/urban-planning/area-dev-1.jpg',
+            '/images/portfolio/urban-planning/area-dev-2.jpg',
+            '/images/portfolio/urban-planning/area-dev-3.jpg',
+            '/images/portfolio/urban-planning/area-dev-4.jpg',
+            '/images/portfolio/urban-planning/transport-2.jpg',
+            '/images/portfolio/urban-planning/transport-3.jpg'
+        ],
+        'institutional': ['/images/portfolio/institutional.jpg']
+    };
+
+    // Get image for a specific project (rotate through available images)
+    const getProjectImage = (category: string, index: number): string => {
+        const images = categoryImages[category as keyof typeof categoryImages] || [];
+        return images[index % images.length] || '/images/portfolio/portfolio-primary.jpg';
     };
 
     return (
@@ -85,7 +113,7 @@ const Portfolio = () => {
                         <div key={index} className="portfolio-card animate-fade-in">
                             <div className="portfolio-image">
                                 <img
-                                    src={projectImages[project.category as keyof typeof projectImages]}
+                                    src={getProjectImage(project.category, index)}
                                     alt={project.name}
                                     loading="lazy"
                                 />
