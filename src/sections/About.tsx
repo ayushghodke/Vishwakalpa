@@ -13,6 +13,11 @@ const About = () => {
 
     return (
         <section id="about" className="section-lg about-section">
+            <div className="about-bg">
+                <img src="/images/portfolio/institutional.jpg" alt="About Background" />
+                <div className="about-overlay"></div>
+            </div>
+
             <div className="container">
                 {/* Section Header */}
                 <div className="section-header text-center">
