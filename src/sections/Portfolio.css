@@ -80,7 +80,7 @@
     align-items: flex-end;
     opacity: 0;
     transition: opacity var(--transition-base);
-    padding: var(--space-6);
+    padding: var(--space-6) var(--space-6) var(--space-12) var(--space-6);
 }
 
 .portfolio-card:hover .portfolio-overlay {
@@ -109,12 +109,15 @@
     font-size: var(--text-2xl);
     margin-bottom: var(--space-2);
     color: var(--color-white);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .project-location {
     font-size: var(--text-sm);
     margin-bottom: var(--space-4);
-    opacity: 0.9;
+    opacity: 1;
+    font-weight: 500;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .project-features {
@@ -137,15 +140,16 @@
 /* Image Carousel Navigation */
 .image-nav-btn {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.9);
-    border: none;
-    width: 40px;
-    height: 40px;
+    bottom: 12px;
+    top: auto;
+    transform: none;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 18px;
     color: var(--color-primary);
     cursor: pointer;
     z-index: 10;
@@ -154,7 +158,6 @@
     justify-content: center;
     opacity: 0;
     transition: all var(--transition-base);
-    box-shadow: var(--shadow-md);
 }
 
 .portfolio-card:hover .image-nav-btn {
@@ -162,17 +165,15 @@
 }
 
 .image-nav-btn:hover {
-    background: var(--color-accent);
-    color: var(--color-white);
-    transform: translateY(-50%) scale(1.1);
+    background: rgba(255, 255, 255, 0.8);
 }
 
 .image-nav-btn.prev {
-    left: 16px;
+    left: 12px;
 }
 
 .image-nav-btn.next {
-    right: 16px;
+    right: 12px;
 }
 
 /* Image Indicators */

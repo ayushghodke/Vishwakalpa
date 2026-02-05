@@ -106,13 +106,16 @@ const Portfolio = () => {
 
     // Get all images for a project (returns array)
     const getProjectImages = (projectName: string, category: string): string[] => {
-        // Residential projects (3 projects from 3 folders)
-        if (category === 'residential') {
-            if (projectName.includes('Complex 1')) {
+        const name = projectName.toLowerCase();
+        const cat = category.toLowerCase();
+
+        // Residential projects
+        if (cat === 'residential' || cat.includes('residen')) {
+            if (name.includes('complex 1')) {
                 return ['/images/portfolio/residential/building-1.jpg'];
-            } else if (projectName.includes('Complex 2')) {
+            } else if (name.includes('complex 2')) {
                 return ['/images/portfolio/residential/building-2.jpg'];
-            } else if (projectName.includes('Bungalow')) {
+            } else if (name.includes('bungalow')) {
                 return [
                     '/images/portfolio/residential/dallas-1.jpg',
                     '/images/portfolio/residential/dallas-2.jpg',
@@ -122,11 +125,11 @@ const Portfolio = () => {
             }
         }
 
-        // Industrial projects (2 projects from 2 folders)
-        if (category === 'industrial') {
-            if (projectName.includes('Industrial Development 1')) {
+        // Industrial projects
+        if (cat === 'industrial') {
+            if (name.includes('development 1')) {
                 return ['/images/portfolio/industrial/industry-1.jpg'];
-            } else if (projectName.includes('Pharmaceutical')) {
+            } else if (name.includes('pharma')) {
                 return [
                     '/images/portfolio/industrial/pharma-2.jpg',
                     '/images/portfolio/industrial/pharma-3.jpg',
@@ -137,16 +140,16 @@ const Portfolio = () => {
             }
         }
 
-        // Urban Planning (2 projects from 2 folders)
-        if (category === 'urban-planning') {
-            if (projectName.includes('Area Development')) {
+        // Urban Planning
+        if (cat === 'urban-planning') {
+            if (name.includes('area')) {
                 return [
                     '/images/portfolio/urban-planning/area-dev-1.jpg',
                     '/images/portfolio/urban-planning/area-dev-2.jpg',
                     '/images/portfolio/urban-planning/area-dev-3.jpg',
                     '/images/portfolio/urban-planning/area-dev-4.jpg'
                 ];
-            } else if (projectName.includes('Transport')) {
+            } else if (name.includes('transport') || name.includes('sai chowk')) {
                 return [
                     '/images/portfolio/urban-planning/transport-2.jpg',
                     '/images/portfolio/urban-planning/transport-3.jpg'
@@ -155,15 +158,16 @@ const Portfolio = () => {
         }
 
         // Institutional
-        if (category === 'institutional') {
+        if (cat === 'institutional') {
             return ['/images/portfolio/institutional.jpg'];
         }
 
         // Commercial
-        if (category === 'commercial') {
+        if (cat === 'commercial') {
             return ['/images/portfolio/portfolio-primary.jpg'];
         }
 
+        // Fallback for everything else
         return ['/images/portfolio/portfolio-primary.jpg'];
     };
 
