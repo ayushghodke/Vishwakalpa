@@ -1,13 +1,11 @@
 import './About.css';
 import contentData from '../assets/content.json';
-import { Cpu, Target, Building2, CheckCircle2, Globe2 } from 'lucide-react';
+import { Building2, Globe2 } from 'lucide-react';
 
 const About = () => {
-    const { company, coreValues, websiteRecommendations, globalPresence } = contentData;
+    const { company, coreValues, globalPresence } = contentData;
 
     const valueIcons: Record<string, React.ReactNode> = {
-        'Technology-led Practice': <Cpu size={48} className="text-accent" />,
-        'From Vision to Delivery': <Target size={48} className="text-accent" />,
         'Modern Architectural Approach': <Building2 size={48} className="text-accent" />
     };
 
@@ -24,9 +22,7 @@ const About = () => {
                     <h2 className="mb-4">
                         What We <span className="accent-gradient-text">Stand For</span>
                     </h2>
-                    <p className="text-gray mb-12">
-                        {websiteRecommendations.about.keyMessage}
-                    </p>
+
                 </div>
 
                 {/* Mission Statement */}
@@ -48,17 +44,7 @@ const About = () => {
                     ))}
                 </div>
 
-                {/* Taglines */}
-                <div className="taglines-section">
-                    <div className="tagline-grid">
-                        {company.taglines.slice(0, 3).map((tagline, index) => (
-                            <div key={index} className="tagline-item">
-                                <span className="tagline-accent"><CheckCircle2 size={24} /></span>
-                                <p>{tagline}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
+
 
                 {/* Statistics or Highlights */}
                 <div className="highlights-grid">

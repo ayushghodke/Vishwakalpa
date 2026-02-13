@@ -1,12 +1,6 @@
 {
     "company": {
         "name": "Vishwakalpa Design Planning & Management Pvt Ltd",
-        "taglines": [
-            "Let's Build Lasting Spaces Together",
-            "Technology-led Practice, Sustainable by Industry",
-            "From Vision to Delivery",
-            "Voices of Success"
-        ],
         "mission": "Driving development through sustainable principles, coordinated design, and practical outcomes.",
         "contact": {
             "phone": "+91 9175761066",
@@ -16,14 +10,6 @@
         }
     },
     "coreValues": [
-        {
-            "title": "Technology-led Practice",
-            "description": "Sustainable by Industry"
-        },
-        {
-            "title": "From Vision to Delivery",
-            "description": "Commitment to sustainability and environmental responsibility"
-        },
         {
             "title": "Modern Architectural Approach",
             "description": "Building illustration against clear sky representing our values"

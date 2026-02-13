@@ -12,7 +12,7 @@ const Hero = () => {
     return (
         <section id="home" className="hero">
             <div className="hero-bg">
-                <img src="/images/hero/hero.jpg" alt="Vishwakalpa Architecture" />
+                <img src="/images/hero/mmlp-new.png" alt="Vishwakalpa Architecture" />
                 <div className="hero-overlay"></div>
             </div>
 

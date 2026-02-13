@@ -1,76 +1,19 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import './Portfolio.css';
 import contentData from '../assets/content.json';
 
 type Category = 'residential' | 'commercial' | 'institutional' | 'industrial' | 'urban-planning';
 
-// Portfolio Card Component with Image Carousel
-const PortfolioCard = ({ project, images }: { project: any; images: string[] }) => {
-    const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const [isPaused, setIsPaused] = useState(false);
-
-    // Auto-carousel effect
-    useEffect(() => {
-        if (images.length <= 1 || isPaused) return;
-
-        const interval = setInterval(() => {
-            setCurrentImageIndex((prev) => (prev + 1) % images.length);
-        }, 4000); // Change image every 4 seconds
-
-        return () => clearInterval(interval);
-    }, [images.length, isPaused]);
-
-    const nextImage = () => {
-        setCurrentImageIndex((prev) => (prev + 1) % images.length);
-    };
-
-    const prevImage = () => {
-        setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
-    };
-
+// Portfolio Card Component - Single Image
+const PortfolioCard = ({ project, image }: { project: any; image: string }) => {
     return (
-        <div
-            className="portfolio-card animate-fade-in"
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
-        >
+        <div className="portfolio-card animate-fade-in">
             <div className="portfolio-image">
                 <img
-                    src={images[currentImageIndex]}
-                    alt={`${project.name} - Image ${currentImageIndex + 1}`}
+                    src={image}
+                    alt={project.name}
                     loading="lazy"
                 />
-
-                {/* Image navigation arrows - only show if multiple images */}
-                {images.length > 1 && (
-                    <>
-                        <button
-                            className="image-nav-btn prev"
-                            onClick={prevImage}
-                            aria-label="Previous image"
-                        >
-                            ‹
-                        </button>
-                        <button
-                            className="image-nav-btn next"
-                            onClick={nextImage}
-                            aria-label="Next image"
-                        >
-                            ›
-                        </button>
-
-                        {/* Image indicators */}
-                        <div className="image-indicators">
-                            {images.map((_, idx) => (
-                                <span
-                                    key={idx}
-                                    className={`indicator ${idx === currentImageIndex ? 'active' : ''}`}
-                                    onClick={() => setCurrentImageIndex(idx)}
-                                />
-                            ))}
-                        </div>
-                    </>
-                )}
 
                 <div className="portfolio-overlay glass-overlay">
                     <div className="portfolio-content">
@@ -223,7 +166,7 @@ const Portfolio = () => {
                             <PortfolioCard
                                 key={projectIndex}
                                 project={project}
-                                images={images}
+                                image={images[0]}
                             />
                         );
                     })}
