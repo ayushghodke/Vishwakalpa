@@ -64,13 +64,6 @@
     margin-bottom: var(--space-4);
 }
 
-.service-details {
-    font-size: var(--text-sm);
-    font-style: italic;
-    color: var(--color-gray-600);
-    margin-bottom: var(--space-4);
-}
-
 .service-sub-list {
     list-style: none;
     padding: 0;
