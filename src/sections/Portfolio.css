@@ -14,48 +14,65 @@
     margin-bottom: var(--space-16);
 }
 
+/* Filter Buttons */
 .filter-btn {
     padding: var(--space-3) var(--space-6);
-    background: var(--color-white);
-    border: 2px solid var(--color-gray-200);
-    border-radius: var(--radius-lg);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--radius-full);
     font-family: var(--font-heading);
     font-size: var(--text-base);
-    font-weight: 600;
-    color: var(--color-primary);
+    font-weight: 500;
+    color: var(--color-primary-light);
     cursor: pointer;
     transition: all var(--transition-base);
+    box-shadow: var(--shadow-sm);
 }
 
 .filter-btn:hover {
+    background: var(--color-white);
     border-color: var(--color-accent-light);
     transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    color: var(--color-accent);
 }
 
 .filter-btn.active {
-    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
-    border-color: var(--color-accent);
+    background: var(--color-primary);
+    border-color: var(--color-primary);
     color: var(--color-white);
-    box-shadow: var(--shadow-gold);
+    box-shadow: var(--shadow-lg);
 }
 
+/* Portfolio Grid */
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: var(--space-8);
 }
 
+/* Portfolio Card */
 .portfolio-card {
     position: relative;
     border-radius: var(--radius-xl);
     overflow: hidden;
     cursor: pointer;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-slow);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.portfolio-card:hover {
+    box-shadow: var(--shadow-2xl);
+    transform: translateY(-8px);
+    border-color: var(--color-accent-light);
 }
 
 .portfolio-image {
     position: relative;
     width: 100%;
-    height: 400px;
+    height: 450px;
     overflow: hidden;
 }
 
@@ -63,13 +80,14 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform var(--transition-slower);
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .portfolio-card:hover .portfolio-image img {
-    transform: scale(1.1);
+    transform: scale(1.08);
 }
 
+/* Overlay & Content */
 .portfolio-overlay {
     position: absolute;
     top: 0;
@@ -78,9 +96,13 @@
     height: 100%;
     display: flex;
     align-items: flex-end;
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.85) 0%,
+            rgba(0, 0, 0, 0.5) 40%,
+            rgba(0, 0, 0, 0) 100%);
     opacity: 0;
-    transition: opacity var(--transition-base);
-    padding: var(--space-6) var(--space-6) var(--space-12) var(--space-6);
+    transition: all var(--transition-base);
+    padding: var(--space-8);
 }
 
 .portfolio-card:hover .portfolio-overlay {
@@ -90,6 +112,12 @@
 .portfolio-content {
     width: 100%;
     color: var(--color-white);
+    transform: translateY(20px);
+    transition: transform var(--transition-base);
+}
+
+.portfolio-card:hover .portfolio-content {
+    transform: translateY(0);
 }
 
 .portfolio-category {
@@ -98,28 +126,33 @@
     background: var(--color-accent);
     color: var(--color-white);
     font-size: var(--text-xs);
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    border-radius: var(--radius-md);
-    margin-bottom: var(--space-3);
+    letter-spacing: 0.1em;
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-4);
+    box-shadow: var(--shadow-md);
 }
 
 .portfolio-content h3 {
     font-size: var(--text-2xl);
-    margin-bottom: var(--space-2);
+    margin-bottom: var(--space-3);
     color: var(--color-white);
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    font-weight: 700;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .project-location {
     font-size: var(--text-sm);
-    margin-bottom: var(--space-4);
-    opacity: 1;
+    margin-bottom: var(--space-5);
+    opacity: 0.9;
     font-weight: 500;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
+/* Feature Tags */
 .project-features {
     display: flex;
     flex-wrap: wrap;
@@ -128,13 +161,16 @@
 }
 
 .feature-tag {
-    padding: var(--space-1) var(--space-3);
-    background: rgba(255, 255, 255, 0.2);
+    padding: 6px 12px;
+    background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(4px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: var(--radius-md);
     font-size: var(--text-xs);
-    color: var(--color-white);
+    color:
+        var(--color-white);
+    font-weight: 500;
+    letter-spacing: 0.02em;
 }
 
 

@@ -27,10 +27,7 @@
 }
 
 .logo-text {
-    background: linear-gradient(135deg, #fbbf24 0%, #f97316 50%, #ea580c 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--color-accent);
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
     display: inline-block;
     text-transform: uppercase;
