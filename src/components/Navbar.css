@@ -133,4 +133,10 @@
     .mobile-menu {
         display: flex;
     }
+
+    .navbar.mobile-open {
+        border-radius: var(--radius-xl);
+        background: rgba(255, 255, 255, 0.15);
+        /* Slightly stronger bg when open */
+    }
 }

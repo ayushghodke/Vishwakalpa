@@ -22,7 +22,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className={`navbar glass-navbar ${scrolled ? 'scrolled' : ''}`}>
+        <nav className={`navbar glass-navbar ${scrolled ? 'scrolled' : ''} ${mobileMenuOpen ? 'mobile-open' : ''}`}>
             <div className="container">
                 <div className="navbar-content">
                     {/* Logo */}
