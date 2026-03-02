@@ -312,16 +312,16 @@
 
 /* Pin positions — percentages of map image dimensions */
 .pin-usa {
-    left: 22%;
+    left: 20%;
     top: 46%;
 }
 
 .pin-africa {
-    left: 51%;
+    left: 55%;
     top: 58%;
 }
 
 .pin-india {
-    left: 74%;
-    top: 47%;
+    left: 71%;
+    top: 50%;
 }
