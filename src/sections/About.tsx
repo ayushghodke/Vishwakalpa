@@ -20,7 +20,7 @@ const About = () => {
                 {/* Section Header */}
                 <div className="section-header text-center">
                     <h2 className="mb-4">
-                        What We <span className="accent-gradient-text">Stand For</span>
+                        What We <span className="text-primary">Stand For</span>
                     </h2>
 
                 </div>
@@ -70,7 +70,7 @@ const About = () => {
                 <div className="global-presence-wrapper">
                     <div className="section-header text-center mb-16">
                         <h2 className="mb-4">
-                            Our <span className="accent-gradient-text">Global Presence</span>
+                            Our <span className="text-primary">Global Presence</span>
                         </h2>
                         <p className="text-gray">{globalPresence.description}</p>
                     </div>
