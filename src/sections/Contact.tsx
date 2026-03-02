@@ -7,17 +7,13 @@ const Contact = () => {
 
     return (
         <section id="contact" className="section-lg contact-section">
-            <div className="contact-bg">
-                <img src="/images/portfolio/portfolio-primary.jpg" alt="Contact Background" />
-                <div className="contact-overlay"></div>
-            </div>
 
             <div className="container">
                 {/* Contact Information */}
                 <div className="contact-wrapper">
                     <div className="section-header text-center mb-12">
                         <h2 className="mb-4">
-                            Let's <span className="accent-gradient-text">Connect</span>
+                            Let's <span className="text-primary">Connect</span>
                         </h2>
                         <p className="text-gray mb-8">
                             Ready to build something extraordinary together?

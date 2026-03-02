@@ -118,7 +118,7 @@ const Portfolio = () => {
         <section id="portfolio" className="section-lg">
             <div className="container">
                 <div className="section-header text-center">
-                    <h2 className="mb-4">Our <span className="accent-gradient-text">Portfolio</span></h2>
+                    <h2 className="mb-4">Our <span className="text-primary">Portfolio</span></h2>
                     <p className="text-gray mb-8">
                         Transforming visions into architectural excellence
                     </p>

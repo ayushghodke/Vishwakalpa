@@ -15,14 +15,10 @@ const Services = () => {
 
     return (
         <section id="services" className="section-lg services-section">
-            <div className="services-bg">
-                <img src="/images/services/service-card.jpg" alt="Services Background" />
-                <div className="services-overlay"></div>
-            </div>
 
             <div className="container">
                 <div className="section-header text-center">
-                    <h2 className="mb-4">Our <span className="accent-gradient-text">Services</span></h2>
+                    <h2 className="mb-4">Our <span className="text-primary">Services</span></h2>
                     <p className="text-gray mb-8">
                         End-to-End Planning, Design & Project Management for All-Scale Developments.
                     </p>
