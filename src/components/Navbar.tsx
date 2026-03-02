@@ -22,7 +22,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className={`navbar glass-navbar ${scrolled ? 'scrolled' : ''} ${mobileMenuOpen ? 'mobile-open' : ''}`}>
+        <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${mobileMenuOpen ? 'mobile-open' : ''}`}>
             <div className="container">
                 <div className="navbar-content">
                     {/* Logo */}
@@ -36,13 +36,8 @@ const Navbar = () => {
                         <li><a onClick={() => scrollTo('portfolio')}>Portfolio</a></li>
                         <li><a onClick={() => scrollTo('services')}>Services</a></li>
                         <li><a onClick={() => scrollTo('about')}>About</a></li>
-                        <li><a onClick={() => scrollTo('contact')}>Contact</a></li>
+                        <li><button className="btn btn-primary contact-highlight" onClick={() => scrollTo('contact')}>Contact Us</button></li>
                     </ul>
-
-                    {/* CTA Button */}
-                    <button className="btn btn-primary" onClick={() => scrollTo('contact')}>
-                        Get in Touch
-                    </button>
 
                     {/* Mobile Menu Toggle */}
                     <button
@@ -62,7 +57,7 @@ const Navbar = () => {
                         <a onClick={() => scrollTo('portfolio')}>Portfolio</a>
                         <a onClick={() => scrollTo('services')}>Services</a>
                         <a onClick={() => scrollTo('about')}>About</a>
-                        <a onClick={() => scrollTo('contact')}>Contact</a>
+                        <button className="btn btn-primary" style={{ marginTop: '10px' }} onClick={() => scrollTo('contact')}>Contact Us</button>
                     </div>
                 )}
             </div>
