@@ -246,6 +246,7 @@
     position: relative;
     width: 100%;
     max-width: 900px;
+    height: 460px;
     margin: 0 auto;
     border-radius: var(--radius-xl);
     overflow: hidden;
@@ -254,7 +255,9 @@
 
 .world-map {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
     display: block;
     border-radius: var(--radius-xl);
 }
@@ -318,10 +321,10 @@
 
 .pin-africa {
     left: 55%;
-    top: 58%;
+    top: 68%;
 }
 
 .pin-india {
     left: 71%;
-    top: 50%;
+    top: 60%;
 }
