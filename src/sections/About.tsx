@@ -1,13 +1,9 @@
 import './About.css';
 import contentData from '../assets/content.json';
-import { Building2, Globe2 } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 
 const About = () => {
-    const { company, coreValues, globalPresence } = contentData;
-
-    const valueIcons: Record<string, React.ReactNode> = {
-        'Modern Architectural Approach': <Building2 size={48} className="text-accent" />
-    };
+    const { company, globalPresence } = contentData;
 
     return (
         <section id="about" className="section-lg about-section">
@@ -25,19 +21,6 @@ const About = () => {
                 <div className="mission-statement glass-card-gold">
                     <h3 className="mission-title">Our Mission</h3>
                     <p className="mission-text">{company.mission}</p>
-                </div>
-
-                {/* Core Values Grid */}
-                <div className="values-grid">
-                    {coreValues.map((value, index) => (
-                        <div key={index} className="value-card glass-card animate-fade-in">
-                            <div className="value-icon">
-                                {valueIcons[value.title]}
-                            </div>
-                            <h4>{value.title}</h4>
-                            <p>{value.description}</p>
-                        </div>
-                    ))}
                 </div>
 
 
@@ -71,13 +54,29 @@ const About = () => {
                         <p className="text-gray">{globalPresence.description}</p>
                     </div>
 
-                    <div className="regions-grid">
-                        {globalPresence.regions.map((region, index) => (
-                            <div key={index} className="region-card glass-card">
-                                <div className="region-icon"><Globe2 size={40} className="text-accent" /></div>
-                                <p className="region-name">{region}</p>
-                            </div>
-                        ))}
+                    <div className="map-container">
+                        <img src="/images/world_map.png" alt="World Map" className="world-map" />
+
+                        {/* USA - approx 22% from left, 38% from top */}
+                        <div className="map-pin pin-usa" title="USA">
+                            <MapPin size={28} className="text-accent" />
+                            <div className="pin-pulse"></div>
+                            <span className="pin-label">USA</span>
+                        </div>
+
+                        {/* Africa - approx 49% from left, 52% from top */}
+                        <div className="map-pin pin-africa" title="Africa">
+                            <MapPin size={28} className="text-accent" />
+                            <div className="pin-pulse"></div>
+                            <span className="pin-label">Africa</span>
+                        </div>
+
+                        {/* India - approx 66% from left, 44% from top */}
+                        <div className="map-pin pin-india" title="India">
+                            <MapPin size={28} className="text-accent" />
+                            <div className="pin-pulse"></div>
+                            <span className="pin-label">India</span>
+                        </div>
                     </div>
                 </div>
             </div>
