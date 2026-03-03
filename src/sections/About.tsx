@@ -55,7 +55,7 @@ const About = () => {
                     </div>
 
                     <div className="map-container">
-                        <img src="/images/world_map.png" alt="World Map" className="world-map" />
+                        <img src="/images/royal_blue_world_map.png" alt="World Map" className="world-map" />
 
                         {/* USA - approx 22% from left, 38% from top */}
                         <div className="map-pin pin-usa" title="USA">
