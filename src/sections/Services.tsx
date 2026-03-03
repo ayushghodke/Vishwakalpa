@@ -1,6 +1,7 @@
 import './Services.css';
 import contentData from '../assets/content.json';
 import { Building2, Map, ClipboardList, Cuboid, Zap } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Services = () => {
     const services = contentData.services;
@@ -26,7 +27,7 @@ const Services = () => {
 
                 <div className="services-grid">
                     {services.map((service) => (
-                        <div key={service.id} className="service-card glass-card-gold">
+                        <Link to={`/service/${service.id}`} key={service.id} className="service-card glass-card-gold block hover:border-accent transition-colors">
                             <div className="service-icon">
                                 {serviceIcons[service.id]}
                             </div>
@@ -39,7 +40,7 @@ const Services = () => {
                                     ))}
                                 </ul>
                             )}
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </div>

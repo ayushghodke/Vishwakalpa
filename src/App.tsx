@@ -1,25 +1,18 @@
-import Navbar from './components/Navbar'
-import Hero from './sections/Hero'
-import Portfolio from './sections/Portfolio'
-import Services from './sections/Services'
-import About from './sections/About'
-import Contact from './sections/Contact'
-import Footer from './components/Footer'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import ServiceDetail from './pages/ServiceDetail'
+import ScrollToTop from './components/ScrollToTop'
 import './index.css'
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <main>
-        <Hero />
-        <Portfolio />
-        <Services />
-        <About />
-        <Contact />
-      </main>
-      <Footer />
-    </>
+    <Router>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/service/:id" element={<ServiceDetail />} />
+      </Routes>
+    </Router>
   )
 }
 

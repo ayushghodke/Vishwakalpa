@@ -1,0 +1,292 @@
+/* Service Detail Page Premium Styles */
+.service-detail-page {
+    background-color: var(--color-white);
+}
+
+/* HERO SECTION */
+.sd-hero {
+    position: relative;
+    background-color: var(--color-primary-dark);
+    padding: var(--space-32) 0 var(--space-24) 0;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.sd-hero-glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.15) 0%, transparent 70%);
+    top: -50%;
+    right: -10%;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.sd-hero-container {
+    position: relative;
+    z-index: 10;
+}
+
+.sd-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--color-accent);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-12);
+    transition: all 0.3s ease;
+}
+
+.sd-back-link:hover {
+    color: white;
+    transform: translateX(-5px);
+}
+
+.sd-title {
+    color: white;
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: var(--space-6);
+    max-width: 900px;
+}
+
+.sd-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: var(--text-2xl);
+    max-width: 700px;
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+/* CONTENT SECTION */
+.sd-content-section {
+    background-color: #fafafa;
+}
+
+.sd-content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-16);
+}
+
+@media (min-width: 1024px) {
+    .sd-content-grid {
+        grid-template-columns: 4fr 5fr;
+        gap: var(--space-20);
+    }
+}
+
+.sd-section-title {
+    font-size: var(--text-3xl);
+    color: var(--color-primary-dark);
+    margin-bottom: var(--space-8);
+    position: relative;
+    padding-bottom: var(--space-4);
+}
+
+.sd-section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-accent);
+}
+
+.sd-description p {
+    font-size: var(--text-lg);
+    line-height: 1.8;
+    color: var(--color-primary-light);
+}
+
+.sd-scope-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+}
+
+@media (min-width: 640px) {
+    .sd-scope-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.sd-scope-card {
+    background: white;
+    padding: var(--space-8);
+    border-radius: var(--radius-xl);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.sd-scope-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+    border-color: rgba(249, 115, 22, 0.2);
+}
+
+.sd-scope-icon {
+    flex-shrink: 0;
+}
+
+.sd-scope-text {
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--color-primary-dark);
+    line-height: 1.4;
+}
+
+/* CONTACT SECTION */
+.sd-contact-section {
+    background-color: var(--color-primary-dark);
+    padding: var(--space-32) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.sd-contact-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.sd-contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-16);
+    position: relative;
+    z-index: 2;
+}
+
+@media (min-width: 1024px) {
+    .sd-contact-grid {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+}
+
+.sd-contact-text h2 {
+    color: white;
+    font-size: var(--text-5xl);
+    line-height: 1.2;
+    margin-bottom: var(--space-6);
+}
+
+.sd-contact-text p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: var(--text-xl);
+}
+
+.sd-contact-form-wrapper {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 1.5rem;
+    /* ~24px */
+    padding: var(--space-10);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+}
+
+.sd-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.sd-input {
+    width: 100%;
+    padding: var(--space-4) var(--space-6);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: var(--radius-lg);
+    font-family: inherit;
+    font-size: var(--text-base);
+    transition: all 0.3s ease;
+}
+
+.sd-input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.sd-input:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.sd-submit-btn {
+    width: 100%;
+    margin-top: var(--space-6);
+    font-size: var(--text-lg);
+    padding: var(--space-4) var(--space-6);
+    background: linear-gradient(135deg, var(--color-accent) 0%, #ff8c42 100%);
+    border: none;
+    border-radius: var(--radius-lg);
+    color: white;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(249, 115, 22, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    position: relative;
+    overflow: hidden;
+}
+
+.sd-submit-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(45deg) translateY(-100%);
+    transition: transform 0.6s ease;
+}
+
+.sd-submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(249, 115, 22, 0.5);
+}
+
+.sd-submit-btn:hover::after {
+    transform: rotate(45deg) translateY(100%);
+}
+
+.sd-submit-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 5px 15px rgba(249, 115, 22, 0.3);
+}
+
+@media (max-width: 768px) {
+    .sd-title {
+        font-size: 2.5rem;
+    }
+
+    .sd-subtitle {
+        font-size: var(--text-lg);
+    }
+
+    .sd-contact-text h2 {
+        font-size: var(--text-4xl);
+    }
+}
