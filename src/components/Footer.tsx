@@ -13,7 +13,7 @@ const Footer = () => {
         <footer id="contact" className="footer">
             <div className="container">
                 <div className="footer-content">
-                    {/* Brand Column  g  */}
+                    {/* Brand Column    g  */}
                     <div className="footer-col">
                         <h3 className="footer-logo">VISHWAKALPA</h3>
                         <p className="footer-tagline">
