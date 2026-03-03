@@ -27,6 +27,7 @@ const Navbar = () => {
                 <div className="navbar-content">
                     {/* Logo */}
                     <div className="navbar-logo">
+                        <img src="/images/Logo.png" alt="Vishwakalpa Logo" className="brand-logo" />
                         <span className="logo-text">VISHWAKALPA</span>
                     </div>
 

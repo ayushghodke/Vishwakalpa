@@ -13,9 +13,12 @@ const Footer = () => {
         <footer id="contact" className="footer">
             <div className="container">
                 <div className="footer-content">
-                    {/* Brand Column    g  */}
+                    {/* Brand Column */}
                     <div className="footer-col">
-                        <h3 className="footer-logo">VISHWAKALPA</h3>
+                        <div className="footer-logo-container">
+                            <img src="/images/Logo.png" alt="Vishwakalpa Logo" className="footer-brand-logo" />
+                            <h3 className="footer-logo">VISHWAKALPA</h3>
+                        </div>
                         <p className="footer-tagline">
                             Let's Build Lasting Spaces Together
                         </p>

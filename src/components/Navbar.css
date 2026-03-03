@@ -25,11 +25,25 @@
 }
 
 .navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
     font-family: var(--font-heading);
     font-size: var(--text-2xl);
     font-weight: 800;
     letter-spacing: 0.05em;
     cursor: pointer;
+}
+
+.brand-logo {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+    transition: height var(--transition-base);
+}
+
+.navbar.scrolled .brand-logo {
+    height: 40px;
 }
 
 .logo-text {
