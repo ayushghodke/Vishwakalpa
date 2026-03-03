@@ -62,9 +62,15 @@ const Contact = () => {
                             <p className="cta-description">
                                 Let's transform your vision into a landmark that stands the test of time.
                             </p>
-                            <button className="btn btn-primary btn-lg">
-                                Start Your Project
-                            </button>
+                            <form className="contact-section-form" onSubmit={(e) => e.preventDefault()}>
+                                <input type="text" placeholder="Name" required />
+                                <input type="email" placeholder="Email" required />
+                                <input type="tel" placeholder="Phone Number" required />
+                                <textarea placeholder="Message" rows={4} required></textarea>
+                                <button type="submit" className="btn btn-primary btn-lg w-full">
+                                    Send Message
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
