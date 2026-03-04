@@ -171,6 +171,23 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+    .navbar {
+        padding: var(--space-2) 0;
+    }
+
+    .navbar-logo {
+        font-size: var(--text-lg);
+        margin-left: -8px;
+        gap: var(--space-2);
+    }
+
+    .brand-logo {
+        height: 28px;
+    }
+
+    .navbar.scrolled .brand-logo {
+        height: 24px;
+    }
 
     .navbar-links,
     .navbar-content .btn {
