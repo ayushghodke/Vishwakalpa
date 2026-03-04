@@ -52,9 +52,9 @@ const Footer = () => {
                     <div className="footer-col">
                         <h4>Ready to Build?</h4>
                         <p className="mb-6">Let's transform your vision into reality</p>
-                        <button className="btn btn-primary">
+                        <a href="#contact" className="btn btn-primary" style={{ display: 'inline-block', textAlign: 'center' }}>
                             Get in Touch
-                        </button>
+                        </a>
                     </div>
                 </div>
 
