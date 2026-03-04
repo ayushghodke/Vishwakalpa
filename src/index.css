@@ -486,3 +486,7 @@ a:hover {
   display: block;
   margin-bottom: var(--space-4);
 }
+
+.form-popup-btn {
+  margin-top: var(--space-6);
+}
