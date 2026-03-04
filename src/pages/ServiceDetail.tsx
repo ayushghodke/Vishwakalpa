@@ -1,39 +1,18 @@
-import { useState } from 'react';
+
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { serviceDetails } from '../data/serviceDetails';
-import { ArrowLeft, CheckCircle2, X } from 'lucide-react';
+import { ArrowLeft, CheckCircle2 } from 'lucide-react';
 import './ServiceDetail.css';
+import { useWeb3Form } from '../hooks/useWeb3Form';
+import FormPopup from '../components/FormPopup';
 
 const ServiceDetail = () => {
     const { id } = useParams<{ id: string }>();
     const service = id ? serviceDetails[id] : null;
 
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [submitResult, setSubmitResult] = useState<'idle' | 'success' | 'error'>('idle');
-
-    const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
-        setIsSubmitting(true);
-        const form = event.currentTarget; // save ref before async
-        const formData = new FormData(form);
-
-        try {
-            await fetch("https://api.web3forms.com/submit", {
-                method: "POST",
-                mode: "no-cors",
-                body: formData
-            });
-
-            setSubmitResult('success');
-            form.reset();
-        } catch (error) {
-            setSubmitResult('error');
-        } finally {
-            setIsSubmitting(false);
-        }
-    };
+    const { onSubmit, isSubmitting, submitResult, resetResult } = useWeb3Form();
 
     if (!service) {
         return (
@@ -111,31 +90,7 @@ const ServiceDetail = () => {
                 </div>
             </section>
 
-            {/* Thank You Popup */}
-            {submitResult !== 'idle' && (
-                <div className="form-popup-overlay" onClick={() => setSubmitResult('idle')}>
-                    <div className="form-popup-card glass-panel animate-fade-in" onClick={e => e.stopPropagation()}>
-                        <button className="form-popup-close" onClick={() => setSubmitResult('idle')} aria-label="Close popup">
-                            <X size={24} />
-                        </button>
-                        {submitResult === 'success' ? (
-                            <div className="form-popup-content">
-                                <CheckCircle2 className="text-accent form-popup-icon mb-4" size={64} />
-                                <h3>Thank You!</h3>
-                                <p>Your message has been sent. Our experts will reach out to you shortly.</p>
-                            </div>
-                        ) : (
-                            <div className="form-popup-content">
-                                <h3>Oops!</h3>
-                                <p>Something went wrong. Please try again later.</p>
-                            </div>
-                        )}
-                        <button className="btn btn-primary form-popup-btn w-full mt-6" onClick={() => setSubmitResult('idle')}>
-                            Close
-                        </button>
-                    </div>
-                </div>
-            )}
+            <FormPopup submitResult={submitResult} onClose={resetResult} />
 
             <Footer />
         </div>
