@@ -64,7 +64,7 @@ const ServiceDetail = () => {
                     <div className="sd-contact-grid">
                         <div className="sd-contact-text">
                             <h2>Ready to Discuss Your <span className="text-accent">{service.title}</span> Project?</h2>
-                            <p>Fill out the form below and our experts will reach out to you shortly to map out your requirements.</p>
+                            <p>Kindly Fill out the form below and our experts will reach out to you shortly to map out your requirements.</p>
                         </div>
                         <div className="sd-contact-form-wrapper">
                             <form className="sd-form" onSubmit={(e) => e.preventDefault()}>
