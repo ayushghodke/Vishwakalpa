@@ -1,6 +1,6 @@
 import './About.css';
 import contentData from '../assets/content.json';
-import { MapPin } from 'lucide-react';
+
 
 const About = () => {
     const { company, globalPresence } = contentData;
@@ -56,27 +56,6 @@ const About = () => {
 
                     <div className="map-container">
                         <img src="/images/royal_blue_world_map.png" alt="World Map" className="world-map" />
-
-                        {/* USA - approx 22% from left, 38% from top */}
-                        <div className="map-pin pin-usa" title="USA">
-                            <MapPin size={28} className="text-accent" />
-                            <div className="pin-pulse"></div>
-                            <span className="pin-label">USA</span>
-                        </div>
-
-                        {/* Africa - approx 49% from left, 52% from top */}
-                        <div className="map-pin pin-africa" title="Africa">
-                            <MapPin size={28} className="text-accent" />
-                            <div className="pin-pulse"></div>
-                            <span className="pin-label">Africa</span>
-                        </div>
-
-                        {/* India - approx 66% from left, 44% from top */}
-                        <div className="map-pin pin-india" title="India">
-                            <MapPin size={28} className="text-accent" />
-                            <div className="pin-pulse"></div>
-                            <span className="pin-label">India</span>
-                        </div>
                     </div>
                 </div>
             </div>
