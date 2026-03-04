@@ -30,8 +30,7 @@ const ServiceDetail = () => {
                 body: json
             });
 
-            const data = await response.json();
-            if (response.status === 200 || data.success) {
+            if (response.status === 200) {
                 setSubmitResult('success');
                 event.currentTarget.reset();
             } else {
