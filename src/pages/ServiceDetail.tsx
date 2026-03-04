@@ -17,10 +17,14 @@ const ServiceDetail = () => {
         event.preventDefault();
         setIsSubmitting(true);
         const form = event.currentTarget; // save ref before async
+        const formData = new FormData(form);
 
         try {
-            // TEMP: Simulated delay for UI testing (no emails sent)
-            await new Promise(resolve => setTimeout(resolve, 1000));
+            await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                mode: "no-cors",
+                body: formData
+            });
 
             setSubmitResult('success');
             form.reset();
