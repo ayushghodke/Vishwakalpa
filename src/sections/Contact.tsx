@@ -62,11 +62,16 @@ const Contact = () => {
                             <p className="cta-description">
                                 Let's transform your vision into a landmark that stands the test of time.
                             </p>
-                            <form className="contact-section-form" onSubmit={(e) => e.preventDefault()}>
-                                <input type="text" placeholder="Name" required />
-                                <input type="email" placeholder="Email" required />
-                                <input type="tel" placeholder="Phone Number" required />
-                                <textarea placeholder="Message" rows={4} required></textarea>
+                            <form className="contact-section-form" action="https://api.web3forms.com/submit" method="POST">
+                                <input type="hidden" name="access_key" value="87403c7e-d81c-4e3e-8e68-4b68f6232ab6" />
+                                <input type="hidden" name="subject" value="New Inquiry from Vishwakalpa Website - Contact Flow" />
+                                <input type="hidden" name="redirect" value={window.location.href} />
+
+                                <input type="text" name="name" placeholder="Name" required />
+                                <input type="email" name="email" placeholder="Email" required />
+                                <input type="tel" name="phone" placeholder="Phone Number" required />
+                                <textarea name="message" placeholder="Message" rows={4} required></textarea>
+
                                 <button type="submit" className="btn btn-primary btn-lg w-full">
                                     Send Message
                                 </button>

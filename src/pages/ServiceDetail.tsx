@@ -67,11 +67,16 @@ const ServiceDetail = () => {
                             <p>Kindly Fill out the form below and our experts will reach out to you shortly to map out your requirements.</p>
                         </div>
                         <div className="sd-contact-form-wrapper">
-                            <form className="sd-form" onSubmit={(e) => e.preventDefault()}>
-                                <input type="text" placeholder="Your Name" required className="sd-input" />
-                                <input type="email" placeholder="Your Email" required className="sd-input" />
-                                <input type="tel" placeholder="Phone Number" required className="sd-input" />
-                                <textarea placeholder="Message" rows={4} required className="sd-input" style={{ resize: 'vertical' }}></textarea>
+                            <form className="sd-form" action="https://api.web3forms.com/submit" method="POST">
+                                <input type="hidden" name="access_key" value="87403c7e-d81c-4e3e-8e68-4b68f6232ab6" />
+                                <input type="hidden" name="subject" value={`New Inquiry from Vishwakalpa Website - ${service.title}`} />
+                                <input type="hidden" name="redirect" value={window.location.href} />
+
+                                <input type="text" name="name" placeholder="Your Name" required className="sd-input" />
+                                <input type="email" name="email" placeholder="Your Email" required className="sd-input" />
+                                <input type="tel" name="phone" placeholder="Phone Number" required className="sd-input" />
+                                <textarea name="message" placeholder="Message" rows={4} required className="sd-input" style={{ resize: 'vertical' }}></textarea>
+
                                 <button type="submit" className="sd-submit-btn">
                                     Send Inquiry
                                 </button>
