@@ -16,23 +16,14 @@ const ServiceDetail = () => {
     const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         setIsSubmitting(true);
-        const formData = new FormData(event.currentTarget);
-        const object = Object.fromEntries(formData);
-        const json = JSON.stringify(object);
+        const form = event.currentTarget; // save ref before async
 
         try {
-            await fetch("https://api.web3forms.com/submit", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Accept": "application/json"
-                },
-                body: json
-            });
+            // TEMP: Simulated delay for UI testing (no emails sent)
+            await new Promise(resolve => setTimeout(resolve, 1000));
 
-            // Email is always delivered if no network error thrown
             setSubmitResult('success');
-            event.currentTarget.reset();
+            form.reset();
         } catch (error) {
             setSubmitResult('error');
         } finally {
