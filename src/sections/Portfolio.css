@@ -173,6 +173,34 @@
     letter-spacing: 0.02em;
 }
 
+/* In Progress Card Styles */
+.in-progress-card {
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+    cursor: default;
+}
+
+.in-progress-card:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.portfolio-content-centered {
+    text-align: center;
+    padding: var(--space-8);
+}
+
+.in-progress-text {
+    font-size: var(--text-2xl);
+    color: var(--color-gray-400);
+    font-weight: 500;
+}
+
 
 
 @media (max-width: 1024px) {

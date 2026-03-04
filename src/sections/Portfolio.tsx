@@ -6,6 +6,18 @@ type Category = 'residential' | 'commercial' | 'institutional' | 'industrial' | 
 
 // Portfolio Card Component - Single Image
 const PortfolioCard = ({ project, image }: { project: any; image: string }) => {
+    const isInProgress = project.name.includes('Website is in progress');
+
+    if (isInProgress || !image) {
+        return (
+            <div className="portfolio-card in-progress-card animate-fade-in">
+                <div className="portfolio-content-centered">
+                    <h3 className="in-progress-text">Website is in Progress</h3>
+                </div>
+            </div>
+        );
+    }
+
     return (
         <div className="portfolio-card animate-fade-in">
             <div className="portfolio-image">
@@ -51,6 +63,11 @@ const Portfolio = () => {
     const getProjectImages = (projectName: string, category: string): string[] => {
         const name = projectName.toLowerCase();
         const cat = category.toLowerCase();
+
+        // If website is in progress, return no image
+        if (name.includes('website is in progress')) {
+            return [];
+        }
 
         // Residential projects
         if (cat === 'residential' || cat.includes('residen')) {
@@ -100,17 +117,7 @@ const Portfolio = () => {
             }
         }
 
-        // Institutional
-        if (cat === 'institutional') {
-            return ['/images/portfolio/institutional.jpg'];
-        }
-
-        // Commercial
-        if (cat === 'commercial') {
-            return ['/images/portfolio/portfolio-primary.jpg'];
-        }
-
-        // Fallback for everything else
+        // Catch-all fallback
         return ['/images/portfolio/portfolio-primary.jpg'];
     };
 
@@ -133,18 +140,6 @@ const Portfolio = () => {
                         Residential
                     </button>
                     <button
-                        className={`filter-btn ${activeCategory === 'commercial' ? 'active' : ''}`}
-                        onClick={() => setActiveCategory('commercial')}
-                    >
-                        Commercial
-                    </button>
-                    <button
-                        className={`filter-btn ${activeCategory === 'institutional' ? 'active' : ''}`}
-                        onClick={() => setActiveCategory('institutional')}
-                    >
-                        Institutional
-                    </button>
-                    <button
                         className={`filter-btn ${activeCategory === 'industrial' ? 'active' : ''}`}
                         onClick={() => setActiveCategory('industrial')}
                     >
@@ -156,6 +151,18 @@ const Portfolio = () => {
                     >
                         Urban Planning
                     </button>
+                    <button
+                        className={`filter-btn ${activeCategory === 'commercial' ? 'active' : ''}`}
+                        onClick={() => setActiveCategory('commercial')}
+                    >
+                        Commercial
+                    </button>
+                    <button
+                        className={`filter-btn ${activeCategory === 'institutional' ? 'active' : ''}`}
+                        onClick={() => setActiveCategory('institutional')}
+                    >
+                        Institutional
+                    </button>
                 </div>
 
                 {/* Portfolio Grid */}
@@ -166,7 +173,7 @@ const Portfolio = () => {
                             <PortfolioCard
                                 key={projectIndex}
                                 project={project}
-                                image={images[0]}
+                                image={images[0] || ''}
                             />
                         );
                     })}

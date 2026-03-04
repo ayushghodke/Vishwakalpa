@@ -50,29 +50,6 @@
     "portfolio": {
         "categories": [
             {
-                "id": "commercial",
-                "title": "Commercial",
-                "description": "Multifunctional spaces combining retail, office and commercial developments",
-                "projects": [
-                    {
-                        "name": "Modern Commercial Complex",
-                        "features": [
-                            "Modern curved facade design",
-                            "Large windows for natural light integration",
-                            "White and gray exterior color scheme",
-                            "Green roof with planted vegetation",
-                            "Sustainable green roof technology",
-                            "Natural light optimization through strategic window placement"
-                        ],
-                        "highlights": [
-                            "Contemporary glass and concrete construction",
-                            "Multifunctional design",
-                            "Urban setting with nature integration"
-                        ]
-                    }
-                ]
-            },
-            {
                 "id": "residential",
                 "title": "Residential Complexes",
                 "description": "Large-scale housing and residential developments",
@@ -174,26 +151,22 @@
                 ]
             },
             {
+                "id": "commercial",
+                "title": "Commercial",
+                "description": "Multifunctional spaces combining retail, office and commercial developments",
+                "projects": [
+                    {
+                        "name": "Website is in progress"
+                    }
+                ]
+            },
+            {
                 "id": "institutional",
                 "title": "Institutional Buildings",
                 "description": "Educational, healthcare, and public institutional facilities",
                 "projects": [
                     {
-                        "name": "Modern Institutional Complex",
-                        "type": "Institutional Building",
-                        "features": [
-                            "Dramatic curved glass facade",
-                            "Multi-level terraced design with integrated greenery",
-                            "Sustainable architecture with green roof technology",
-                            "Contemporary organic forms",
-                            "Natural light optimization",
-                            "Seamless indoor-outdoor flow"
-                        ],
-                        "highlights": [
-                            "Iconic curved architecture",
-                            "Biophilic design integration",
-                            "Modern glass and concrete construction"
-                        ]
+                        "name": "Website is in progress"
                     }
                 ]
             }
