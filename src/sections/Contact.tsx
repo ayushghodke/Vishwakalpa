@@ -12,18 +12,21 @@ const Contact = () => {
         event.preventDefault();
         setIsSubmitting(true);
         const formData = new FormData(event.currentTarget);
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
 
         try {
             const response = await fetch("https://api.web3forms.com/submit", {
                 method: "POST",
                 headers: {
+                    "Content-Type": "application/json",
                     "Accept": "application/json"
                 },
-                body: formData
+                body: json
             });
 
             const data = await response.json();
-            if (data.success) {
+            if (response.status === 200 || data.success) {
                 setSubmitResult('success');
                 event.currentTarget.reset();
             } else {
