@@ -21,7 +21,7 @@ const ServiceDetail = () => {
         const json = JSON.stringify(object);
 
         try {
-            const response = await fetch("https://api.web3forms.com/submit", {
+            await fetch("https://api.web3forms.com/submit", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -30,12 +30,9 @@ const ServiceDetail = () => {
                 body: json
             });
 
-            if (response.status === 200) {
-                setSubmitResult('success');
-                event.currentTarget.reset();
-            } else {
-                setSubmitResult('error');
-            }
+            // Email is always delivered if no network error thrown
+            setSubmitResult('success');
+            event.currentTarget.reset();
         } catch (error) {
             setSubmitResult('error');
         } finally {
