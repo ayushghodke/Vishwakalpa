@@ -55,8 +55,6 @@ const Contact = () => {
                                     </a>
                                 </div>
                             </div>
-
-
                         </div>
 
                         {/* CTA Card */}
