@@ -61,7 +61,7 @@ const Contact = () => {
 
                         {/* CTA Card */}
                         <div className="cta-card glass-panel">
-                            <h3>Ready to Build?</h3>
+                            <h3>Planning a Project?</h3>
                             <p className="cta-description">
                                 Let's transform your vision into a landmark that stands the test of time.
                             </p>
