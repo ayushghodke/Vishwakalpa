@@ -91,11 +91,11 @@ const Portfolio = () => {
                 return ['/images/portfolio/industrial/industry-1.jpg'];
             } else if (name.includes('pharma')) {
                 return [
+                    '/images/portfolio/industrial/pharma-external.jpg',
                     '/images/portfolio/industrial/pharma-2.jpg',
                     '/images/portfolio/industrial/pharma-3.jpg',
                     '/images/portfolio/industrial/pharma-4.jpg',
-                    '/images/portfolio/industrial/pharma-5.jpg',
-                    '/images/portfolio/industrial/pharma-external.jpg'
+                    '/images/portfolio/industrial/pharma-5.jpg'
                 ];
             }
         }

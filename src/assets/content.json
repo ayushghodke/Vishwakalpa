@@ -109,6 +109,7 @@
                         "name": "Pharmaceutical Manufacturing Complex",
                         "location": "Addis Ababa, Ethiopia",
                         "type": "Pharma industrial facility",
+                        "image": "/images/pharma-external.jpg",
                         "features": [
                             "State-of-the-art pharmaceutical facility",
                             "Clean room laboratory design",
