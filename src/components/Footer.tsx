@@ -51,7 +51,7 @@ const Footer = () => {
                     {/* CTA */}
                     <div className="footer-col">
                         <h4>Ready to Build?</h4>
-                        <p className="mb-6">Let's transform your vision into reality</p>
+                        <p className="footer-description mb-6">Let's transform your vision into reality</p>
                         <a href="#contact" className="btn btn-primary" style={{ display: 'inline-block', textAlign: 'center' }}>
                             Get in Touch
                         </a>
