@@ -55,6 +55,18 @@
                 "description": "Large-scale housing and residential developments",
                 "projects": [
                     {
+                        "name": "Luxury Bungalow Development",
+                        "type": "Premium residential villas",
+                        "image": "/images/portfolio/residential/dallas-3.jpg",
+                        "features": [
+                            "Modern luxury bungalow design",
+                            "High-end interior finishes",
+                            "Premium residential amenities",
+                            "Contemporary architectural style",
+                            "Spacious layouts with natural light"
+                        ]
+                    },
+                    {
                         "name": "Residential Building Complex 1",
                         "type": "Multi-story residential development",
                         "features": [
@@ -74,17 +86,6 @@
                             "Green roofs adding environmental value",
                             "Integration with natural topography",
                             "Sustainable design approach"
-                        ]
-                    },
-                    {
-                        "name": "Luxury Bungalow Development",
-                        "type": "Premium residential villas",
-                        "features": [
-                            "Modern luxury bungalow design",
-                            "High-end interior finishes",
-                            "Premium residential amenities",
-                            "Contemporary architectural style",
-                            "Spacious layouts with natural light"
                         ]
                     }
                 ]

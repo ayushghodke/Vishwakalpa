@@ -77,9 +77,9 @@ const Portfolio = () => {
                 return ['/images/portfolio/residential/building-2.jpg'];
             } else if (name.includes('bungalow')) {
                 return [
+                    '/images/portfolio/residential/dallas-3.jpg',
                     '/images/portfolio/residential/dallas-1.jpg',
                     '/images/portfolio/residential/dallas-2.jpg',
-                    '/images/portfolio/residential/dallas-3.jpg',
                     '/images/portfolio/residential/bungalow-concept.jpg'
                 ];
             }
