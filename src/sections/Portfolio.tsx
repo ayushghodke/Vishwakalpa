@@ -71,8 +71,8 @@ const Portfolio = () => {
 
         // Residential projects
         if (cat === 'residential' || cat.includes('residen')) {
-            if (name.includes('complex 2')) {
-                return ['/images/portfolio/residential/building-2.jpg'];
+            if (name.includes('complex 1')) {
+                return ['/images/portfolio/residential/building-1.jpg'];
             } else if (name.includes('bungalow')) {
                 return [
                     '/images/portfolio/residential/dallas-3.jpg',
