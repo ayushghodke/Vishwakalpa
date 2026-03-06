@@ -67,17 +67,6 @@
                         ]
                     },
                     {
-                        "name": "Residential Building Complex 1",
-                        "type": "Multi-story residential development",
-                        "features": [
-                            "Modern residential architecture",
-                            "Multi-level structures",
-                            "Contemporary design elements",
-                            "Comprehensive site planning",
-                            "Optimized living spaces"
-                        ]
-                    },
-                    {
                         "name": "Residential Building Complex 2",
                         "type": "Hillside residential development",
                         "features": [
