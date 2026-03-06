@@ -17,8 +17,8 @@ export const serviceDetails: Record<string, ServiceDetailType> = {
             'Design coordination & execution support'
         ]
     },
-    'planning-master-planning': {
-        title: 'Planning & Master Planning',
+    'urban-planning': {
+        title: 'Urban Planning',
         heading: 'We undertake large-scale urban and campus planning projects with a focus on functionality, circulation, infrastructure integration, and long-term viability.',
         description: 'From township layouts to mixed-use developments, we design structured, efficient, and regulation-aligned master plans.',
         scope: [
