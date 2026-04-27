@@ -16,7 +16,15 @@ const Footer = () => {
                     {/* Brand Column */}
                     <div className="footer-col">
                         <div className="footer-logo-container">
-                            <img src="/images/Logo.png" alt="Vishwakalpa Logo" className="footer-brand-logo" />
+                            <img
+                                src="/images/Logo.webp"
+                                alt="Vishwakalpa Logo"
+                                className="footer-brand-logo"
+                                width="96"
+                                height="96"
+                                loading="lazy"
+                                decoding="async"
+                            />
                             <h3 className="footer-logo">VISHWAKALPA</h3>
                         </div>
                         <p className="footer-tagline">

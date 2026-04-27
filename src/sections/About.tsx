@@ -55,7 +55,15 @@ const About = () => {
                     </div>
 
                     <div className="map-container">
-                        <img src="/images/royal_blue_world_map.png" alt="World Map" className="world-map" />
+                        <img
+                            src="/images/royal_blue_world_map.webp"
+                            alt="World Map"
+                            className="world-map"
+                            width="1600"
+                            height="900"
+                            loading="lazy"
+                            decoding="async"
+                        />
                     </div>
                 </div>
             </div>

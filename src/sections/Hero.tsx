@@ -4,7 +4,14 @@ const Hero = () => {
     return (
         <section id="home" className="hero">
             <div className="hero-bg">
-                <img src="/images/hero/mmlp-new.png" alt="Vishwakalpa Architecture" />
+                <img
+                    src="/images/hero/mmlp-new.webp"
+                    alt="Vishwakalpa Architecture"
+                    width="1920"
+                    height="1080"
+                    fetchPriority="high"
+                    decoding="async"
+                />
                 <div className="hero-overlay"></div>
             </div>
 

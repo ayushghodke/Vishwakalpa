@@ -57,7 +57,7 @@
                     {
                         "name": "Luxury Bungalow Development",
                         "type": "Premium residential villas",
-                        "image": "/images/portfolio/residential/dallas-3.jpg",
+                        "image": "/images/portfolio/residential/dallas-3.webp",
                         "features": [
                             "Modern luxury bungalow design",
                             "High-end interior finishes",
@@ -99,7 +99,7 @@
                         "name": "Pharmaceutical Manufacturing Complex",
                         "location": "Addis Ababa, Ethiopia",
                         "type": "Pharma industrial facility",
-                        "image": "/images/pharma-external.jpg",
+                        "image": "/images/portfolio/industrial/pharma-external.webp",
                         "features": [
                             "State-of-the-art pharmaceutical facility",
                             "Clean room laboratory design",

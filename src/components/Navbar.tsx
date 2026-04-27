@@ -6,10 +6,17 @@ const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
+        let ticking = false;
         const handleScroll = () => {
-            setScrolled(window.scrollY > 20);
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    setScrolled(window.scrollY > 20);
+                    ticking = false;
+                });
+                ticking = true;
+            }
         };
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
@@ -27,7 +34,14 @@ const Navbar = () => {
                 <div className="navbar-content">
                     {/* Logo */}
                     <div className="navbar-logo">
-                        <img src="/images/Logo.png" alt="Vishwakalpa Logo" className="brand-logo" />
+                        <img
+                            src="/images/Logo.webp"
+                            alt="Vishwakalpa Logo"
+                            className="brand-logo"
+                            width="96"
+                            height="96"
+                            decoding="async"
+                        />
                         <span className="logo-text">VISHWAKALPA</span>
                     </div>
 

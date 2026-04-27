@@ -25,6 +25,9 @@ const PortfolioCard = ({ project, image }: { project: any; image: string }) => {
                     src={image}
                     alt={project.name}
                     loading="lazy"
+                    decoding="async"
+                    width="1400"
+                    height="933"
                 />
 
                 <div className="portfolio-overlay glass-overlay">
@@ -72,13 +75,13 @@ const Portfolio = () => {
         // Residential projects
         if (cat === 'residential' || cat.includes('residen')) {
             if (name.includes('complex 1')) {
-                return ['/images/portfolio/residential/building-1.jpg'];
+                return ['/images/portfolio/residential/building-1.webp'];
             } else if (name.includes('bungalow')) {
                 return [
-                    '/images/portfolio/residential/dallas-3.jpg',
-                    '/images/portfolio/residential/dallas-1.jpg',
-                    '/images/portfolio/residential/dallas-2.jpg',
-                    '/images/portfolio/residential/bungalow-concept.jpg'
+                    '/images/portfolio/residential/dallas-3.webp',
+                    '/images/portfolio/residential/dallas-1.webp',
+                    '/images/portfolio/residential/dallas-2.webp',
+                    '/images/portfolio/residential/bungalow-concept.webp'
                 ];
             }
         }
@@ -86,14 +89,14 @@ const Portfolio = () => {
         // Industrial projects
         if (cat === 'industrial') {
             if (name.includes('development 1')) {
-                return ['/images/portfolio/industrial/industry-1.jpg'];
+                return ['/images/portfolio/industrial/industry-1.webp'];
             } else if (name.includes('pharma')) {
                 return [
-                    '/images/portfolio/industrial/pharma-external.jpg',
-                    '/images/portfolio/industrial/pharma-2.jpg',
-                    '/images/portfolio/industrial/pharma-3.jpg',
-                    '/images/portfolio/industrial/pharma-4.jpg',
-                    '/images/portfolio/industrial/pharma-5.jpg'
+                    '/images/portfolio/industrial/pharma-external.webp',
+                    '/images/portfolio/industrial/pharma-2.webp',
+                    '/images/portfolio/industrial/pharma-3.webp',
+                    '/images/portfolio/industrial/pharma-4.webp',
+                    '/images/portfolio/industrial/pharma-5.webp'
                 ];
             }
         }
@@ -102,21 +105,21 @@ const Portfolio = () => {
         if (cat === 'urban-planning') {
             if (name.includes('area')) {
                 return [
-                    '/images/portfolio/urban-planning/area-dev-1.jpg',
-                    '/images/portfolio/urban-planning/area-dev-2.jpg',
-                    '/images/portfolio/urban-planning/area-dev-3.jpg',
-                    '/images/portfolio/urban-planning/area-dev-4.jpg'
+                    '/images/portfolio/urban-planning/area-dev-1.webp',
+                    '/images/portfolio/urban-planning/area-dev-2.webp',
+                    '/images/portfolio/urban-planning/area-dev-3.webp',
+                    '/images/portfolio/urban-planning/area-dev-4.webp'
                 ];
             } else if (name.includes('transport') || name.includes('sai chowk')) {
                 return [
-                    '/images/portfolio/urban-planning/transport-2.jpg',
-                    '/images/portfolio/urban-planning/transport-3.jpg'
+                    '/images/portfolio/urban-planning/transport-2.webp',
+                    '/images/portfolio/urban-planning/transport-3.webp'
                 ];
             }
         }
 
         // Catch-all fallback
-        return ['/images/portfolio/portfolio-primary.jpg'];
+        return ['/images/portfolio/portfolio-primary.webp'];
     };
 
     return (
