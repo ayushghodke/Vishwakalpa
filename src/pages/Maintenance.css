@@ -228,6 +228,9 @@
     line-height: 1.1;
     margin-bottom: var(--space-4);
     color: var(--color-white);
+    /* iOS Safari: -webkit-text-fill-color on a child span bleeds into sibling
+       text nodes in the same element. Pin the h1's own text to white explicitly. */
+    -webkit-text-fill-color: var(--color-white);
 }
 
 .maint-title span {
