@@ -1,0 +1,400 @@
+/* ============================================
+   MAINTENANCE PAGE - "Construction Site" theme
+   ============================================ */
+
+.maint {
+    position: fixed;
+    inset: 0;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-6);
+    overflow: hidden;
+    background:
+        radial-gradient(120% 120% at 50% 0%, #1e293b 0%, var(--color-primary) 45%, var(--color-primary-dark) 100%);
+    color: var(--color-white);
+    font-family: var(--font-body);
+    z-index: var(--z-modal);
+}
+
+/* ---------- Blueprint grid backdrop ---------- */
+.maint-grid {
+    position: absolute;
+    inset: -2px;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: radial-gradient(circle at 50% 40%, #000 0%, transparent 78%);
+    -webkit-mask-image: radial-gradient(circle at 50% 40%, #000 0%, transparent 78%);
+    pointer-events: none;
+    animation: grid-drift 40s linear infinite;
+}
+
+@keyframes grid-drift {
+    from { background-position: 0 0; }
+    to   { background-position: 44px 44px; }
+}
+
+/* ---------- Floating dust / sparks ---------- */
+.maint-dust {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.maint-dust span {
+    position: absolute;
+    bottom: -10px;
+    left: calc((var(--i) * 5.6%) + 2%);
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--color-accent-light);
+    opacity: 0;
+    animation: maint-float 9s linear infinite;
+    animation-delay: calc(var(--i) * -0.6s);
+}
+
+.maint-dust span:nth-child(even) {
+    width: 3px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.6);
+}
+
+@keyframes maint-float {
+    0% {
+        transform: translateY(0) translateX(0) scale(0.6);
+        opacity: 0;
+    }
+    10% { opacity: 0.9; }
+    90% { opacity: 0.5; }
+    100% {
+        transform: translateY(-92vh) translateX(28px) scale(1);
+        opacity: 0;
+    }
+}
+
+/* ---------- Layout ---------- */
+.maint-inner {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 640px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Staggered entrance — each direct child slides up and fades in */
+@keyframes maint-reveal {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.maint-inner > * {
+    animation: maint-reveal 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.maint-inner > *:nth-child(1) { animation-delay: 0.05s; }
+.maint-inner > *:nth-child(2) { animation-delay: 0.15s; }
+.maint-inner > *:nth-child(3) { animation-delay: 0.25s; }
+.maint-inner > *:nth-child(4) { animation-delay: 0.33s; }
+.maint-inner > *:nth-child(5) { animation-delay: 0.40s; }
+.maint-inner > *:nth-child(6) { animation-delay: 0.47s; }
+.maint-inner > *:nth-child(7) { animation-delay: 0.53s; }
+.maint-inner > *:nth-child(8) { animation-delay: 0.58s; }
+
+.maint-brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-2);
+}
+
+.maint-logo {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.4));
+    animation: logo-breathe 4s ease-in-out infinite;
+}
+
+@keyframes logo-breathe {
+    0%, 100% { filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.4)); }
+    50%       { filter: drop-shadow(0 4px 18px rgba(249, 115, 22, 0.45)) drop-shadow(0 0 8px rgba(249, 115, 22, 0.2)); }
+}
+
+/* ---------- Crane ---------- */
+.maint-crane {
+    width: 100%;
+    max-width: 340px;
+    margin: var(--space-2) 0 var(--space-4);
+}
+
+.maint-crane svg {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+.crane-mast,
+.crane-arm,
+.crane-cab,
+.crane-weight {
+    fill: var(--color-accent);
+}
+
+.crane-cab { fill: var(--color-accent-dark); }
+.crane-weight { fill: var(--color-accent-dark); }
+
+.crane-line,
+.crane-cable {
+    stroke: var(--color-accent-light);
+    stroke-width: 2;
+}
+
+.crane-load rect {
+    fill: var(--color-gray-200);
+    stroke: rgba(255, 255, 255, 0.4);
+    stroke-width: 1;
+}
+
+/* Jib slowly swings back and forth around the mast top */
+.maint-crane .crane-jib {
+    transform-box: fill-box;
+    transform-origin: 50px 41px;
+    animation: crane-swing 6s ease-in-out infinite;
+}
+
+@keyframes crane-swing {
+    0%, 100% { transform: rotate(-4deg); }
+    50% { transform: rotate(4deg); }
+}
+
+/* Load bobs gently on the cable */
+.maint-crane .crane-load {
+    transform-box: fill-box;
+    transform-origin: top center;
+    animation: crane-bob 3s ease-in-out infinite;
+}
+
+@keyframes crane-bob {
+    0%, 100% { transform: translateY(0) rotate(-2deg); }
+    50% { transform: translateY(6px) rotate(2deg); }
+}
+
+/* ---------- Badge ---------- */
+.maint-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-full);
+    background: rgba(249, 115, 22, 0.15);
+    border: 1px solid var(--glass-border-gold);
+    color: var(--color-accent-light);
+    font-weight: 600;
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: var(--space-6);
+}
+
+.maint-badge svg {
+    animation: hat-tip 3.5s ease-in-out infinite;
+}
+
+@keyframes hat-tip {
+    0%, 90%, 100% { transform: rotate(0); }
+    93% { transform: rotate(-12deg); }
+    97% { transform: rotate(8deg); }
+}
+
+/* ---------- Copy ---------- */
+.maint-title {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: clamp(2rem, 6vw, var(--text-5xl));
+    line-height: 1.1;
+    margin-bottom: var(--space-4);
+}
+
+.maint-title span {
+    color: var(--color-accent);
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+/* Light streak sweeps across "great." every 5 seconds */
+.maint-title span::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -80%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.38) 50%,
+        transparent 100%
+    );
+    animation: title-shimmer 5s ease-in-out infinite;
+    animation-delay: 1.2s;
+    pointer-events: none;
+}
+
+@keyframes title-shimmer {
+    0%, 70%, 100% { left: -80%; }
+    40%            { left: 130%; }
+}
+
+.maint-text {
+    color: var(--color-gray-300);
+    font-size: clamp(var(--text-base), 2.4vw, var(--text-lg));
+    max-width: 30rem;
+    margin: 0 auto var(--space-8);
+}
+
+/* ---------- Progress meter ---------- */
+.maint-progress {
+    width: 100%;
+    max-width: 26rem;
+    margin-bottom: var(--space-8);
+}
+
+.maint-progress-head {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-gray-300);
+    margin-bottom: var(--space-2);
+}
+
+.maint-progress-head span:last-child {
+    color: var(--color-accent-light);
+}
+
+.maint-progress-track {
+    height: 14px;
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    overflow: hidden;
+}
+
+.maint-progress-fill {
+    height: 100%;
+    border-radius: var(--radius-full);
+    background: linear-gradient(90deg, var(--color-accent-dark), var(--color-accent), var(--color-accent-light));
+    position: relative;
+    overflow: hidden;
+    transition: width 1.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Animated hazard-stripe shimmer inside the bar */
+.maint-progress-stripes {
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.25) 0,
+        rgba(255, 255, 255, 0.25) 10px,
+        transparent 10px,
+        transparent 20px
+    );
+    animation: stripes-move 1s linear infinite;
+}
+
+@keyframes stripes-move {
+    from { background-position: 0 0; }
+    to { background-position: 28px 0; }
+}
+
+/* ---------- Contact ---------- */
+.maint-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.maint-contact-label {
+    font-size: var(--text-sm);
+    color: var(--color-gray-300);
+}
+
+.maint-contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    justify-content: center;
+}
+
+.maint-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    font-size: var(--text-sm);
+    text-decoration: none;
+    transition: transform var(--transition-base), box-shadow var(--transition-base), background var(--transition-base);
+}
+
+.maint-btn--primary {
+    background: var(--color-accent);
+    color: var(--color-white);
+    box-shadow: var(--shadow-gold);
+}
+
+.maint-btn--primary:hover {
+    background: var(--color-accent-light);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(249, 115, 22, 0.4);
+}
+
+.maint-btn--ghost {
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--color-white);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.maint-btn--ghost:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-2px);
+}
+
+/* ---------- Footer ---------- */
+.maint-footer {
+    margin-top: var(--space-12);
+    font-size: var(--text-xs);
+    color: var(--color-gray-600);
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+    .maint-dust span,
+    .maint-crane .crane-jib,
+    .maint-crane .crane-load,
+    .maint-badge svg,
+    .maint-progress-stripes,
+    .maint-grid,
+    .maint-logo,
+    .maint-title span::after,
+    .maint-inner > * {
+        animation: none;
+    }
+}
