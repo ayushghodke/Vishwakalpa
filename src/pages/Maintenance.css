@@ -54,6 +54,7 @@
     border-radius: 50%;
     background: var(--color-accent-light);
     opacity: 0;
+    will-change: transform, opacity;
     animation: maint-float 9s linear infinite;
     animation-delay: calc(var(--i) * -0.6s);
 }
@@ -166,28 +167,30 @@
     stroke-width: 1;
 }
 
-/* Jib slowly swings back and forth around the mast top */
+/* Jib slowly swings back and forth around the mast top (x=48, y=41 in SVG viewBox) */
 .maint-crane .crane-jib {
-    transform-box: fill-box;
-    transform-origin: 50px 41px;
+    transform-box: view-box;
+    transform-origin: 48px 41px;
+    will-change: transform;
     animation: crane-swing 6s ease-in-out infinite;
 }
 
 @keyframes crane-swing {
     0%, 100% { transform: rotate(-4deg); }
-    50% { transform: rotate(4deg); }
+    50%       { transform: rotate(4deg); }
 }
 
-/* Load bobs gently on the cable */
+/* Load bobs on the cable — simple translateY avoids compound-transform issues */
 .maint-crane .crane-load {
-    transform-box: fill-box;
-    transform-origin: top center;
+    transform-box: view-box;
+    transform-origin: 240px 120px;
+    will-change: transform;
     animation: crane-bob 3s ease-in-out infinite;
 }
 
 @keyframes crane-bob {
-    0%, 100% { transform: translateY(0) rotate(-2deg); }
-    50% { transform: translateY(6px) rotate(2deg); }
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(8px); }
 }
 
 /* ---------- Badge ---------- */
@@ -224,37 +227,32 @@
     font-size: clamp(2rem, 6vw, var(--text-5xl));
     line-height: 1.1;
     margin-bottom: var(--space-4);
+    color: var(--color-white);
 }
 
 .maint-title span {
-    color: var(--color-accent);
-    position: relative;
     display: inline-block;
-    overflow: hidden;
-}
-
-/* Light streak sweeps across "great." every 5 seconds */
-.maint-title span::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -80%;
-    width: 60%;
-    height: 100%;
     background: linear-gradient(
         90deg,
-        transparent 0%,
-        rgba(255, 255, 255, 0.38) 50%,
-        transparent 100%
+        var(--color-accent)       0%,
+        var(--color-accent)       38%,
+        rgba(255, 255, 255, 0.95) 50%,
+        var(--color-accent)       62%,
+        var(--color-accent)       100%
     );
+    background-size: 250% 100%;
+    background-position: 0% 0;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: var(--color-accent); /* fallback */
     animation: title-shimmer 5s ease-in-out infinite;
-    animation-delay: 1.2s;
-    pointer-events: none;
+    animation-delay: 1.5s;
 }
 
 @keyframes title-shimmer {
-    0%, 70%, 100% { left: -80%; }
-    40%            { left: 130%; }
+    0%, 65%, 100% { background-position: 0% 0; }
+    45%            { background-position: 100% 0; }
 }
 
 .maint-text {
@@ -386,6 +384,7 @@
 
 /* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
+    /* Suppress decorative animations */
     .maint-dust span,
     .maint-crane .crane-jib,
     .maint-crane .crane-load,
@@ -393,8 +392,14 @@
     .maint-progress-stripes,
     .maint-grid,
     .maint-logo,
-    .maint-title span::after,
+    .maint-title span {
+        animation: none;
+    }
+
+    /* Entrance: skip animation but keep elements visible */
     .maint-inner > * {
         animation: none;
+        opacity: 1;
+        transform: none;
     }
 }
