@@ -32,7 +32,7 @@ const About = () => {
                         <p className="highlight-label">Built-up Area Designed</p>
                     </div>
                     <div className="highlight-card glass-panel">
-                        <div className="highlight-number accent-gradient-text">1000+ Acres</div>
+                        <div className="highlight-number accent-gradient-text">850+ Acres</div>
                         <p className="highlight-label">Site Area</p>
                     </div>
                     <div className="highlight-card glass-panel">

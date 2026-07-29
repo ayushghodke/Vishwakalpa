@@ -170,25 +170,10 @@
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-    .navbar {
-        padding: var(--space-2) 0;
-    }
-
-    .navbar-logo {
-        font-size: var(--text-lg);
-        margin-left: -8px;
-        gap: var(--space-2);
-    }
-
-    .brand-logo {
-        height: 28px;
-    }
-
-    .navbar.scrolled .brand-logo {
-        height: 24px;
-    }
-
+/* Five links + the Contact button don't reliably fit in the pill between
+   ~769px and ~1010px, so the hamburger/mobile menu takes over from 1024px
+   down — matching the tablet breakpoint used elsewhere on the site. */
+@media (max-width: 1024px) {
     .navbar-links,
     .navbar-content .btn {
         display: none;
@@ -206,5 +191,25 @@
         border-radius: var(--radius-xl);
         background: rgba(255, 255, 255, 0.15);
         /* Slightly stronger bg when open */
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: var(--space-2) 0;
+    }
+
+    .navbar-logo {
+        font-size: var(--text-lg);
+        margin-left: -8px;
+        gap: var(--space-2);
+    }
+
+    .brand-logo {
+        height: 28px;
+    }
+
+    .navbar.scrolled .brand-logo {
+        height: 24px;
     }
 }

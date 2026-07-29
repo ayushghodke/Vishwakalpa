@@ -4,6 +4,7 @@ import Hero from '../sections/Hero'
 import Footer from '../components/Footer'
 import '../index.css'
 
+const Sectors = lazy(() => import('../sections/Sectors'))
 const Portfolio = lazy(() => import('../sections/Portfolio'))
 const Services = lazy(() => import('../sections/Services'))
 const About = lazy(() => import('../sections/About'))
@@ -16,8 +17,9 @@ function Home() {
             <main>
                 <Hero />
                 <Suspense fallback={null}>
-                    <Portfolio />
+                    <Sectors />
                     <Services />
+                    <Portfolio />
                     <About />
                     <Contact />
                 </Suspense>

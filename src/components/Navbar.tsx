@@ -48,6 +48,7 @@ const Navbar = () => {
                     {/* Desktop Navigation */}
                     <ul className="navbar-links">
                         <li><a onClick={() => scrollTo('home')}>Home</a></li>
+                        <li><a onClick={() => scrollTo('industries')}>Industries</a></li>
                         <li><a onClick={() => scrollTo('portfolio')}>Portfolio</a></li>
                         <li><a onClick={() => scrollTo('services')}>Services</a></li>
                         <li><a onClick={() => scrollTo('about')}>About</a></li>
@@ -69,6 +70,7 @@ const Navbar = () => {
                 {mobileMenuOpen && (
                     <div className="mobile-menu glass-panel">
                         <a onClick={() => scrollTo('home')}>Home</a>
+                        <a onClick={() => scrollTo('industries')}>Industries</a>
                         <a onClick={() => scrollTo('portfolio')}>Portfolio</a>
                         <a onClick={() => scrollTo('services')}>Services</a>
                         <a onClick={() => scrollTo('about')}>About</a>

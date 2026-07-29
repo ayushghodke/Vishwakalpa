@@ -2,7 +2,24 @@ import { useState } from 'react';
 import './Portfolio.css';
 import contentData from '../assets/content.json';
 
-type Category = 'residential' | 'commercial' | 'institutional' | 'industrial' | 'urban-planning';
+interface PortfolioProject {
+    name: string;
+    type?: string;
+    location?: string;
+    image?: string;
+    features?: string[];
+}
+
+interface PortfolioCategory {
+    id: string;
+    title: string;
+    description: string;
+    // Categories default to active when the flag is absent, so older data
+    // shapes without the flag still render. Set `active: false` to hide a
+    // category from the site without deleting its project data.
+    active?: boolean;
+    projects: PortfolioProject[];
+}
 
 // Portfolio Card Component - Single Image
 const PortfolioCard = ({ project, image }: { project: any; image: string }) => {
@@ -48,11 +65,12 @@ const PortfolioCard = ({ project, image }: { project: any; image: string }) => {
 };
 
 const Portfolio = () => {
-    const [activeCategory, setActiveCategory] = useState<Category>('residential');
+    const portfolioData = contentData.portfolio.categories as PortfolioCategory[];
+    const activeCategories = portfolioData.filter(category => category.active !== false);
 
-    const portfolioData = contentData.portfolio.categories;
+    const [activeCategory, setActiveCategory] = useState<string | undefined>(activeCategories[0]?.id);
 
-    const projects = portfolioData.flatMap(category =>
+    const projects = activeCategories.flatMap(category =>
         category.projects.map(project => ({
             ...project,
             category: category.id,
@@ -128,43 +146,24 @@ const Portfolio = () => {
                 <div className="section-header text-center">
                     <h2 className="mb-4">Our <span className="text-primary">Portfolio</span></h2>
                     <p className="text-gray mb-8">
-                        Transforming visions into architectural excellence
+                        Industrial facilities built for performance, compliance, and scale
                     </p>
                 </div>
 
-                {/* Category Filter */}
-                <div className="portfolio-filter">
-                    <button
-                        className={`filter-btn ${activeCategory === 'residential' ? 'active' : ''}`}
-                        onClick={() => setActiveCategory('residential')}
-                    >
-                        Residential
-                    </button>
-                    <button
-                        className={`filter-btn ${activeCategory === 'industrial' ? 'active' : ''}`}
-                        onClick={() => setActiveCategory('industrial')}
-                    >
-                        Industrial
-                    </button>
-                    <button
-                        className={`filter-btn ${activeCategory === 'urban-planning' ? 'active' : ''}`}
-                        onClick={() => setActiveCategory('urban-planning')}
-                    >
-                        Urban Planning
-                    </button>
-                    <button
-                        className={`filter-btn ${activeCategory === 'commercial' ? 'active' : ''}`}
-                        onClick={() => setActiveCategory('commercial')}
-                    >
-                        Commercial
-                    </button>
-                    <button
-                        className={`filter-btn ${activeCategory === 'institutional' ? 'active' : ''}`}
-                        onClick={() => setActiveCategory('institutional')}
-                    >
-                        Institutional
-                    </button>
-                </div>
+                {/* Category Filter — hidden when only one category is active */}
+                {activeCategories.length > 1 && (
+                    <div className="portfolio-filter">
+                        {activeCategories.map(category => (
+                            <button
+                                key={category.id}
+                                className={`filter-btn ${activeCategory === category.id ? 'active' : ''}`}
+                                onClick={() => setActiveCategory(category.id)}
+                            >
+                                {category.title}
+                            </button>
+                        ))}
+                    </div>
+                )}
 
                 {/* Portfolio Grid */}
                 <div className="portfolio-grid">

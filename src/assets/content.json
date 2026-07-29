@@ -53,6 +53,7 @@
                 "id": "residential",
                 "title": "Residential Complexes",
                 "description": "Large-scale housing and residential developments",
+                "active": false,
                 "projects": [
                     {
                         "name": "Luxury Bungalow Development",
@@ -81,8 +82,9 @@
             },
             {
                 "id": "industrial",
-                "title": "Industrial Parks",
+                "title": "Industrial",
                 "description": "Large-scale industrial planning and development",
+                "active": true,
                 "projects": [
                     {
                         "name": "Industrial Development 1",
@@ -115,6 +117,7 @@
                 "id": "urban-planning",
                 "title": "Urban Planning",
                 "description": "Municipal corporation proposals and city-wide development",
+                "active": false,
                 "projects": [
                     {
                         "name": "Area Development Project",
@@ -145,6 +148,7 @@
                 "id": "commercial",
                 "title": "Commercial",
                 "description": "Multifunctional spaces combining retail, office and commercial developments",
+                "active": false,
                 "projects": [
                     {
                         "name": "Website is in progress"
@@ -155,6 +159,7 @@
                 "id": "institutional",
                 "title": "Institutional Buildings",
                 "description": "Educational, healthcare, and public institutional facilities",
+                "active": false,
                 "projects": [
                     {
                         "name": "Website is in progress"

@@ -29,6 +29,13 @@ const targets = [
   { in: 'portfolio/urban-planning/area-dev-4.jpg',        webp: 'portfolio/urban-planning/area-dev-4.webp',        maxW: 1400, q: 80 },
   { in: 'portfolio/urban-planning/transport-2.jpg',       webp: 'portfolio/urban-planning/transport-2.webp',       maxW: 1400, q: 80 },
   { in: 'portfolio/urban-planning/transport-3.jpg',       webp: 'portfolio/urban-planning/transport-3.webp',       maxW: 1400, q: 80 },
+  { in: 'sectors/automotive-ev.png',                      webp: 'sectors/automotive-ev.webp',                      maxW: 1000, q: 80 },
+  { in: 'sectors/electronics-semiconductors.png',         webp: 'sectors/electronics-semiconductors.webp',         maxW: 1000, q: 80 },
+  { in: 'sectors/warehousing-logistics.png',              webp: 'sectors/warehousing-logistics.webp',              maxW: 1000, q: 80 },
+  { in: 'sectors/multi-tenant-campus.png',                webp: 'sectors/multi-tenant-campus.webp',                maxW: 1000, q: 80 },
+  { in: 'sectors/food-processing.png',                    webp: 'sectors/food-processing.webp',                    maxW: 1000, q: 80 },
+  { in: 'sectors/pharmaceuticals.png',                     webp: 'sectors/pharmaceuticals.webp',                    maxW: 1000, q: 80 },
+  { in: 'sectors/heavy-engineering-manufacturing.png',    webp: 'sectors/heavy-engineering-manufacturing.webp',    maxW: 1000, q: 80 },
 ];
 
 const fmt = (n) => (n / 1024).toFixed(1) + ' KB';
