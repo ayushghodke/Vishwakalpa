@@ -150,7 +150,7 @@ export const sectors: Sector[] = [
             'Large-span hangar design with security zoning and access control',
             'Compliance with defense establishment and statutory norms'
         ],
-        image: null,
+        image: '/images/sectors/precision-aerospace-defense.webp',
         icon: Plane
     },
     {
@@ -164,7 +164,7 @@ export const sectors: Sector[] = [
             'Fire suppression and multi-tier security zone design',
             'Facade and landscape design for corporate data parks'
         ],
-        image: null,
+        image: '/images/sectors/data-centers.webp',
         icon: Server
     },
     {
@@ -178,7 +178,7 @@ export const sectors: Sector[] = [
             'Safety compliance for flammable material environments',
             'IGBC green building integration and certification support'
         ],
-        image: null,
+        image: '/images/sectors/renewable-energy-biofuels.webp',
         icon: Leaf
     },
     {
@@ -192,7 +192,7 @@ export const sectors: Sector[] = [
             'Common facilities — admin, security, canteen, fire station',
             'MIDC and statutory layout approval coordination'
         ],
-        image: null,
+        image: '/images/sectors/industrial-parks.webp',
         icon: LandPlot
     },
     {
@@ -206,7 +206,7 @@ export const sectors: Sector[] = [
             'Effluent treatment and waste segregation planning',
             'IGBC compliance and green landscaping integration'
         ],
-        image: null,
+        image: '/images/sectors/plastics-recycling-textiles.webp',
         icon: Recycle
     }
 ];

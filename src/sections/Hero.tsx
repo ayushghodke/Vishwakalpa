@@ -1,6 +1,6 @@
-import { Link } from 'react-router';
 import './Hero.css';
-import { company, whatsappUrl } from '../data/company';
+// `company` is unused while the hero-qualifier block below is commented out.
+import { whatsappUrl } from '../data/company';
 
 // ============================================
 // HERO
@@ -22,8 +22,8 @@ const Hero = () => {
                 <img
                     src="/images/hero/mmlp-new.webp"
                     alt="Industrial facility designed by Vishwakalpa"
-                    width="1920"
-                    height="1080"
+                    width="1774"
+                    height="887"
                     fetchPriority="high"
                     decoding="async"
                 />
@@ -35,20 +35,18 @@ const Hero = () => {
                     {/* The only h1 on the homepage. Leads with the nouns a factory
                         owner actually searches for. */}
                     <h1 className="hero-title animate-fade-in-up">
-                        Factories, Foundries and <span>Industrial Plants</span> — Designed to Run
+                        Factories and <span>Industrial Plants</span> — Designed to Run
                     </h1>
                     <p className="hero-subtitle">
-                        Master planning, architecture, structural design and project management
+                        Architecture, MEP, structural design and project management
                         for manufacturing facilities across India.
                     </p>
 
                     <div className="hero-actions">
-                        <Link to="/services/foundry-design" className="btn btn-primary btn-lg">
-                            Foundry &amp; Plant Design
-                        </Link>
+                        {/* Single CTA, so it takes the primary treatment. */}
                         <a
                             href={whatsappUrl}
-                            className="btn btn-secondary btn-lg"
+                            className="btn btn-primary btn-lg"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
@@ -60,10 +58,10 @@ const Hero = () => {
                         rather than limitation, and lets the enquiries the firm
                         does not want — residential, interiors, retail — filter
                         themselves out before they reach the team. */}
-                    <p className="hero-qualifier">
+                    {/* <p className="hero-qualifier">
                         Industrial projects from {company.engagement.minProjectValue} ·{' '}
                         {company.engagement.projectsPerYear} engagements a year · Pune
-                    </p>
+                    </p> */}
                 </div>
             </div>
         </section>

@@ -48,18 +48,35 @@ h6 {
   margin-bottom: var(--space-4);
 }
 
+/* Fluid heading scale.
+ *
+ * These were fixed rem values with breakpoints only at 1024px and 768px, which
+ * left everything from 1025px upward on the largest size in the scale. A
+ * 1440x900 laptop — the most common desktop size — got type meant for a big
+ * monitor: h1 and h2 both landed on 48px, so there was no hierarchy between a
+ * page title and a section heading, and the homepage ran to nearly 9000px.
+ *
+ * clamp() interpolates continuously instead, so there is no width where the
+ * page is sized for a screen the visitor does not have. Read as:
+ *     clamp(floor, <small screens> + <growth per 1% of viewport>, ceiling)
+ *
+ * Resulting sizes:  1024px    1440px    1920px+
+ *             h1      36px      42px      52px
+ *             h2      28px      32px      40px
+ *             h3      22px      24px      28px
+ */
 h1 {
-  font-size: var(--text-6xl);
+  font-size: clamp(2.25rem, 0.75rem + 2.08vw, 3.25rem);
   letter-spacing: -0.02em;
 }
 
 h2 {
-  font-size: var(--text-5xl);
+  font-size: clamp(1.75rem, 0.5rem + 1.67vw, 2.5rem);
   letter-spacing: -0.01em;
 }
 
 h3 {
-  font-size: var(--text-4xl);
+  font-size: clamp(1.375rem, 0.75rem + 0.83vw, 1.75rem);
 }
 
 h4 {
@@ -104,12 +121,27 @@ a:hover {
   padding: 0 var(--space-6);
 }
 
+/* Section rhythm, fluid for the same reason as the type scale.
+ * .section-lg was a flat 128px top AND bottom at every width above 1024px —
+ * 256px of empty space per section, five sections deep on the homepage.
+ *
+ *                    1024px   1440px   1920px+
+ *   .section           44px     54px     72px
+ *   .section-lg        56px     72px     96px
+ */
 .section {
-  padding: var(--space-24) 0;
+  padding: clamp(2.75rem, 3.75vw, 4.5rem) 0;
 }
 
 .section-lg {
-  padding: var(--space-32) 0;
+  padding: clamp(3.5rem, 5vw, 6rem) 0;
+}
+
+/* Global, despite previously living in Portfolio.css — every homepage section
+ * uses it. The h2 override there hard-set every section heading to 48px, which
+ * is what collapsed the gap between headings and the page title. */
+.section-header {
+  margin-bottom: clamp(2rem, 0.25rem + 2.5vw, 3.25rem);
 }
 
 /* ========== GRID SYSTEM ========== */
@@ -306,30 +338,24 @@ a:hover {
   /* Pill shape for large buttons like in reference */
 }
 
-/* ========== RESPONSIVE ========== */
+/* ========== RESPONSIVE ==========
+ *
+ * The per-breakpoint h1/h2/h3 overrides that used to live here are gone. The
+ * clamp() scale above covers every width continuously, and a fixed font-size
+ * inside a media query would override it — at 1024px the old rule actually set
+ * h1 LARGER (48px) than the fluid value it replaces, so keeping both would have
+ * made the page jump upward as the window narrowed.
+ *
+ * What remains here is layout that genuinely changes at a threshold — column
+ * counts and gutters — rather than sizes that should scale smoothly.
+ */
 @media (max-width: 1024px) {
-  h1 {
-    font-size: var(--text-5xl);
-  }
-
-  h2 {
-    font-size: var(--text-4xl);
-  }
-
-  h3 {
-    font-size: var(--text-3xl);
-  }
-
   .grid-cols-3 {
     grid-template-columns: repeat(2, 1fr);
   }
 
   .grid-cols-4 {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .section {
-    padding: var(--space-20) 0;
   }
 }
 
@@ -338,22 +364,10 @@ a:hover {
     font-size: 14px;
   }
 
-  h1 {
-    font-size: var(--text-4xl);
-  }
-
-  h2 {
-    font-size: var(--text-3xl);
-  }
-
   .grid-cols-2,
   .grid-cols-3,
   .grid-cols-4 {
     grid-template-columns: 1fr;
-  }
-
-  .section {
-    padding: var(--space-16) 0;
   }
 
   .container,

@@ -20,7 +20,10 @@
 /* ========== Sector Card ========== */
 .sector-card {
     position: relative;
-    height: 300px;
+    /* Twelve cards in a 3-column grid is four rows, so each 10px of card height
+       costs 40px of page. Scales with the viewport instead of sitting at the
+       large-monitor size on a laptop. */
+    height: clamp(230px, 18vw, 300px);
     border-radius: var(--radius-xl);
     overflow: hidden;
     cursor: pointer;

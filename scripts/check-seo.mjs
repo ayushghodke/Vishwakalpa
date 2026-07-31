@@ -265,8 +265,8 @@ if (maintenancePages > 0) {
         `\n  NOTE: MAINTENANCE_MODE is ON — ${maintenancePages} page(s) prerendered\n` +
         `  the maintenance body instead of their real content. Head tags, canonicals\n` +
         `  and JSON-LD were still verified; body content checks were skipped.\n` +
-        `\n  To verify real content prerenders, build with the override:\n` +
-        `      VITE_MAINTENANCE_MODE=false npm run build`,
+        `\n  To verify real content prerenders, set MAINTENANCE_MODE = false in\n` +
+        `  src/constants/config.ts, rebuild, then set it back.`,
     );
 }
 

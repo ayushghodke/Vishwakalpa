@@ -26,7 +26,7 @@ export function meta({ params }: { params: { slug?: string } }): MetaDescriptor[
 
     if (!project) {
         return buildMeta({
-            title: 'Project Not Found | Vishwakalpa',
+            title: 'Vishwakalpa | Project Not Found',
             description: 'This page could not be found.',
             path: `/projects/${params.slug ?? ''}`,
             noindex: true,
@@ -72,6 +72,19 @@ const ProjectDetail = () => {
             />
 
             <section className="pd-hero">
+                {project.image && (
+                    <div className="pd-hero-media">
+                        <img
+                            src={project.image}
+                            alt={`${project.title}, ${project.city}`}
+                            width="1400"
+                            height="700"
+                            fetchPriority="high"
+                            decoding="async"
+                        />
+                        <div className="pd-hero-media-overlay"></div>
+                    </div>
+                )}
                 <div className="pd-hero-glow"></div>
                 <div className="container pd-hero-container">
                     <Link to="/" className="pd-back-link">

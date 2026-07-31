@@ -22,7 +22,7 @@ import './NotFound.css';
 
 export function meta(): MetaDescriptor[] {
     return buildMeta({
-        title: 'Page Not Found | Vishwakalpa',
+        title: 'Vishwakalpa | Page Not Found',
         description: 'This page could not be found.',
         path: '/404',
         noindex: true,

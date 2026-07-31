@@ -1,15 +1,21 @@
 // ============================================
 // SERVICES
 //
-// Six deep pages rather than eleven thin ones. Every page is backed by a real
-// project — depth ranks, breadth does not, and unbacked pages drag the strong
-// ones down with them.
+// Six deep pages rather than eleven thin ones. Depth ranks, breadth does not,
+// and unbacked pages drag the strong ones down with them.
 //
-// Priority order (owner answer, Section I):
-//   1. Foundry design          — lowest competition, highest intent
-//   2. Industrial master plan  — entry point for most large deals
-//   3. Precision machining
-//   4. Industrial PMC
+// The list is organised by DISCIPLINE (what we do) rather than by FACILITY TYPE
+// (what we build). Facility and industry targeting lives in sectors.ts — the
+// twelve "Industries We Serve" cards — and in the case studies. Ordered as the
+// work actually runs: plan the campus, design the building, lay out the
+// machines, engineer it, model it, build it.
+//
+// NOTE ON FOUNDRY — the owner's Section I ranked "foundry design consultant
+// India" as the single highest-value target: lowest competition, highest
+// intent, three real projects behind it. It was removed from the service list
+// at the owner's request. It now appears only in the Ahmedabad case study, and
+// there is no foundry sector card either, so nothing on the site targets that
+// term directly. Worth revisiting.
 //
 // HONESTY GUARDRAILS — these are not stylistic preferences, they are factual
 // constraints the owner set. Do not soften them when editing copy:
@@ -40,7 +46,7 @@ export interface Service {
     title: string;
     /** Short label for nav and breadcrumbs */
     shortTitle: string;
-    /** <title> — under ~60 chars before the brand suffix */
+    /** <title> — under ~60 chars including the brand suffix */
     seoTitle: string;
     /** <meta name="description"> — 140-160 chars */
     seoDescription: string;
@@ -61,13 +67,13 @@ export interface Service {
 const COST_FAQ: ServiceFaq = {
     question: 'How much does it cost per square foot?',
     answer:
-        'It is the first question every client asks, and an honest answer needs two numbers from you: the process the building has to house, and the plot. A general-purpose shed and a foundry melting bay of the same floor area differ by a wide margin, because the foundry needs crane-rated structure, hot-zone separation and heavy power that the shed does not. Consultancy fees are normally a percentage of construction cost, scaled to the scope you actually need — design only, design plus coordination, or full project management. Send us the plot details and what you intend to manufacture and you will get a specific fee proposal rather than a range.',
+        'It is the first question every client asks, and an honest answer needs two things from you: the process the building has to house, and the plot. A general-purpose shed and a heavy manufacturing bay of the same floor area differ by a wide margin, because the heavy bay needs crane-rated structure, process zoning and power infrastructure the shed does not. Consultancy fees are normally a percentage of construction cost, scaled to the scope you actually need — design only, design plus coordination, or full project management. Send us the plot details and what you intend to manufacture and you will get a specific fee proposal rather than a range.',
 };
 
 const TIMELINE_FAQ: ServiceFaq = {
     question: 'How long will it take?',
     answer:
-        'Design and drawing production for a mid-sized industrial facility typically runs three to six months to GFC stage, depending on how settled the process layout is when we start. Construction then depends on scale — the two completed projects on this site ran 22 months and 18 months from start to commissioning, at roughly 4,00,000 and 2,50,000 sq ft respectively. The single largest cause of delay is not drawing production; it is process changes arriving after the structure is fixed. Time spent on master planning at the beginning is what protects the schedule later.',
+        'Design and drawing production for a mid-sized industrial facility typically runs three to six months to GFC stage, depending on how settled the process layout is when we start. Construction then depends on scale — the two completed projects on this site ran 22 months and 18 months from start to commissioning, at roughly 4,00,000 and 2,50,000 sq ft respectively. The single largest cause of delay is not drawing production; it is process changes arriving after the structure is fixed. Time spent on planning at the beginning is what protects the schedule later.',
 };
 
 const MIN_SIZE_FAQ: ServiceFaq = {
@@ -84,77 +90,10 @@ const BIM_FAQ: ServiceFaq = {
 
 export const services: Service[] = [
     {
-        slug: 'foundry-design',
-        title: 'Foundry Design',
-        shortTitle: 'Foundry Design',
-        seoTitle: 'Foundry Design Consultant India | Vishwakalpa',
-        seoDescription:
-            'Foundry design consultants for melting shops and casting plants. Hot-zone separation, EOT crane structure and HT power infrastructure, across India.',
-        heading:
-            'Melting shops, casting plants and grinding media foundries — designed around the process, not the plot.',
-        cardDescription:
-            'Melting and holding bays, hot-zone separation, heavy crane structure and HT power infrastructure.',
-        intro: [
-            'A foundry is not a shed with furnaces in it. Metal moves through a continuous sequence of very different environments in a single building — from a melting furnace running above 1500°C, through moulding and pouring, to a finishing area where people handle the cooled casting by hand. Get the separation between those zones wrong and you have built a safety problem into the structure, where it is expensive and disruptive to fix later.',
-            'We have designed and coordinated foundry facilities including a 9.2-acre, 4,00,000 sq ft grinding media campus with three melting and three holding furnaces, and we are currently working on foundry and machining facilities elsewhere in western India. That work is where the detail on this page comes from.',
-        ],
-        sections: [
-            {
-                heading: 'Hot-zone separation is a structural decision, not a site rule',
-                body: [
-                    'The layout follows the process, not the shape of the plot. Melting and holding furnaces — the hottest and highest-risk zones — get their own dedicated bays, separated from moulding, pattern-making and finishing by structural walls rather than distance alone. Molten metal travels a fixed, short crane path from furnace to mould and never crosses a walkway or a finishing area.',
-                    'Cooling and quenching sits between the hot zone and the finishing area as a deliberate buffer, so that nobody working on finished castings is ever standing next to an open furnace. Designed once into the building, this stops being something the plant has to manage through procedure every shift.',
-                ],
-            },
-            {
-                heading: 'Crane loads and clear heights drive the frame',
-                body: [
-                    'Foundry structure is sized for the full crane duty cycle, not a nominal load. On the grinding media campus that meant a melting platform carrying three 10 MT and one 30 MT EOT cranes plus a 5 MT monorail, with a separate holding-furnace bay carrying two 10 MT and two 5 MT cranes — crane rail fixed at 10m inside a 15m clear-height shed so maintenance access stays workable.',
-                    'Mezzanine levels at maintenance walkways and pouring areas are worked into the frame without interrupting crane runway clearances. These decisions are extremely difficult to retrofit, which is why they belong in the first structural model rather than in a variation order.',
-                ],
-            },
-            {
-                heading: 'Power infrastructure with layered redundancy',
-                body: [
-                    'A furnace in the middle of a melt cannot be exposed to a single point of power failure. On the same campus, 11 kV HT supply enters by underground cable to a metering kiosk with CT and PT, through an isolator with earth switch and gantry, into two main HT transformers. Seven internal distribution transformers with LT panels step power down for individual machine areas, backed by four 750 KVA DG sets each with a dedicated diesel tank.',
-                    'Electrical and MEP design is coordinated with our consultant partners and integrated into the model alongside structure and process, so the clashes surface before anything is built.',
-                ],
-            },
-        ],
-        scope: [
-            'Foundry master planning and process-driven zoning',
-            'Melting, holding, moulding and finishing bay layout',
-            'EOT crane structure, runway beams and machine foundations',
-            'HT power distribution and DG backup coordination',
-            'Wind-based zoning, fume extraction and hot-zone ventilation strategy',
-            'Quenching pit design with insulated false floor and ceiling',
-            'BIM coordination across structure, services and process equipment',
-            'Drawings and documentation supporting your statutory approval applications',
-        ],
-        faqs: [
-            {
-                question: 'What makes foundry design different from ordinary industrial design?',
-                answer:
-                    'Three things a general industrial consultant will usually under-estimate: heat and fume management as a zoning problem rather than a ventilation afterthought, crane duty cycles that drive the entire structural frame, and power redundancy sized so a melt is never at risk from a single failure. A foundry laid out like a general engineering shed works on paper and creates safety and quality problems in operation.',
-            },
-            {
-                question: 'Can you work with our existing furnace and equipment suppliers?',
-                answer:
-                    'Yes, and it is better when we do. Equipment vendors set the foundations, utility loads, clearances and crane requirements that the building has to accommodate. We coordinate their inputs into the model early, because equipment selection changing after the structure is fixed is one of the most expensive things that can happen on a foundry project.',
-            },
-            COST_FAQ,
-            TIMELINE_FAQ,
-            BIM_FAQ,
-        ],
-        relatedProject: 'foundry-campus-ahmedabad',
-        order: 1,
-    },
-
-    {
         slug: 'industrial-master-planning',
         title: 'Industrial Master Planning',
         shortTitle: 'Master Planning',
-        seoTitle: 'Industrial Master Planning Consultant | Vishwakalpa',
+        seoTitle: 'Vishwakalpa | Industrial Master Planning Consultant',
         seoDescription:
             'Industrial campus master planning: plot layout, material flow, utility corridors and phased expansion. Projects delivered up to 500 acres.',
         heading:
@@ -212,147 +151,282 @@ export const services: Service[] = [
             TIMELINE_FAQ,
         ],
         relatedProject: 'precision-machining-facility-solapur',
+        order: 1,
+    },
+
+    {
+        slug: 'architecture-design',
+        title: 'Architecture & Design',
+        shortTitle: 'Architecture',
+        seoTitle: 'Vishwakalpa | Industrial Architecture & Design Consultant',
+        seoDescription:
+            'Industrial architecture for factories and manufacturing campuses: building envelope, admin blocks, worker amenities, facade and statutory compliance.',
+        heading:
+            'The building around the process — engineered for the people who work in it, not only the machines.',
+        cardDescription:
+            'Building envelope, admin and amenity blocks, facade, daylight and ventilation, statutory compliance.',
+        intro: [
+            'Industrial architecture is usually treated as whatever is left over once the process layout is fixed. That is how you end up with a plant that runs adequately and is unpleasant to work in — no daylight where people spend ten hours, an admin block positioned so visitors walk through a material route, an entrance that says nothing about the company to the OEM customer auditing it.',
+            'The building envelope is also where a large amount of operating cost is decided: orientation, roof and wall build-up, ventilation strategy and glazing determine what you spend on cooling and lighting for the next twenty years.',
+        ],
+        sections: [
+            {
+                heading: 'Envelope, daylight and ventilation',
+                body: [
+                    'Orientation and roof design are settled against the actual process heat load, not a default. Where the process is hot — furnaces, ovens, hot forming — ventilation and stack effect are designed into the section rather than solved afterwards with fans. Where it is precision work, the priority inverts: stable temperature, controlled daylight and no glare across a machine console.',
+                    'North light, roof monitors and translucent sheeting reduce the lighting load through the working day. On a large-span shed that is a material saving, and it is free if it is decided before the structure is.',
+                ],
+            },
+            {
+                heading: 'Admin, amenity and the visitor route',
+                body: [
+                    'Offices, canteen, changing rooms, first aid and toilets are positioned so that people reach them without crossing a material route or a hazardous zone. On the Solapur campus each building was split north-south, with maintenance, stores and offices on one strip and entrance, conference and canteen on the other, so operational and visitor traffic never overlap.',
+                    'This matters commercially as well as practically. If your customers audit your plant — and in automotive, pharma and food they will — the route they walk is part of what they are assessing.',
+                ],
+            },
+            {
+                heading: 'Facade, identity and statutory compliance',
+                body: [
+                    'An industrial building does not need to be decorative, but it does need to look like a company worth placing a long-term order with. Facade treatment, entrance design, boundary and landscape are handled as part of the architecture rather than added at the end when the budget is gone.',
+                    'Setbacks, ground coverage, FSI, fire tender access, green belt provision and parking are checked against the applicable development control rules from the first sketch. We prepare the drawings and documentation your approval applications require; the liaison and filing stay with you or your appointed consultant.',
+                ],
+            },
+        ],
+        scope: [
+            'Concept and schematic design for industrial buildings and campuses',
+            'Building envelope, roof and section design against process heat load',
+            'Daylight, natural ventilation and glare control strategy',
+            'Administration, canteen, changing room and amenity block design',
+            'Facade, entrance and campus identity treatment',
+            'Green belt, boundary and landscape integration',
+            'Detailed working drawings through to GFC stage',
+            'Drawings and documentation supporting your statutory applications',
+        ],
+        faqs: [
+            {
+                question: 'Do we need an architect if we already have a PEB vendor?',
+                answer:
+                    'A PEB vendor supplies and erects a structural shed. They do not plan how people move through it, where the amenities go, how it is ventilated, or whether the layout satisfies your development control rules — and they have no commercial reason to. On anything beyond a plain storage shed, the two are complementary rather than alternatives: we design the facility, they supply the frame, and we proof-check what they propose.',
+            },
+            {
+                question: 'Can you improve an existing plant without rebuilding it?',
+                answer:
+                    'Often, yes. Daylight, ventilation, amenity provision and circulation can frequently be improved substantially within an existing envelope, and those are the changes people working there actually notice. It starts with a survey of the as-built condition, because on older plants the drawings and the building have usually diverged.',
+            },
+            COST_FAQ,
+            TIMELINE_FAQ,
+        ],
+        relatedProject: 'precision-machining-facility-solapur',
         order: 2,
     },
 
     {
-        slug: 'factory-design',
-        title: 'Factory Design',
-        shortTitle: 'Factory Design',
-        seoTitle: 'Factory Design Consultant India | Vishwakalpa',
+        slug: 'machine-layout-design',
+        title: 'Machine Layout Design',
+        shortTitle: 'Machine Layout',
+        seoTitle: 'Vishwakalpa | Machine Layout Design Consultant',
         seoDescription:
-            'Greenfield factory design, plant expansion and factory layout planning. Process-led layouts, PEB structure and BIM coordination for manufacturers across India.',
+            'Machine layout design for manufacturing plants: machine placement, material flow, clearances, floor loading and provision for future reconfiguration.',
         heading:
-            'Greenfield plants from empty land, expansions to running facilities, and layouts that follow the process.',
+            'Where every machine sits, how material reaches it, and what the floor underneath has to carry.',
         cardDescription:
-            'New plants from bare land, expansion of existing facilities, and machine-level layout planning.',
+            'Machine placement, line balancing, clearances, floor loading specification and future handling provision.',
         intro: [
-            '"I have land and need a manufacturing plant designed" is close to the exact phrasing we hear at the first call. It covers three quite different jobs: a greenfield plant on an empty site, an extension or renovation to a facility that is already running, and layout planning inside a building envelope that already exists.',
-            'All three start the same way — with what you intend to manufacture, at what volume, and how material has to move to make that happen. The building comes after that, not before.',
+            '"I have the machines, I need to know how to lay them out" is one of the more common ways this conversation starts — sometimes for a new plant, often for a shop floor that has grown by accretion until nobody can move a pallet without going the long way round.',
+            'Layout is where a large amount of avoidable operating cost is either designed out or locked in for a decade. A line laid out to minimise travel, double-handling and cross-traffic does not need re-laying out in two years, and the floor under it does not crack because it was specified for the loads it actually carries.',
         ],
         sections: [
             {
-                heading: 'Greenfield — from bare land to production',
+                heading: 'Flow first, then placement',
                 body: [
-                    'A greenfield project gives you the rare freedom to let the process dictate the building rather than the reverse. Machine lines, material routes, utility corridors and expansion land can all be positioned optimally instead of being fitted around constraints inherited from someone else.',
-                    'That freedom is also the risk. Every early decision compounds, and the cost of changing a structural bay or a utility corridor rises steeply once construction starts. This is why we model the whole facility in BIM before anything is built.',
+                    'Machines are positioned against the process sequence and the material route, not against the shape of the building. Incoming stock, work in progress and finished goods each get a defined path, and those paths are kept from crossing — on the Solapur machining campus, raw material entered the machine shop from the warehouse side, moved through lines L#01 to L#10, and finished parts left by an entirely separate route, because contamination on precision components is a quality failure.',
+                    'Operator positions, inspection points, tool storage and scrap removal are placed in the same exercise. They are what determine whether the layout works on a Tuesday afternoon, and they are what a purely equipment-driven layout leaves out.',
                 ],
             },
             {
-                heading: 'Expansion — designing around a plant that cannot stop',
+                heading: 'Clearances people actually need',
                 body: [
-                    'Extending a running facility is a harder problem than a greenfield one, because production continues throughout. The design has to account for construction access that does not cut across live material routes, utility tie-ins that can be made during planned shutdowns, and structural connections to a building whose as-built condition may not match its drawings.',
-                    'We survey and model the existing condition before designing the extension, rather than trusting the original drawing set. That is usually where the surprises are.',
+                    'Maintenance access, door swings, guard opening, chip conveyor withdrawal, pallet turning circles and forklift aisles are set from the real equipment drawings rather than a nominal gap. The common failure is a layout that satisfies the machine footprint and leaves no room to pull a spindle or turn a stacker.',
+                    'Statutory clearances — gangway widths, fire escape routes, electrical panel working space — are checked at the same time, because retro-fitting them means moving machines that are already grouted down.',
                 ],
             },
             {
-                heading: 'Layout planning — machines, flow and clearance',
+                heading: 'Floor loading and future handling',
                 body: [
-                    'Layout planning is the detailed level: machine placement, material flow, clearances for operation and maintenance, and the provision for equipment you intend to add later. It is where floor loading specifications, service drops and handling routes are settled.',
-                    'Done properly it is also where a large amount of avoidable cost is removed — a line laid out to minimise travel and rework does not need to be re-laid out two years later.',
+                    'Layout and floor specification are the same decision. We work from the equipment schedule — machine weights, footprints, dynamic loads and vibration sensitivity — to a uniformly distributed load and a puncture load per footprint. On the Solapur facility that produced 5 MT UDL plus 8 MT puncture load with a laser-screeded FM II finish, appropriate to precision equipment rather than general industrial traffic.',
+                    'Provision for what you will add later belongs in the same drawing. A jack beam along each line, service drops at planned positions and spare capacity in the compressed air and power runs cost very little now and are disruptive to add into a running shop floor.',
                 ],
             },
         ],
         scope: [
-            'Greenfield plant design from site analysis to GFC drawings',
-            'Expansion and renovation design for facilities in production',
-            'Factory layout planning — machine placement, flow, clearances',
-            'PEB and RCC structural design coordination',
-            'Coordinated MEP design with our consultant partners',
-            'BIM modelling and clash detection before construction',
-            'Detailed Project Reports and feasibility studies',
-            'Drawings and documentation supporting your approval applications',
+            'Machine placement and line layout against process sequence',
+            'Material flow planning — raw material, WIP and finished goods separation',
+            'Operator, inspection, tool storage and scrap removal positions',
+            'Maintenance, statutory and material-handling clearance verification',
+            'Floor loading specification from the real equipment schedule',
+            'Floor finish and flatness class specification',
+            'Utility drop coordination — power, compressed air, extraction, coolant',
+            'Provision for future overhead handling and line reconfiguration',
         ],
         faqs: [
             {
-                question: 'We have land but no drawings and no process layout yet. Can you still start?',
+                question: 'We have an existing shop floor. Can you re-plan it without stopping production?',
                 answer:
-                    'Yes, and that is the best time to involve us. If the process layout is not yet fixed we can work from your production targets, product mix and equipment shortlist to develop it — which is considerably better than receiving a layout that was drawn without reference to how the building has to work. Bring the plot documents, the products and the volumes.',
+                    'Usually in phases, yes — but it starts with an honest survey, because on an established plant the as-built layout and the drawings have almost always diverged. We then sequence the moves so that each step leaves a workable floor, which normally means the relayout takes longer than a greenfield one and costs far less than the disruption of doing it all at once.',
             },
             {
-                question: 'Can you design around equipment we have already ordered?',
+                question: 'What floor specification do we actually need?',
                 answer:
-                    'Yes. Equipment foundations, utility loads, clearances and handling requirements become fixed inputs to the design. It is more constrained than designing before ordering, but it is entirely workable — the important thing is that we get the vendor drawings early rather than late.',
+                    'It comes from your machines, not from a standard. Machine weights, footprints, dynamic loads and vibration sensitivity give a uniformly distributed load and a puncture load per footprint, and the slab, reinforcement and finish flatness class are specified against those figures. Over-designing a floor is expensive; under-designing one is expensive later, which is worse.',
             },
-            COST_FAQ,
-            TIMELINE_FAQ,
             BIM_FAQ,
+            COST_FAQ,
         ],
-        relatedProject: null,
+        relatedProject: 'precision-machining-facility-solapur',
         order: 3,
     },
 
     {
-        slug: 'precision-machining-facility-design',
-        title: 'Precision Machining Facility Design',
-        shortTitle: 'Machining Facilities',
-        seoTitle: 'Machining Plant Design Consultant | Vishwakalpa',
+        slug: 'structural-mep-design',
+        title: 'Structural & MEP Design',
+        shortTitle: 'Structural & MEP',
+        seoTitle: 'Vishwakalpa | Industrial Structural & MEP Design',
         seoDescription:
-            'Design consultants for CNC, VMC and HMC machining plants. Floor loading engineered to machine spec, with long-span column-free bays.',
+            'Industrial structural design and coordinated MEP: PEB frames, crane gantries, machine foundations and utility systems. Licensed engineers.',
         heading:
-            'Floors engineered for the loads they actually carry, and column-free bays you can reconfigure.',
+            'The engineering that holds the building up and keeps it running — coordinated in one model.',
         cardDescription:
-            'CNC, VMC and HMC facilities — machine-spec floor loading, long-span structure and clean material routes.',
+            'PEB frames, crane gantries and machine foundations, with coordinated electrical, HVAC and utility design.',
         intro: [
-            'Precision machining puts two demands on a building that pull against each other. The floor has to take heavy, repeated point loads without cracking or settling, and the bays have to stay column-free so machine lines can be rearranged as the product mix changes.',
-            'We designed a 10-acre, 2,50,000 sq ft automotive machining facility with ten machining lines producing camshafts for global OEM customers. The specifics below come from that project.',
+            'Industrial structure has to carry loads that ordinary buildings never see: furnaces, EOT cranes running full duty cycles, machine foundations taking repeated puncture loading, and long spans that have to stay column-free. The services then have to route through that structure without conflict.',
+            'Our Head of Structural Engineering is a Licensed Structural Design Engineer in two states, with over fifteen years across industrial, commercial and high-rise work in both RCC and steel.',
         ],
         sections: [
             {
-                heading: 'Floor specification is a calculation, not a standard detail',
+                heading: 'Structural design for industrial loads',
                 body: [
-                    'A generic industrial floor does not survive concentrated, repetitive machine loading. On the Solapur facility the floor was engineered for the calculated machine loads — 5 MT uniformly distributed load plus an 8 MT puncture load per machine footprint — with a laser-screeded FM II finish appropriate to precision equipment rather than general industrial traffic.',
-                    'Specifying this correctly means the floor is neither over-designed nor under-designed. Both are expensive; the second is expensive later, which is worse.',
+                    'PEB frame design and proof-checking, crane runway beams sized to the actual duty cycle, machine foundations for furnaces, CNC and VMC lines, and foundation engineering for heavy and dynamic loads. Long-span frames keep production bays column-free so lines can be reconfigured without structural constraint.',
+                    'On the Ahmedabad campus that meant a melting platform carrying three 10 MT and one 30 MT EOT cranes plus a 5 MT monorail, with crane rail fixed at 10m inside a 15m clear-height shed so maintenance access stayed workable. Where equipment vendors provide foundation and load data, that becomes a fixed input to the structural model rather than a coordination problem discovered on site.',
                 ],
             },
             {
-                heading: 'Column-free bays with provision for overhead handling',
+                heading: 'Coordinated MEP design',
                 body: [
-                    'A PEB long-span frame keeps the full 30m bay column-free, so machine lines can be reconfigured without a column in the way. Alongside that, a jack beam runs the full length of each of the ten machining lines — a structural provision allowing an overhead handling or light crane system to be added later along any line, without breaking the floor or introducing a mid-bay column.',
-                    'That provision cost very little to build in. Retrofitting it would mean structural work in a live machining hall.',
+                    'MEP is delivered in coordination with our consultant partners rather than by an in-house team, and we would rather state that plainly than imply a capability we do not hold directly. What we do own is the coordination: electrical distribution, HVAC and ventilation, compressed air and utility piping, plumbing, drainage and firefighting systems are integrated into the same model as structure and process.',
+                    'Our senior technical authority on this side brings over forty years in MEP engineering, industrial piping and utility infrastructure, which is what makes the coordination meaningful rather than administrative.',
                 ],
             },
             {
-                heading: 'Raw material and finished goods must never cross',
+                heading: 'Power infrastructure with layered redundancy',
                 body: [
-                    'Machined parts are contamination-sensitive. Dust or debris carried in on incoming stock, travelling the same route as finished components, is a quality failure route. On the Solapur campus, raw material enters the machine shop from the warehouse side, moves through lines L#01 to L#10, and finished parts exit by a separate route into the finished goods store.',
-                    'The separation is built into the site plan rather than managed by procedure, which is the difference between a control that holds and one that depends on everybody following it every day.',
+                    'On a process that cannot be interrupted mid-cycle, single points of failure are a design problem rather than an operations one. The Ahmedabad foundry takes 11 kV HT supply by underground cable to a metering kiosk with CT and PT, through an isolator with earth switch and gantry, into two main HT transformers — with seven internal distribution transformers feeding individual machine areas and four 750 KVA DG sets behind them, each with a dedicated diesel tank.',
+                    'That layering is specified against what a stoppage actually costs you, which is a different calculation for a melting furnace than for an assembly line.',
                 ],
             },
         ],
         scope: [
-            'Machine shop layout for CNC, VMC and HMC lines',
-            'Floor loading design to calculated machine specification',
-            'Laser-screeded FM-classified floor finish specification',
-            'Long-span PEB structure with column-free machining bays',
-            'Jack beam and future overhead handling provision',
-            'Raw material and finished goods flow separation',
-            'Warehouse, stores and finished goods integration',
-            'Coordinated MEP design — compressed air, power, extraction',
+            'PEB frame design, proof-checking and vendor drawing review',
+            'EOT crane runway beams and gantry structure',
+            'Machine foundation design for furnaces, CNC, VMC and HMC lines',
+            'Heavy and dynamic load foundation engineering',
+            'Long-span column-free bay design in steel and RCC',
+            'Coordinated electrical distribution and HT infrastructure',
+            'Coordinated HVAC, ventilation, compressed air and utility piping',
+            'Firefighting, plumbing and drainage coordination',
         ],
         faqs: [
             {
-                question: 'What floor specification do we actually need?',
+                question: 'Is your MEP team in-house?',
                 answer:
-                    'It comes from your machines, not from a standard. We work from the equipment schedule — machine weights, footprints, dynamic loads and vibration sensitivity — to calculate a uniformly distributed load and a puncture load per footprint, then specify the slab, reinforcement and finish flatness class against those figures. On our Solapur project that produced 5 MT UDL plus 8 MT puncture load with an FM II laser-screeded finish.',
+                    'No. MEP design is delivered through our consultant partners, with coordination, integration and technical oversight held by us. We are explicit about this because the distinction matters when you are comparing proposals — some firms describe coordinated MEP as though it were in-house. What you get from us is a single point of accountability for the coordination, backed by a principal consultant with over forty years in industrial MEP and piping.',
             },
             {
-                question: 'Can we add cranes to the machining lines later?',
+                question: 'Can you proof-check a PEB vendor\'s design?',
                 answer:
-                    'Only if the structure was designed for it. Adding overhead handling to a frame that was not provisioned means structural strengthening in an operating facility. Building in a jack beam along each line at construction stage is inexpensive and preserves the option — we would recommend it on almost any machining hall.',
+                    'Yes, and it is worth doing. PEB vendors optimise for their own supply, which is reasonable, but the design still has to satisfy your crane loads, future provisions and site conditions. Independent proof-checking by a licensed structural engineer is inexpensive relative to what it catches.',
+            },
+            BIM_FAQ,
+            COST_FAQ,
+        ],
+        relatedProject: 'foundry-campus-ahmedabad',
+        order: 4,
+    },
+
+    {
+        slug: 'bim-3d-modeling',
+        title: 'BIM, 3D Modelling & Visualization',
+        shortTitle: 'BIM & Visualization',
+        seoTitle: 'Vishwakalpa | BIM & 3D Visualization for Industry',
+        seoDescription:
+            'BIM-integrated design with clash detection across structure, services and process equipment. LOD 200-500 deliverables, renders and walkthroughs.',
+        heading:
+            'Build it once in the model, so you do not build it twice on site.',
+        cardDescription:
+            'Clash detection across structure, services and equipment. LOD 200–500, photorealistic renders and walkthroughs.',
+        intro: [
+            'Every project we take on is modelled before construction begins. This is the firm\'s core differentiator and the mechanism behind the 10–15% construction cost saving we quote — not a general claim about technology, but the accumulated cost of conflicts that never reached site.',
+            'A crane runway crossing a duct route, a machine foundation clashing with a drainage run, a service drop landing inside a machine footprint: each of these costs an afternoon to resolve in a model. On site, each costs rework, a variation order and programme.',
+        ],
+        sections: [
+            {
+                heading: 'Clash detection is where the saving is',
+                body: [
+                    'Structure, services and process equipment are modelled together and checked against each other before anything is procured. Vendor equipment drawings are brought into the same model, so foundation positions, utility connection points and maintenance clearances are verified against the building rather than assumed.',
+                    'The clashes worth catching are rarely the obvious ones. They are the maintenance access that disappears once the cable tray is routed, or the crane hook approach that cannot reach the furnace because a duct was moved 400mm during detailing.',
+                ],
+            },
+            {
+                heading: 'LOD 200 to 500, matched to the decision being made',
+                body: [
+                    'Modelling to a higher level of detail than a decision requires is wasted effort, and modelling to a lower one gives false confidence. Concept-stage massing and zoning sit at LOD 200; coordination and clash detection at LOD 300–350; fabrication-level detail and as-built records at LOD 400–500.',
+                    'The deliverable is agreed against what you actually need it for — coordination, procurement, fabrication, or handover to a facilities team who will still be using it in ten years.',
+                ],
+            },
+            {
+                heading: 'Visualization that answers a question',
+                body: [
+                    'Photorealistic renders and walkthrough animations are produced from the same model as the drawings, so what you show a board, a lender or an OEM customer is the building that will actually be built rather than an artist\'s impression of it.',
+                    'They are also genuinely useful internally. Walking a production manager through a model before the foundation is poured surfaces process objections while they are still free to act on.',
+                ],
+            },
+        ],
+        scope: [
+            '3D modelling and BIM coordination across all disciplines',
+            'Clash detection between structure, services and process equipment',
+            'Vendor equipment integration into the coordinated model',
+            'LOD 200–500 deliverables matched to project stage',
+            'Drawing production from the coordinated model',
+            'Photorealistic renders for stakeholder and customer presentation',
+            'Walkthrough animations and process flow visualization',
+            'As-built model handover for facilities management',
+        ],
+        faqs: [
+            {
+                question: 'Where does the 10–15% saving actually come from?',
+                answer:
+                    'Conflicts resolved before procurement rather than after installation. A clash found in the model costs drafting time; the same clash found on site costs rework, a variation, and usually programme. It also comes from quantities taken off a coordinated model rather than estimated, which reduces both over-ordering and mid-project surprises. It is not a discount on construction — it is avoided waste.',
+            },
+            {
+                question: 'We already have a contractor doing shop drawings. Is BIM duplicating that?',
+                answer:
+                    'No, and the sequence matters. Shop drawings are produced per trade, after award, by parties with no visibility of each other. Coordination modelling happens before that and across all of them, which is precisely where inter-trade clashes live. The model then makes the shop drawings faster and less contentious rather than replacing them.',
+            },
+            {
+                question: 'Can you model an existing plant we did not design?',
+                answer:
+                    'Yes. It begins with a measured survey, because on an established facility the as-built condition and the original drawings have almost always diverged. That model is worth having before any expansion or relayout — it is the difference between designing against the building you have and the building you think you have.',
             },
             COST_FAQ,
-            BIM_FAQ,
         ],
-        relatedProject: 'precision-machining-facility-solapur',
-        order: 4,
+        relatedProject: 'foundry-campus-ahmedabad',
+        order: 5,
     },
 
     {
         slug: 'industrial-pmc',
         title: 'Industrial Project Management',
         shortTitle: 'Project Management',
-        seoTitle: 'Industrial PMC & Project Management | Vishwakalpa',
+        seoTitle: 'Vishwakalpa | Industrial PMC & Project Management',
         seoDescription:
             'Project management for industrial construction: contractor coordination, site supervision, quality and cost control. Periodic or full-time PMC.',
         heading:
@@ -411,73 +485,6 @@ export const services: Service[] = [
                 answer:
                     'Yes. It begins with a condition and design review so we know what has been built, what was specified, and where the two differ. That review is worth doing honestly even if you then decide not to appoint us — knowing the actual position is better than assuming.',
             },
-            COST_FAQ,
-        ],
-        relatedProject: 'foundry-campus-ahmedabad',
-        order: 5,
-    },
-
-    {
-        slug: 'structural-mep-design',
-        title: 'Structural & MEP Design',
-        shortTitle: 'Structural & MEP',
-        seoTitle: 'Industrial Structural & MEP Design | Vishwakalpa',
-        seoDescription:
-            'Industrial structural design and coordinated MEP: PEB frames, crane gantries, machine foundations and utility systems. Licensed engineers.',
-        heading:
-            'The engineering that holds the building up and keeps it running — coordinated in one model.',
-        cardDescription:
-            'PEB frames, crane gantries and machine foundations, with coordinated electrical, HVAC and utility design.',
-        intro: [
-            'Industrial structure has to carry loads that ordinary buildings never see: furnaces, EOT cranes running full duty cycles, machine foundations taking repeated puncture loading, and long spans that have to stay column-free. The services then have to route through that structure without conflict.',
-            'Our Head of Structural Engineering is a Licensed Structural Design Engineer in two states, with over fifteen years across industrial, commercial and high-rise work in both RCC and steel.',
-        ],
-        sections: [
-            {
-                heading: 'Structural design for industrial loads',
-                body: [
-                    'PEB frame design and proof-checking, crane runway beams sized to the actual duty cycle, machine foundations for furnaces, CNC and VMC lines, and foundation engineering for heavy and dynamic loads. Long-span frames keep production bays column-free so lines can be reconfigured without structural constraint.',
-                    'Where equipment vendors provide foundation and load data, that becomes a fixed input to the structural model rather than a coordination problem discovered on site.',
-                ],
-            },
-            {
-                heading: 'Coordinated MEP design',
-                body: [
-                    'MEP is delivered in coordination with our consultant partners rather than by an in-house team, and we would rather state that plainly than imply a capability we do not hold directly. What we do own is the coordination: electrical distribution, HVAC and ventilation, compressed air and utility piping, plumbing, drainage and firefighting systems are integrated into the same model as structure and process.',
-                    'Our senior technical authority on this side brings over forty years in MEP engineering, industrial piping and utility infrastructure, which is what makes the coordination meaningful rather than administrative.',
-                ],
-            },
-            {
-                heading: 'Clash detection is where the saving is',
-                body: [
-                    'Structure, services and process equipment are modelled together and checked against each other before construction. A crane runway crossing a duct route, a foundation clashing with a drainage run, a service drop landing in a machine footprint — each of these costs an afternoon to resolve in a model and days of rework on site.',
-                    'This is the concrete mechanism behind the 10–15% construction cost saving we quote. It is not a general claim about technology; it is the accumulated cost of conflicts that never reached site.',
-                ],
-            },
-        ],
-        scope: [
-            'PEB frame design, proof-checking and vendor drawing review',
-            'EOT crane runway beams and gantry structure',
-            'Machine foundation design for furnaces, CNC, VMC and HMC lines',
-            'Heavy and dynamic load foundation engineering',
-            'Long-span column-free bay design in steel and RCC',
-            'Coordinated electrical distribution and HT infrastructure',
-            'Coordinated HVAC, ventilation, compressed air and utility piping',
-            'Firefighting, plumbing and drainage coordination',
-            'BIM clash detection across all disciplines before construction',
-        ],
-        faqs: [
-            {
-                question: 'Is your MEP team in-house?',
-                answer:
-                    'No. MEP design is delivered through our consultant partners, with coordination, integration and technical oversight held by us. We are explicit about this because the distinction matters when you are comparing proposals — some firms describe coordinated MEP as though it were in-house. What you get from us is a single point of accountability for the coordination, backed by a principal consultant with over forty years in industrial MEP and piping.',
-            },
-            {
-                question: 'Can you proof-check a PEB vendor\'s design?',
-                answer:
-                    'Yes, and it is worth doing. PEB vendors optimise for their own supply, which is reasonable, but the design still has to satisfy your crane loads, future provisions and site conditions. Independent proof-checking by a licensed structural engineer is inexpensive relative to what it catches.',
-            },
-            BIM_FAQ,
             COST_FAQ,
         ],
         relatedProject: 'foundry-campus-ahmedabad',

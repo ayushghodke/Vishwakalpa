@@ -36,6 +36,13 @@ const targets = [
   { in: 'sectors/food-processing.png',                    webp: 'sectors/food-processing.webp',                    maxW: 1000, q: 80 },
   { in: 'sectors/pharmaceuticals.png',                     webp: 'sectors/pharmaceuticals.webp',                    maxW: 1000, q: 80 },
   { in: 'sectors/heavy-engineering-manufacturing.png',    webp: 'sectors/heavy-engineering-manufacturing.webp',    maxW: 1000, q: 80 },
+  { in: 'sectors/precision-aerospace-defense.png',        webp: 'sectors/precision-aerospace-defense.webp',        maxW: 1000, q: 80 },
+  { in: 'sectors/data-centers.png',                       webp: 'sectors/data-centers.webp',                       maxW: 1000, q: 80 },
+  { in: 'sectors/renewable-energy-biofuels.png',          webp: 'sectors/renewable-energy-biofuels.webp',          maxW: 1000, q: 80 },
+  { in: 'sectors/industrial-parks.png',                   webp: 'sectors/industrial-parks.webp',                   maxW: 1000, q: 80 },
+  { in: 'sectors/plastics-recycling-textiles.png',        webp: 'sectors/plastics-recycling-textiles.webp',        maxW: 1000, q: 80 },
+  { in: 'projects/foundry-campus-ahmedabad.png',          webp: 'projects/foundry-campus-ahmedabad.webp',          maxW: 1400, q: 80 },
+  { in: 'projects/precision-machining-facility-solapur.png', webp: 'projects/precision-machining-facility-solapur.webp', maxW: 1400, q: 80 },
 ];
 
 const fmt = (n) => (n / 1024).toFixed(1) + ' KB';

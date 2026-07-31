@@ -27,7 +27,7 @@ import { buildMeta } from '../utils/seo'
 
 export function meta(): MetaDescriptor[] {
     return buildMeta({
-        title: 'Factory & Foundry Design Consultants India | Vishwakalpa',
+        title: 'Vishwakalpa | Factory & Foundry Design Consultants India',
         description:
             'Industrial design consultancy for foundries, factories and manufacturing plants. Master planning, architecture, structural design and PMC across India.',
         path: '/',

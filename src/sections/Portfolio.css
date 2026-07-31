@@ -5,13 +5,13 @@
    belonged to the multi-category filtered grid and the "Website is in progress"
    placeholder cards, none of which exist any more. */
 
-.section-header {
-    margin-bottom: var(--space-16);
-}
-
-.section-header h2 {
-    font-size: var(--text-5xl);
-}
+/* .section-header and its h2 override moved to index.css.
+ *
+ * Both were global rules living in a section-specific file, and every homepage
+ * section depended on them loading — which only worked because Portfolio is on
+ * the homepage too. The h2 rule hard-set every section heading to 48px, the
+ * same size as the hero title, which is what removed the hierarchy between
+ * them. Headings now use the fluid scale in index.css. */
 
 /* ========== CASE STUDY CARDS ========== */
 .case-study-grid {
@@ -180,10 +180,6 @@
 }
 
 @media (max-width: 768px) {
-    .section-header h2 {
-        font-size: var(--text-3xl);
-    }
-
     .case-study-body {
         padding: var(--space-6);
     }

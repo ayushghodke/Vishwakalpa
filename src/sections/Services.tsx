@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import { Flame, Map, Factory, Cog, ClipboardList, Zap } from 'lucide-react';
+import { Map, Building2, Cog, Zap, Cuboid, ClipboardList, Factory } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import './Services.css';
 import { servicesByOrder } from '../data/services';
@@ -8,12 +8,12 @@ import { servicesByOrder } from '../data/services';
 // — it is imported by react-router.config.ts, which runs in Node and must not
 // pull in React components.
 const SERVICE_ICONS: Record<string, LucideIcon> = {
-    'foundry-design': Flame,
     'industrial-master-planning': Map,
-    'factory-design': Factory,
-    'precision-machining-facility-design': Cog,
-    'industrial-pmc': ClipboardList,
+    'architecture-design': Building2,
+    'machine-layout-design': Cog,
     'structural-mep-design': Zap,
+    'bim-3d-modeling': Cuboid,
+    'industrial-pmc': ClipboardList,
 };
 
 const Services = () => {

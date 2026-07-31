@@ -91,10 +91,6 @@ const Contact = () => {
 
                         <div className="cta-card glass-panel">
                             <h3>Send an Enquiry</h3>
-                            <p className="cta-description">
-                                Industrial projects from {company.engagement.minProjectValue}{' '}
-                                upward. We do not take residential, interior or retail work.
-                            </p>
                             <form className="contact-section-form" onSubmit={onSubmit}>
                                 {/* Key comes from constants/config.ts rather than being
                                     re-hardcoded here, as it was before. */}

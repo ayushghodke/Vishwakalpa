@@ -62,7 +62,7 @@ export const projects: Project[] = [
         slug: 'foundry-campus-ahmedabad',
         title: 'Grinding Media Foundry Campus',
         shortTitle: 'Foundry Campus',
-        seoTitle: 'Foundry Campus Case Study | 9.2 Acres, Ahmedabad',
+        seoTitle: 'Vishwakalpa | Foundry Campus Case Study, Ahmedabad',
         seoDescription:
             'Inside a 4,00,000 sq ft grinding media foundry: three melting and three holding furnaces, 30 MT EOT cranes at 15m clear height, and 11 kV HT supply.',
         clientName: null,
@@ -119,8 +119,8 @@ export const projects: Project[] = [
                     'Heat, fumes and fire risk stay contained to the two bays built for them, while moulding, finishing and quality checks happen in a separate, safer environment — with a fixed, minimum-distance path for molten metal designed once into the building, not managed afterwards through site rules.',
             },
         ],
-        image: null,
-        relatedServices: ['foundry-design', 'structural-mep-design', 'industrial-pmc'],
+        image: '/images/projects/foundry-campus-ahmedabad.webp',
+        relatedServices: ['structural-mep-design', 'industrial-pmc', 'bim-3d-modeling'],
         order: 1,
     },
 
@@ -128,7 +128,7 @@ export const projects: Project[] = [
         slug: 'precision-machining-facility-solapur',
         title: 'Automotive Precision Machining Facility',
         shortTitle: 'Machining Facility',
-        seoTitle: 'Precision Machining Plant Case Study | Solapur',
+        seoTitle: 'Vishwakalpa | Precision Machining Case Study, Solapur',
         seoDescription:
             'Inside a 10-acre automotive machining campus: floor engineered to 5 MT UDL plus 8 MT puncture load, and column-free 30m PEB bays.',
         clientName: null,
@@ -183,11 +183,11 @@ export const projects: Project[] = [
                     'A machining hall where the floor is engineered for exactly the loads it carries — neither over- nor under-designed — and every line already has built-in provision for future overhead handling, without a single column constraining how production is run today or reconfigured tomorrow.',
             },
         ],
-        image: null,
+        image: '/images/projects/precision-machining-facility-solapur.webp',
         relatedServices: [
-            'precision-machining-facility-design',
             'industrial-master-planning',
-            'structural-mep-design',
+            'machine-layout-design',
+            'architecture-design',
         ],
         order: 2,
     },

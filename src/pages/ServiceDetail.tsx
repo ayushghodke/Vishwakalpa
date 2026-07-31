@@ -19,7 +19,7 @@ export function meta({ params }: { params: { slug?: string } }): MetaDescriptor[
 
     if (!service) {
         return buildMeta({
-            title: 'Service Not Found | Vishwakalpa',
+            title: 'Vishwakalpa | Service Not Found',
             description: 'This page could not be found.',
             path: `/services/${params.slug ?? ''}`,
             noindex: true,

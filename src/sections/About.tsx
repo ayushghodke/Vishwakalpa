@@ -54,7 +54,7 @@ const About = () => {
                 <div className="highlights-grid">
                     <div className="highlight-card glass-panel">
                         <div className="highlight-number accent-gradient-text">850+ Acres</div>
-                        <p className="highlight-label">Designed and master planned</p>
+                        <p className="highlight-label">Designed Area</p>
                     </div>
                     <div className="highlight-card glass-panel">
                         <div className="highlight-number accent-gradient-text">{yearsFloor}+ Years</div>
@@ -64,7 +64,7 @@ const About = () => {
                         <div className="highlight-number accent-gradient-text">
                             {company.employeeCount}
                         </div>
-                        <p className="highlight-label">Architects, engineers and PMs</p>
+                        <p className="highlight-label">Architects, Engineers and PMC</p>
                     </div>
                     <div className="highlight-card glass-panel">
                         <div className="highlight-number accent-gradient-text">

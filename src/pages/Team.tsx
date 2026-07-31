@@ -25,7 +25,7 @@ import './Team.css';
 
 export function meta(): MetaDescriptor[] {
     return buildMeta({
-        title: 'Industrial Design & Engineering Team | Vishwakalpa',
+        title: 'Vishwakalpa | Industrial Design & Engineering Team',
         description:
             'Licensed structural engineers, planning-trained architects and a principal consultant with 40+ years in industrial MEP. Meet the team behind Vishwakalpa.',
         path: '/team',

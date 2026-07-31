@@ -50,7 +50,7 @@ async function findHtmlFiles(dir) {
     return found;
 }
 
-/** dist/client/services/foundry-design/index.html -> /services/foundry-design */
+/** dist/client/services/machine-layout-design/index.html -> /services/machine-layout-design */
 function routePathFor(file) {
     const rel = relative(OUT_DIR, file).split(sep).join('/');
     if (rel === 'index.html') return '/';

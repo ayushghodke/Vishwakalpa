@@ -237,7 +237,7 @@ These are drafted from the words your actual callers use (F3), not from architec
 abstraction. I've built the site with **Option 1** active; switching is a one-line change.
 
 **Option 1**
-> ### Factories, Foundries and Industrial Plants — Designed to Run
+> ### Factories and Industrial Plants — Designed to Run
 > Master planning, architecture and project management for manufacturing facilities across India.
 
 **Option 2**

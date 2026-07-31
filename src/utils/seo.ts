@@ -20,7 +20,7 @@ const DEFAULT_OG_IMAGE = '/images/hero/mmlp-new.webp';
 export interface SeoInput {
     title: string;
     description: string;
-    /** Site-relative, e.g. '/services/foundry-design' */
+    /** Site-relative, e.g. '/services/machine-layout-design' */
     path: string;
     /** Site-relative. Made absolute automatically. */
     image?: string;

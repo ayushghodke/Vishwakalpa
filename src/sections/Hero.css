@@ -44,8 +44,15 @@
     padding: var(--space-8);
 }
 
+/* Runs a step above the base h1 — the hero is the one place on the site where
+ * large type earns its space. The problem was never this heading; it was every
+ * section h2 matching it at 48px.
+ *
+ *   1024px   1440px   1920px+
+ *     36px     43px     54px
+ */
 .hero-title {
-    font-size: var(--text-5xl);
+    font-size: clamp(2.25rem, 0.5rem + 2.4vw, 3.5rem);
     font-weight: 800;
     line-height: 1.1;
     margin-bottom: var(--space-6);
@@ -77,12 +84,9 @@
     color: rgba(255, 255, 255, 0.72);
 }
 
-/* Responsive */
+/* Responsive — the .hero-title font-size steps are gone; the clamp above covers
+   every width, and a fixed size here would override it. */
 @media (max-width: 1024px) {
-    .hero-title {
-        font-size: var(--text-4xl);
-    }
-
     .hero-subtitle {
         font-size: var(--text-lg);
     }
@@ -91,10 +95,6 @@
 @media (max-width: 768px) {
     .hero {
         height: 100svh;
-    }
-
-    .hero-title {
-        font-size: var(--text-3xl);
     }
 
     .hero-subtitle {

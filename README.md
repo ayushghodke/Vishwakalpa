@@ -11,40 +11,31 @@ deployed to Vercel.
 
 ## ⚠️ The site is currently dark
 
-Maintenance mode is **off locally and on in every build** — see
-[`src/constants/config.ts`](src/constants/config.ts):
+One switch, in [`src/constants/config.ts`](src/constants/config.ts):
 
-| | Maintenance page | Why |
-|---|---|---|
-| `npm run dev` | **off** | work on the real site, no token needed |
-| `npm run build` | **on** | production and Vercel previews stay dark |
-
-It is driven by `import.meta.env.PROD` rather than a hand-edited boolean, because the
-boolean is a foot-gun: the site goes live the moment someone commits it in the wrong
-state, and that is a one-character diff nobody notices in review.
-
-Force either state when you need to:
-
-```bash
-VITE_MAINTENANCE_MODE=false npm run build   # build the real site, to verify content
-VITE_MAINTENANCE_MODE=true npm run dev      # work on the maintenance page
+```ts
+export const MAINTENANCE_MODE = true;   // true = maintenance page, false = real site
 ```
 
-**On the deployed site**, visit any page once with the preview token to see the real site:
+It applies everywhere — `npm run dev`, production, and Vercel preview deployments alike.
+There is nothing else to set.
+
+**To see the real site without flipping it**, open any page once with the preview token:
 
 ```
+http://localhost:5173/?preview=vk-2026
 https://www.vishwakalpa.com/?preview=vk-2026
 ```
 
 The unlock is stored in `localStorage`, so it survives navigation, refreshes and closing
 the tab. Clear `vk-preview` from localStorage to lock the browser again.
 
-### Going live — one commit, both halves together
+> Because this is a hand-edited boolean, the site goes live the moment it is committed as
+> `false`. Check it before every push while the site is meant to stay dark.
 
-Going live is a deliberate act, not an env var:
+### Going live — one commit, all three together
 
-1. In `src/constants/config.ts`, replace the whole expression with
-   `export const MAINTENANCE_MODE = false`
+1. Set `MAINTENANCE_MODE = false` in `src/constants/config.ts`
 2. Delete `src/utils/preview.ts`, `src/pages/Maintenance.tsx`, `src/pages/Maintenance.css`,
    and the `MAINTENANCE_MODE` branch in `src/root.tsx`
 3. Remove the `X-Robots-Tag` header block from [`vercel.json`](vercel.json)

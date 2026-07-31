@@ -55,8 +55,8 @@ export const team: TeamMember[] = [
         id: 'akshay-shilimkar',
         name: 'Akshay Shilimkar',
         role: 'Co-Founder and CEO',
-        credential: 'B.E. Mechanical; M.Sc. Electrical & Electronics, University of Nottingham',
-        yearsExperience: null,
+        credential: '12+ years; B.E. Mechanical, M.Sc. Electrical & Electronics, University of Nottingham',
+        yearsExperience: 12,
         qualifications: [
             'B.E. Mechanical Engineering, Savitribai Phule Pune University',
             'M.Sc. Electrical and Electronics Engineering, University of Nottingham',
@@ -75,8 +75,8 @@ export const team: TeamMember[] = [
         id: 'anuja-shinde',
         name: 'Anuja Shinde',
         role: 'Co-Founder and CTO',
-        credential: 'B.Arch; M.Plan Urban and Regional Planning — campuses up to 500 acres',
-        yearsExperience: null,
+        credential: '12+ years; B.Arch, M.Plan Urban and Regional Planning',
+        yearsExperience: 12,
         qualifications: [
             'Bachelor of Architecture, Ajeenkya DY Patil Knowledge City, Pune',
             'Master of Urban and Regional Planning, MIT ADT University, Pune (full scholarship)',
