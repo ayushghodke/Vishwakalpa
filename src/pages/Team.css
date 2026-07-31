@@ -9,7 +9,8 @@
     background: linear-gradient(135deg,
             var(--color-primary-dark, #1a1a1a) 0%,
             var(--color-primary, #2a2a2a) 100%);
-    padding: calc(clamp(3.5rem, 5vw, 6rem) + 60px) 0 clamp(2.75rem, 3.75vw, 4.5rem);
+    /* The +60px clears the fixed navbar pill. */
+    padding: calc(var(--section-pad-lg) + 60px) 0 var(--section-pad);
     overflow: hidden;
 }
 
@@ -65,16 +66,16 @@
 .team-grid {
     display: flex;
     flex-direction: column;
-    gap: var(--space-12);
+    gap: var(--block-gap);
     max-width: 960px;
-    margin: 0 auto var(--space-24);
+    margin: 0 auto var(--block-gap);
 }
 
 .team-card {
     display: grid;
-    grid-template-columns: 220px 1fr;
-    gap: var(--space-8);
-    padding: var(--space-8);
+    grid-template-columns: 190px 1fr;
+    gap: var(--space-6);
+    padding: var(--space-6);
     align-items: start;
 }
 

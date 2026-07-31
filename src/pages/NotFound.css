@@ -9,7 +9,8 @@
     flex: 1;
     display: flex;
     align-items: center;
-    padding: calc(clamp(3.5rem, 5vw, 6rem) + 60px) 0 clamp(3.5rem, 5vw, 6rem);
+    /* The +60px clears the fixed navbar pill. */
+    padding: calc(var(--section-pad-lg) + 60px) 0 var(--section-pad-lg);
 }
 
 .notfound-container {

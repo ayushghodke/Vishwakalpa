@@ -105,25 +105,30 @@
 .contact-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: var(--space-12);
+    gap: var(--space-8);
     max-width: 1000px;
     margin: 0 auto;
 }
 
+/* The paddings and gaps through this card were each one step larger, which
+   added up to a 707px-tall card — taller than a 740px viewport has room for
+   once the section heading and padding are counted, so the WhatsApp button and
+   office hours fell below the fold. One step down throughout keeps the card
+   comfortable while bringing it back inside the screen. */
 .contact-info-card {
-    padding: var(--space-12);
+    padding: var(--space-8);
 }
 
 .contact-info-card h3 {
     font-size: var(--text-3xl);
     color: var(--color-primary);
-    margin-bottom: var(--space-8);
+    margin-bottom: var(--space-6);
 }
 
 .contact-item {
     display: flex;
     gap: var(--space-4);
-    margin-bottom: var(--space-8);
+    margin-bottom: var(--space-4);
     align-items: flex-start;
 }
 
@@ -136,7 +141,7 @@
     display: inline-flex;
     align-items: center;
     gap: var(--space-2);
-    margin-top: var(--space-8);
+    margin-top: var(--space-6);
     width: 100%;
     justify-content: center;
 }
@@ -169,12 +174,16 @@
 
 /* CTA Card */
 .cta-card {
-    padding: var(--space-12);
+    padding: var(--space-8);
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    /* flex-start, not center: the grid stretches this card to match
+       .contact-info-card's (taller) content-driven height, and centering
+       here left the "Send an Enquiry" heading sitting well below "Get in
+       Touch" instead of lined up with it. */
+    justify-content: flex-start;
     background: rgba(249, 115, 22, 0.08);
     border-color: rgba(249, 115, 22, 0.2);
 }
@@ -182,7 +191,7 @@
 .cta-card h3 {
     font-size: var(--text-3xl);
     color: var(--color-primary);
-    margin-bottom: var(--space-6);
+    margin-bottom: var(--space-4);
 }
 
 .cta-description {
@@ -196,9 +205,9 @@
 .contact-section-form {
     display: flex;
     flex-direction: column;
-    gap: var(--space-4);
+    gap: var(--space-3);
     width: 100%;
-    margin-top: var(--space-4);
+    margin-top: var(--space-2);
 }
 
 .contact-section-form input,

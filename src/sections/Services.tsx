@@ -22,7 +22,7 @@ const Services = () => {
             <div className="container">
                 <div className="section-header text-center">
                     <h2 className="mb-4">
-                        What We <span className="text-primary">Do</span>
+                        What We <span className="text-accent">Do</span>
                     </h2>
                     <p className="text-gray mb-8">
                         Industrial facility design and delivery — from an empty plot to a

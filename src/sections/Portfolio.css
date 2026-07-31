@@ -35,9 +35,19 @@
     box-shadow: var(--shadow-lg);
 }
 
+/* 16/10 rather than 3/2: on a two-up grid the media is the single tallest part
+   of the card, and the flatter ratio takes ~25px off each without cropping the
+   subject noticeably.
+
+   The max-height then stops the ratio alone from deciding the height. At a
+   1200px grid the aspect ratio worked out to a 363px image — half a short
+   viewport spent on one photo — because a ratio scales with the card's WIDTH
+   and knows nothing about available height. object-fit: cover on the img means
+   capping the frame crops rather than distorts. */
 .case-study-media {
     position: relative;
-    aspect-ratio: 3 / 2;
+    aspect-ratio: 16 / 10;
+    max-height: clamp(200px, 10vw + 12vmin, 340px);
     overflow: hidden;
 }
 
@@ -94,7 +104,7 @@
 }
 
 .case-study-body {
-    padding: var(--space-8);
+    padding: var(--space-6);
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -123,15 +133,15 @@
     font-size: var(--text-sm);
     font-style: italic;
     color: var(--color-primary-light);
-    margin-bottom: var(--space-6);
+    margin-bottom: var(--space-4);
 }
 
 .case-study-stats {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-4);
-    margin: 0 0 var(--space-8);
-    padding: var(--space-6) 0;
+    margin: 0 0 var(--space-6);
+    padding: var(--space-4) 0;
     border-top: 1px solid rgba(249, 115, 22, 0.2);
     border-bottom: 1px solid rgba(249, 115, 22, 0.2);
 }

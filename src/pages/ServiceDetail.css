@@ -7,8 +7,9 @@
 .sd-hero {
     position: relative;
     background-color: var(--color-primary-dark);
-    padding: calc(clamp(3.5rem, 5vw, 6rem) + 60px) 0 clamp(2.75rem, 3.75vw, 4.5rem);
-    min-height: 500px;
+    /* The +60px clears the fixed navbar pill. */
+    padding: calc(var(--section-pad-lg) + 60px) 0 var(--section-pad);
+    min-height: 420px;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -76,7 +77,7 @@
 
 .sd-intro {
     max-width: 70ch;
-    margin: 0 auto var(--space-16);
+    margin: 0 auto var(--block-gap);
 }
 
 .sd-intro p {
@@ -88,7 +89,7 @@
 
 .sd-block {
     max-width: 70ch;
-    margin: 0 auto var(--space-16);
+    margin: 0 auto var(--block-gap);
 }
 
 .sd-block p {
@@ -106,7 +107,7 @@
 .sd-related,
 .sd-faqs {
     max-width: 70ch;
-    margin: 0 auto var(--space-16);
+    margin: 0 auto var(--block-gap);
 }
 
 /* ===== RELATED CASE STUDY ===== */
@@ -288,7 +289,7 @@
 /* CONTACT SECTION */
 .sd-contact-section {
     background-color: var(--color-primary-dark);
-    padding: clamp(3.5rem, 5vw, 6rem) 0;
+    padding: var(--section-pad-lg) 0;
     position: relative;
     overflow: hidden;
 }
@@ -306,7 +307,7 @@
 .sd-contact-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--space-16);
+    gap: var(--block-gap);
     position: relative;
     z-index: 2;
 }
@@ -318,11 +319,13 @@
     }
 }
 
+/* Was a flat --text-5xl (48px) at every size, larger than the fluid h2 scale
+   tops out at, on a page whose own hero title is already the visual anchor. */
 .sd-contact-text h2 {
     color: white;
-    font-size: var(--text-5xl);
+    font-size: var(--text-4xl);
     line-height: 1.2;
-    margin-bottom: var(--space-6);
+    margin-bottom: var(--space-4);
 }
 
 .sd-contact-text p {
@@ -336,7 +339,7 @@
     backdrop-filter: blur(20px);
     border-radius: 1.5rem;
     /* ~24px */
-    padding: var(--space-10);
+    padding: var(--space-8);
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
 }
 

@@ -9,7 +9,8 @@
     background: linear-gradient(135deg,
             var(--color-primary-dark, #1a1a1a) 0%,
             var(--color-primary, #2a2a2a) 100%);
-    padding: calc(clamp(3.5rem, 5vw, 6rem) + 60px) 0 clamp(2.75rem, 3.75vw, 4.5rem);
+    /* The +60px clears the fixed navbar pill. */
+    padding: calc(var(--section-pad-lg) + 60px) 0 var(--section-pad);
     overflow: hidden;
 }
 
@@ -93,7 +94,7 @@
     font-size: var(--text-lg);
     color: rgba(255, 255, 255, 0.75);
     max-width: 60ch;
-    margin-bottom: var(--space-12);
+    margin-bottom: var(--space-8);
 }
 
 .pd-stat-bar {
@@ -126,7 +127,7 @@
 /* ========== SUMMARY & FACTS ========== */
 .pd-summary {
     max-width: 70ch;
-    margin: 0 auto var(--space-12);
+    margin: 0 auto var(--block-gap);
 }
 
 .pd-summary p {
@@ -141,8 +142,8 @@
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: var(--space-6);
     max-width: 70ch;
-    margin: 0 auto var(--space-24);
-    padding: var(--space-8);
+    margin: 0 auto var(--block-gap);
+    padding: var(--space-6);
     background: #fafafa;
     border-radius: var(--radius-lg);
     border: 1px solid rgba(0, 0, 0, 0.06);
@@ -174,7 +175,7 @@
 /* ========== VERTICALS ========== */
 .pd-vertical {
     max-width: 70ch;
-    margin: 0 auto var(--space-24);
+    margin: 0 auto var(--block-gap);
 }
 
 .pd-vertical-header {
@@ -250,7 +251,7 @@
 /* ========== RELATED SERVICES ========== */
 .pd-related {
     max-width: 70ch;
-    margin: 0 auto var(--space-16);
+    margin: 0 auto var(--block-gap);
 }
 
 .pd-related-title {

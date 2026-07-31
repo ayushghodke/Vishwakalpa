@@ -38,17 +38,19 @@
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--space-8);
+    gap: var(--space-6);
 }
 
 .service-card {
-    padding: var(--space-8);
+    padding: var(--space-6);
     text-align: center;
 }
 
+/* A 64px icon plus 24px beneath it was 88px of the card's 364px spent above the
+   heading, twice over in a two-row grid. */
 .service-icon {
-    font-size: 4rem;
-    margin-bottom: var(--space-6);
+    font-size: 3rem;
+    margin-bottom: var(--space-4);
     filter: drop-shadow(0 4px 8px rgba(249, 115, 22, 0.3));
 }
 

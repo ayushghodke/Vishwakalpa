@@ -21,9 +21,11 @@
 .sector-card {
     position: relative;
     /* Twelve cards in a 3-column grid is four rows, so each 10px of card height
-       costs 40px of page. Scales with the viewport instead of sitting at the
-       large-monitor size on a laptop. */
-    height: clamp(230px, 18vw, 300px);
+       costs 40px of page — the single biggest lever on this section's height.
+       The vw-only version read 276px on a 1536x740 viewport and made this the
+       tallest section on the page at 1456px; the vmin term lets a short screen
+       pull the cards down without shrinking them on a tall one. */
+    height: clamp(210px, 9vw + 7vmin, 285px);
     border-radius: var(--radius-xl);
     overflow: hidden;
     cursor: pointer;

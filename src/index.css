@@ -106,6 +106,25 @@ a:hover {
   color: var(--color-accent-dark);
 }
 
+/* ========== ANCHOR SCROLL OFFSET ==========
+ * The navbar is a floating pill with `position: fixed`, not part of normal
+ * document flow, so scrollIntoView() (used for both in-page nav clicks and
+ * the /#section deep-link handler in Home.tsx) lands a section's heading
+ * directly underneath it instead of below it. scroll-margin-top pads the
+ * landing position by the pill's own height and is honoured by both
+ * scrollIntoView() and native hash navigation. Values match the navbar
+ * height at each of its own breakpoints (see Navbar.css).
+ */
+section[id] {
+  scroll-margin-top: 120px;
+}
+
+@media (max-width: 768px) {
+  section[id] {
+    scroll-margin-top: 84px;
+  }
+}
+
 /* ========== LAYOUT UTILITIES ========== */
 .container {
   width: 100%;
@@ -121,27 +140,24 @@ a:hover {
   padding: 0 var(--space-6);
 }
 
-/* Section rhythm, fluid for the same reason as the type scale.
- * .section-lg was a flat 128px top AND bottom at every width above 1024px —
- * 256px of empty space per section, five sections deep on the homepage.
- *
- *                    1024px   1440px   1920px+
- *   .section           44px     54px     72px
- *   .section-lg        56px     72px     96px
- */
+/* Section rhythm. .section-lg was a flat 128px top AND bottom at every width
+ * above 1024px — 256px of empty space per section, five sections deep on the
+ * homepage. The fluid values now live in styles/variables.css, which explains
+ * the formula and is the one place to tune it; four page heroes and the
+ * service-page contact block share the same tokens. */
 .section {
-  padding: clamp(2.75rem, 3.75vw, 4.5rem) 0;
+  padding: var(--section-pad) 0;
 }
 
 .section-lg {
-  padding: clamp(3.5rem, 5vw, 6rem) 0;
+  padding: var(--section-pad-lg) 0;
 }
 
 /* Global, despite previously living in Portfolio.css — every homepage section
  * uses it. The h2 override there hard-set every section heading to 48px, which
  * is what collapsed the gap between headings and the page title. */
 .section-header {
-  margin-bottom: clamp(2rem, 0.25rem + 2.5vw, 3.25rem);
+  margin-bottom: clamp(1.5rem, 1vw + 1.5vmin, 2.75rem);
 }
 
 /* ========== GRID SYSTEM ========== */
@@ -332,7 +348,11 @@ a:hover {
 }
 
 .btn-lg {
-  padding: var(--space-6) var(--space-12);
+  /* Vertical padding only was reduced from --space-6. At 24px top and bottom
+     the submit button alone stood 66px tall, which is a lot of height to spend
+     on the last row of a form that already does not fit a short viewport. The
+     horizontal padding carries the pill shape and is untouched. */
+  padding: var(--space-4) var(--space-12);
   font-size: var(--text-lg);
   border-radius: 9999px;
   /* Pill shape for large buttons like in reference */

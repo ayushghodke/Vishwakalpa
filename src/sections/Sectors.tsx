@@ -77,7 +77,7 @@ const Sectors = () => {
         <section id="industries" className="section-lg">
             <div className="container">
                 <div className="section-header text-center">
-                    <h2 className="mb-4">Industries We <span className="text-primary">Serve</span></h2>
+                    <h2 className="mb-4">Industries We <span className="text-accent">Serve</span></h2>
                     <p className="text-gray mb-8">
                         Purpose-built industrial facilities engineered across 12 specialized sectors
                     </p>

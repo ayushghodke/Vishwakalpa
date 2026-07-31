@@ -18,11 +18,16 @@ const Contact = () => {
         <section id="contact" className="section-lg contact-section">
             <div className="container">
                 <div className="contact-wrapper">
-                    <div className="section-header text-center mb-12">
+                    {/* mb-12 and mb-8 dropped: both hard-set margins that the
+                        .section-header rhythm in index.css already sizes, and
+                        being later in the cascade they won — so this header
+                        alone kept the 48px spacing every other section had
+                        given up, and the section overflowed a short viewport. */}
+                    <div className="section-header text-center">
                         <h2 className="mb-4">
-                            Discuss Your <span className="text-primary">Project</span>
+                            Discuss Your <span className="text-accent">Project</span>
                         </h2>
-                        <p className="text-gray mb-8">
+                        <p className="text-gray">
                             Tell us the plot and what you intend to manufacture, and you will
                             get a specific answer rather than a brochure.
                         </p>

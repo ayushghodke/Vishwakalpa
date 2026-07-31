@@ -32,7 +32,7 @@ const Portfolio = () => {
             <div className="container">
                 <div className="section-header text-center">
                     <h2 className="mb-4">
-                        Selected <span className="text-primary">Projects</span>
+                        Selected <span className="text-accent">Projects</span>
                     </h2>
                     <p className="text-gray mb-8">
                         Two facilities in detail — the engineering decisions, and why they

@@ -20,8 +20,8 @@
 /* ========== MISSION ========== */
 .mission-statement {
     max-width: 900px;
-    margin: 0 auto var(--space-16);
-    padding: var(--space-12);
+    margin: 0 auto var(--space-12);
+    padding: var(--space-8);
     text-align: center;
 }
 
@@ -48,10 +48,10 @@
 }
 
 .highlight-card {
-    padding: var(--space-6);
+    padding: var(--space-6) var(--space-4);
     text-align: center;
     transition: all var(--transition-base);
-    min-height: 150px;
+    min-height: 130px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -64,10 +64,10 @@
 
 .highlight-number {
     font-family: var(--font-heading);
-    font-size: var(--text-4xl);
+    font-size: var(--text-3xl);
     font-weight: 800;
     line-height: 1.2;
-    margin-bottom: var(--space-4);
+    margin-bottom: var(--space-2);
     word-break: break-word;
     hyphens: auto;
 }
@@ -88,7 +88,7 @@
  * it was pure stacked whitespace. The section already carries its own 72px
  * padding; this only needs to separate sub-blocks within it. */
 .leadership-wrapper {
-    margin-top: clamp(3rem, 4.5vw, 5.5rem);
+    margin-top: clamp(2rem, 2vw + 2vmin, 4rem);
 }
 
 .leadership-grid {
@@ -100,7 +100,7 @@
 }
 
 .leadership-card {
-    padding: var(--space-8) var(--space-6);
+    padding: var(--space-6);
     text-align: center;
     transition: transform var(--transition-base);
 }
@@ -133,7 +133,7 @@
 
 /* ========== WHERE WE WORK ========== */
 .locations-wrapper {
-    margin-top: clamp(3rem, 4.5vw, 5.5rem);
+    margin-top: clamp(2rem, 2vw + 2vmin, 4rem);
 }
 
 .locations-list {

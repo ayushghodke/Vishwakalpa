@@ -34,7 +34,7 @@ const About = () => {
             <div className="container">
                 <div className="section-header text-center">
                     <h2 className="mb-4">
-                        Why <span className="text-primary">Vishwakalpa</span>
+                        Why <span className="text-accent">Vishwakalpa</span>
                     </h2>
                 </div>
 
@@ -79,7 +79,7 @@ const About = () => {
                 <div className="leadership-wrapper">
                     <div className="section-header text-center mb-12">
                         <h2 className="mb-4">
-                            Led by <span className="text-primary">Specialists</span>
+                            Led by <span className="text-accent">Specialists</span>
                         </h2>
                         <p className="text-gray">
                             Not generalists who also take industrial work.
@@ -107,7 +107,7 @@ const About = () => {
                 <div className="locations-wrapper">
                     <div className="section-header text-center mb-12">
                         <h2 className="mb-4">
-                            Where We <span className="text-primary">Work</span>
+                            Where We <span className="text-accent">Work</span>
                         </h2>
                         <p className="text-gray">
                             Based in Pune, delivering across India. Projects completed or in
