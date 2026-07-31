@@ -299,7 +299,7 @@ export const services: Service[] = [
             'PEB frames, crane gantries and machine foundations, with coordinated electrical, HVAC and utility design.',
         intro: [
             'Industrial structure has to carry loads that ordinary buildings never see: furnaces, EOT cranes running full duty cycles, machine foundations taking repeated puncture loading, and long spans that have to stay column-free. The services then have to route through that structure without conflict.',
-            'Our Head of Structural Engineering is a Licensed Structural Design Engineer in two states, with over fifteen years across industrial, commercial and high-rise work in both RCC and steel.',
+            'Our Head of Structural Engineering is a Licensed Structural Design Engineer in four states, with over fifteen years across industrial, commercial and high-rise work in both RCC and steel.',
         ],
         sections: [
             {

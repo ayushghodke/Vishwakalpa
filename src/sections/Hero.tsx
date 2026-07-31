@@ -35,10 +35,11 @@ const Hero = () => {
                     {/* The only h1 on the homepage. Leads with the nouns a factory
                         owner actually searches for. */}
                     <h1 className="hero-title animate-fade-in-up">
-                        Factories and <span>Industrial Plants</span> — Designed to Run
+                        Factories and <span>Industrial Parks</span> — Designed to Operate
+                        with Efficiency
                     </h1>
                     <p className="hero-subtitle">
-                        Architecture, MEP, structural design and project management
+                        Architecture, Structural Design, MEP and Project Management
                         for manufacturing facilities across India.
                     </p>
 

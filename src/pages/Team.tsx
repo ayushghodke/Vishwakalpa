@@ -58,11 +58,12 @@ const Team = () => {
                     <Link to="/" className="team-back-link">
                         <ArrowLeft size={18} /> BACK TO HOME
                     </Link>
-                    <h1 className="team-title">The People Behind the Drawings</h1>
+                    <h1 className="team-title">The Professionals Behind the Vision</h1>
                     <p className="team-subtitle">
                         {company.employeeCount} architects, engineers and project managers,
                         with {yearsFloor}+ years of combined experience across foundry,
-                        machining, pharmaceutical and heavy manufacturing facilities.
+                        machining, plastic recycling and processing, textiles, food
+                        processing, pharmaceutical and heavy manufacturing facilities.
                     </p>
                 </div>
             </section>

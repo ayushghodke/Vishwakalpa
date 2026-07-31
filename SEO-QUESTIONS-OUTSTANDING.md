@@ -201,10 +201,10 @@ Placeholders render until these arrive. Adding them later is one line per item �
 Ideally head-and-shoulders, roughly square, any size above 800×800. Consistent background if
 possible, but don't let that hold it up — a mixed set beats an empty set.
 
-- [ ] Vishwakalpa Shinde — Co-Founder & Principal Consultant
+- [ ] Vishwakalpa Shinde — Co-Founder & Principal Advisor
 - [ ] Akshay Shilimkar — Co-Founder & CEO
 - [ ] Anuja Shinde — Co-Founder & CTO
-- [ ] Mohammed Zabi — Head of Structural Engineering
+- [ ] Nakul Kabra — Head of Structural Engineering
 - [ ] Akash Sanjay Jagtap — Head of MEP Design
 - [ ] Mayur Ashok — Head of Mechanical Engineering
 - [ ] Aarushi Gupta — Senior Architect & Landscape Designer
