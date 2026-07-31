@@ -1,0 +1,433 @@
+===============================================================================
+ VISHWAKALPA — SEO QUESTIONNAIRE (TECHNICAL)
+ Audience: developer
+ Companion file: SEO-QUESTIONS-OWNER.txt (send that one to the company owner)
+===============================================================================
+
+Answer inline. [x] to tick. "IDK" is a fine answer.
+★ = blocks me from starting.
+
+Context for each question is given as WHY: so you can push back if my
+reasoning is wrong.
+
+
+===============================================================================
+ 1. ACCESS & MEASUREMENT                                           ★ BLOCKING
+===============================================================================
+
+WHY: There is currently no Search Console, no analytics, and no tracking code
+of any kind in the repo (grepped — zero matches). That means: I can't submit a
+sitemap, can't verify Google is indexing anything, can't see what you already
+rank for, and can't prove any of this work did something. Doing SEO without
+Search Console is guessing.
+
+1.1 ★ Google Search Console property for vishwakalpa.com?
+    [ ] Yes, exists — I have access
+    [ ] Yes, exists — owner has access, I don't
+    [ ] No
+    [ *] Don't know
+    If yes, is it a Domain property or a URL-prefix property? ...............
+
+1.2 ★ Verification method available to you:
+    [ ] DNS TXT record (best — covers all subdomains + protocols)
+    [ ] HTML file upload to /public
+    [ ] HTML meta tag in <head>
+    [ ] Google Analytics
+    [ ] None of these / no DNS access
+    -dont know
+
+1.3 ★ Analytics — nothing is installed today.
+    [ ] Add GA4          Measurement ID (if you have one): ..................
+    [ ] Add Vercel Analytics / Speed Insights (@vercel/analytics)
+    [ ] Add Plausible / Fathom / Umami — which: ..........................
+    [ *] None for now
+    NOTE: whatever we pick, I'd wire form submissions and phone-link clicks
+    as conversion events. Otherwise you'll have traffic numbers and no idea
+    if they're leads. Want that? [ ] Yes  [* ] No
+
+1.4 Bing Webmaster Tools? (Free, 2 min, imports straight from GSC. Small
+    traffic share but AI answer engines lean on Bing's index.)
+    [ *] Yes, set it up   [ ] Skip
+
+
+===============================================================================
+ 2. DOMAIN & URL DECISIONS                                         ★ BLOCKING
+===============================================================================
+
+WHY: Everything in the repo is hardcoded to https://www.vishwakalpa.com/ —
+canonical, og:url, and the JSON-LD url/logo. If the apex also serves content
+and doesn't 301 to www, that's two copies of every page competing with each
+other. This has to be settled before I generate a sitemap, because the sitemap
+must use the exact canonical host.
+
+2.1 ★ Which is canonical?
+    [ ] https://www.vishwakalpa.com  (what the code currently assumes)
+    [ ] https://vishwakalpa.com
+    Does the other one 301-redirect to it today? [ ] Yes [ ] No [ ] Don't know
+    if i put https://vishwakalpa.com in search then it redirect to https://www.vishwakalpa.com 
+
+2.2 ★ Who controls DNS, and where is it hosted?
+    Registrar: ...............................................................
+    DNS host (Vercel / Cloudflare / GoDaddy / other): ........................
+    Do you have login? [ ] Yes  [ ] No — owner does  [ *] Don't know
+
+2.3 Was there a previous website on this domain?
+    [* ] No — this is the first
+    [ ] Yes — old URLs still live somewhere
+    [ ] Yes — but it's gone
+    WHY: if there was an old site with indexed URLs, we need 301s from the old
+    paths to the new ones or you throw away whatever authority they'd built.
+    If yes, can you get me the old URL list (or a GSC export)? ...............
+
+2.4 Any subdomains in use? (blog., staging., etc.)
+    no idea..........................................................................
+    WHY: a public staging deployment with no noindex is a duplicate-content
+    source. Vercel preview URLs are noindexed by default, so those are fine —
+    I'm asking about custom subdomains.
+
+
+===============================================================================
+ 3. RENDERING ARCHITECTURE — THE BIG DECISION                      ★ BLOCKING
+===============================================================================
+
+WHY: This is the one real fork in the road, and it gets more expensive to
+change the longer we wait.
+
+You're a Vite 7 + React 19 SPA using react-router-dom 7.13 in library mode
+(plain <BrowserRouter>). Every route serves the same empty <div id="root">
+plus one static <head>. Consequences:
+
+  - Google CAN render JS, but does it on a delayed second pass. Fine for 6
+    URLs. Less fine for ~40 long-tail pages that are the entire strategy.
+  - AI crawlers (GPTBot, PerplexityBot, ClaudeBot) mostly DON'T execute JS.
+    They get an empty div. This is a growing discovery channel and it's the
+    one where a small firm can actually beat a big one.
+  - Social scrapers never run JS. Your link previews are dead today regardless.
+  - No per-route <head> at all — every service page currently claims the
+    homepage's canonical.
+
+RESEARCH NOTE: vite-react-ssg's own README now redirects React Router v7
+users to RR7's built-in SSG. You're already on 7.13.1, so the first-party
+path is available and no third-party plugin is needed.
+
+CORRECTION — I told you earlier that React 19 hoists <title>/<meta> natively
+so option B needs no library. That was WRONG and I've verified it against the
+installed react-dom@19.2.4 source. React hoists title/meta but never DEDUPES
+them (getResource returns null for `case "meta": case "title":` — only
+rel="stylesheet" becomes a deduped resource). mountHoistable does:
+
+    hoistableRoot.head.insertBefore(
+      instance,
+      "title" === type ? hoistableRoot.querySelector("head > title") : null
+    );
+
+So against the existing static tags in index.html:
+  <title>       → inserted BEFORE existing → React's wins, but 2 titles in DOM
+  <meta name=description> → insertBefore(…, null) = APPEND → STATIC ONE WINS
+  <link canonical>        → append → TWO CANONICALS
+
+Rendering meta in-tree does NOT override index.html. Option B therefore needs
+an imperative mutation hook, not React 19 hoisting. Costed honestly below.
+
+CORRECTION 2 — I also said the vercel.json catch-all would shadow prerendered
+files. Also wrong. Vercel docs: "precedence is given to the filesystem prior
+to rewrites being applied." The real traps are different (see 3.4).
+
+3.1 ★ Pick one:
+
+    [* ] A) Migrate to React Router 7 framework mode, ssr:false + prerender()
+           → Real static HTML per URL at build time. Still deploys to Vercel
+             as plain static files — no server, no functions, no cost change.
+           → Route modules export meta() — per-route head is first-party.
+           COST — verified, and LOWER than I first estimated:
+             · Only 4 files import react-router-dom (App, ScrollToTop,
+               ServiceDetail, Services) → change to `react-router`.
+             · appDirectory: 'src' IS officially supported — your src/ layout
+               stays. No app/ directory forced.
+             · index.html goes away → src/root.tsx (mechanical relocation).
+             · No RR actions exist (form is a plain fetch to web3forms), so
+               ssr:false's action/headers prohibition never bites.
+             · ScrollRestoration replaces src/components/ScrollToTop.tsx.
+             · @vitejs/plugin-react gets REMOVED — @react-router/dev ships
+               babel + react-refresh itself and conflicts if both are present.
+             · manualChunks in vite.config.ts:10-18 must be dropped; RR7 owns
+               the Rollup config and chunks per-route.
+           ★ ONE HARD BLOCKER (see 3.5) — must be fixed first.
+
+    [ ] B) Stay in library mode, add per-route meta only
+           → Given the correction above: a ~40-line imperative useSeo() hook
+             that MUTATES IN PLACE (document.title = …;
+             head.querySelector('meta[name=description]').setAttribute(...)),
+             reading the same route→meta map. Plus a build-time sitemap.
+           COST: ~2-3 hours.
+           WHAT YOU LOSE (honest):
+             · Zero HTML for non-JS crawlers.
+             · ALL social scrapers permanently broken — no OG on any share,
+               ever. No JS-executing fallback fixes this; FB/LinkedIn/
+               WhatsApp/Slack don't run JS.
+             · Canonical/meta only correct post-render → betting 40 pages on
+               Google's render queue.
+             · No real 404s.
+           It buys per-route titles for Google and essentially nothing else.
+
+    [ ] C) Migrate to Next.js
+           → Best ceiling. Also a shell rewrite on a live client project, and
+             (A) gets ~90% of the SEO benefit for a fraction of the risk.
+
+    [ ] D) Recommend one and justify it — I'll decide after reading
+
+MY RECOMMENDATION: (A), and the timing argument is what makes it decisive.
+The site is dark. Nothing is indexed. There are 2 routes, 4 router imports,
+and zero rankings to protect. This is the cheapest this migration will EVER
+be. Deferring means doing it later across 40 pages with live rankings.
+
+3.4 ★ The real vercel.json traps (not shadowing):
+    1. outputDirectory MUST become "dist/client" — RR7 emits
+       <buildDirectory>/client/. Miss it and Vercel serves the wrong dir =
+       total outage. This is the actual correctness trap.
+    2. The catch-all becomes a SOFT-404 GENERATOR. Once / is prerendered,
+       /index.html IS the homepage — so /any-bogus-url returns the full
+       homepage at HTTP 200. Infinite duplicate content, exactly wrong for a
+       40-page long-tail play. RR writes the fallback to __spa-fallback.html
+       (not index.html) precisely when / is prerendered.
+    Since every route is prerendered, cleanest config DROPS the rewrite:
+       { "outputDirectory": "dist/client", "trailingSlash": false }
+    Deep links hit real files; unknown URLs get a real 404. Object?
+    [ ] Fine  [ ] I want a client-rendered 404 (accepts soft-404s)  [ ] Discuss, you tell me what shoudl be done, do what you recommed
+
+3.5 ★ THE BLOCKER — src/utils/preview.ts:13 calls window.location.search
+    during render (via the App.tsx:15 early return). Under prerendering that
+    executes in Node → "window is not defined" → BUILD CRASH.
+    Every other browser global (Navbar, ScrollToTop, Footer) is inside
+    useEffect or an event handler and is safe. This one file is both the
+    maintenance gate AND the blocker. The middleware redesign in Q4.2 removes
+    it (cookie instead of query string), which is why those two questions are
+    coupled. Noting so you're not surprised.
+
+3.6 Pinning — ★ do NOT `npm i @react-router/dev` unpinned. The template on
+    main is now v8.0.0 + Vite 8; unpinned installs 8.2.0. Pin @7.13.1 to match
+    your installed react-router. Peers allow vite ^5||^6||^7, so 7.2.4 is fine.
+    [* ] Understood  [ ] Actually I'd rather go to RR8 + Vite 8 while we're here
+
+3.2 If (A): any constraint I should know? Do you want it behind a branch/PR
+    with a Vercel preview before it touches main? - no
+    ..........................................................................
+
+3.3 Build-time budget — prerendering ~40 routes adds to build. Any CI/CD
+    time limits or Vercel plan limits I should respect? no
+    ..........................................................................
+
+
+===============================================================================
+ 4. MAINTENANCE MODE                                               ★ BLOCKING
+===============================================================================
+
+WHY — read this one properly, it's the most urgent thing in the file:
+
+  src/constants/config.ts:10  →  MAINTENANCE_MODE = true
+  src/App.tsx:15-17           →  returns <Maintenance /> for the entire app
+  vercel.json                 →  rewrites /(.*) to /index.html
+
+So every URL returns HTTP 200 with your real title/description/canonical/
+JSON-LD in the raw HTML — and then renders "We're building something great."
+No noindex. No 503. Googlebot executes the JS, so the DOM it indexes is the
+construction page.
+
+This is the worst of all configurations. A 503 + Retry-After tells Google
+"temporary, hold the index." A 200 tells Google "this IS the page" — so it
+replaces your real content in the index with a progress bar. It also means
+the HTML promises architecture content and the render delivers something
+else, which is its own quality signal problem.
+
+Also: isPreviewUnlocked() only reads window.location.search and nothing
+persists it, so a hard refresh or a shared /service/... link drops back to
+the maintenance page. And the token ships in the client bundle in plaintext
+(the file's own comment concedes this — it's obscurity, not security).
+
+4.1 ★ What do you want?
+    [* ] Flip MAINTENANCE_MODE off now — go live, let real content index
+    [ ] Keep it on, but return 503 + Retry-After + X-Robots-Tag: noindex
+    [ ] Keep it on as-is (please don't, but tell me if there's a reason)
+    Target launch date: ......................................................
+
+4.2 If staying dark — now VERIFIED, and the answer is more constrained than
+    I first said:
+
+    · X-Robots-Tag: noindex — TRIVIAL, and it's the part that actually
+      matters. Pure vercel.json, no function:
+          { "headers": [{ "source": "/(.*)", "headers": [
+              { "key": "X-Robots-Tag", "value": "noindex, nofollow" },
+              { "key": "Cache-Control", "value": "no-store" } ]}]}
+
+    · 503 + Retry-After — NOT ACHIEVABLE from static vercel.json config.
+      `headers` cannot set a status code. `redirects` only does 3xx.
+      `rewrites` run after the filesystem so they can't intercept /. The only
+      pure-config candidate is legacy `routes` (has status + headers +
+      missing, runs before the filesystem) but whether status:503 + dest
+      serves a body is UNDOCUMENTED — I'd be guessing. Verify on a preview:
+          curl -sI https://<preview>.vercel.app/ | head -1
+
+    · The clean way is middleware.ts at repo root — verified: works with
+      framework=other, runs before the request is processed, can return
+      new Response(html, { status: 503, headers }), and next() from
+      @vercel/functions lets preview traffic through.
+      COSTS: fluid-compute billing per request (negligible at your traffic),
+      and Vercel docs flag "Permissions Required: Routing Middleware".
+
+    ★ Q: Does your Vercel plan grant Routing Middleware? [ ] Yes [ ] No [ *] Don't know
+
+    Preference?
+    [ ] X-Robots-Tag noindex only — simple, static, no function. Stops the
+        indexing (which is the real damage) but no "come back later" signal.
+    [ ] middleware.ts with a real 503 — correct, and it also fixes 4.3 + 3.5
+    [ *] Whatever's simplest
+
+4.3 ★ The preview link is ALREADY broken, and it's coupled to the above.
+    preview.ts:13 reads window.location.search on every render with NO
+    persistence — despite the file's comment claiming it "unlocks the real
+    site for that browser." Hard-refresh /service/x without ?preview=vk-2026
+    and you get the maintenance page. ServiceDetail's <Link to="/"> drops the
+    param too.
+
+    The middleware fix is elegant here: set a COOKIE on first sight of the
+    token, then check the cookie. That fixes the UX bug AND removes the
+    window call from the render path — which unblocks prerendering (3.5).
+    One change, three problems solved.
+    [ ] Do it  [ ] Just sessionStorage  [* ] Preview won't be needed after launch
+
+4.4 ★ Do NOT `Disallow: /` in robots.txt while relying on X-Robots-Tag
+    noindex. If crawling is disallowed Google never SEES the noindex and can
+    still index the URL from external links. While dark: noindex, and ALLOW
+    crawling. Flagging because it's counterintuitive and commonly gotten
+    wrong. [ *] Understood
+
+
+===============================================================================
+ 5. WORKFLOW & PERMISSIONS                                         ★ BLOCKING
+===============================================================================
+
+5.1 ★ How should changes land?
+    [ *] Commit straight to main, Vercel auto-deploys
+    [ ] Feature branch + PR, you review and merge
+    [ ] Branch + PR, and you want a Vercel preview link on each
+
+5.2 ★ Am I allowed to run `npm install`? (RR7 migration needs @react-router/dev
+    and friends; a sitemap generator may need a small dep.)
+    [* ] Yes  [ ] Ask first  [ ] No new deps without discussion
+
+5.3 Can I run the dev server / build to verify changes end-to-end?
+    [* ] Yes  [ ] Ask first
+
+5.4 Do you have Vercel dashboard access? (Needed to check response headers,
+    the deployed vercel.json behaviour, and to confirm the 200-vs-503 issue.)
+    [ ] Yes  [ ] No  [ ] Owner does,
+    i have the versal login but i have the free plan
+
+5.5 Anything in this repo I should NOT touch?
+    nothing such that, you can touch anything..........................................................................
+
+
+===============================================================================
+ 6. KNOWN BUGS — CONFIRM SCOPE
+===============================================================================
+
+WHY: I found these while auditing. Some are SEO, some aren't. Tell me which
+to fix now vs. leave alone. Default = I fix the SEO-critical ones only.
+- fix whatever you can
+
+  [ ] 6.1  Hardcoded canonical in index.html:12 — every service page declares
+           the homepage as its canonical. This SILENTLY deindexes all 5
+           service pages the moment you go live. (SEO-CRITICAL — fixing
+           regardless unless you object.)
+
+  [ ] 6.2  og:image is a relative path (index.html:23). Every WhatsApp /
+           LinkedIn / Slack link preview is broken right now. One-line fix.
+           Note the JSON-LD logo right below it IS absolute — inconsistent.
+
+  [ ] 6.3  No robots.txt, no sitemap.xml anywhere in public/.
+
+  [ ] 6.4  No 404 route. Any unmatched URL renders a blank white page —
+           Vercel serves index.html, SPA boots, <Routes> matches nothing.
+
+  [ ] 6.5  Organization JSON-LD should be LocalBusiness/ProfessionalService,
+           and needs @id + sameAs + geo. Currently no sameAs at all, so
+           Google can't connect the site to your social profiles or GBP.
+
+  [ ] 6.6  Duplicate id="contact" — on Contact.tsx:12 AND Footer.tsx:13.
+           Invalid HTML. getElementById hits Contact first so nav works by
+           accident. Breaks if anyone reorders.
+
+  [ ] 6.7  Nav is dead on /service/:id. Navbar.tsx:50-54 does
+           getElementById(id).scrollIntoView() for #portfolio/#services/etc,
+           which don't exist on that route. 4 of 5 nav items silently no-op.
+           Any new page inherits this. (Gets worse fast if we add ~40 pages.)
+
+  [ ] 6.8  bim-3d-modeling title mismatch: content.json says "BIM, 3D Modeling
+           and Visualization", serviceDetails.ts says "BIM, 3D Modelling &
+           Visualization". Card and H1 disagree.
+
+  [ ] 6.9  Portfolio images resolved by substring-matching the project NAME
+           (Portfolio.tsx:66-123, ~55 lines of if/else). content.json HAS an
+           `image` field that's ignored entirely. Renaming a project silently
+           swaps its photo to a fallback.
+
+  [ ] 6.10 getProjectImages() returns 2-5 images per project but the caller
+           only uses images[0] (Portfolio.tsx:177). ~13 of 20 portfolio
+           images are downloaded and never displayed. Real perf cost.
+
+  [ ] 6.11 No srcset/sizes anywhere. Every image ships at full res to phones;
+           portfolio masters are 1400px wide. Also Portfolio.tsx:29-30 stamps
+           width="1400" height="933" on EVERY card regardless of real aspect
+           ratio, so CLS protection is wrong for most of them.
+
+  [ ] 6.12 Dead code: Services.tsx:36-42 renders (service as any).subServices
+           — no service has that key. Portfolio.tsx:39 reads
+           project.features || project.deliverables — no project has
+           `deliverables`. Both branches never execute; `as any` hides it.
+
+  [ ] 6.13 content.json ships designPhilosophy + websiteRecommendations
+           (lines 176-215) to every visitor — design-brief notes, not content.
+           Nothing reads them. Dead weight in the bundle.
+
+  [ ] 6.14 WEB3FORMS_ACCESS_KEY is exported from config.ts:2 but re-hardcoded
+           in Contact.tsx:67 and ServiceDetail.tsx:76. (Key is public by
+           design, so maintainability not security.)
+
+  [ ] 6.15 README.md is still the stock Vite template.
+
+
+===============================================================================
+ 7. CONSTRAINTS & PREFERENCES
+===============================================================================
+
+7.1 Anything performance-sensitive I should know? Current bundle is ~250KB JS
+    (react-vendor 192KB + router 36KB + index 22KB). Hero image is 345KB webp.
+    Any Lighthouse/CWV target you're held to?
+    nothing..........................................................................
+
+7.2 You have scripts/optimize-images.mjs (sharp) but it's not wired to any npm
+    script, and the source .jpg/.png originals aren't in the repo — so running
+    it now prints SKIP for everything. Do you still have the originals?
+    [ ] Yes, somewhere  [ ] No  [ *] Don't know
+    WHY: needed for srcset/responsive images (6.11).
+
+7.3 Styling: no Tailwind despite Tailwind-looking classnames (they're no-ops —
+    e.g. Services.tsx:30 has `hover:border-accent transition-colors` which do
+    nothing). I'll reuse variables.css tokens + index.css classes and won't
+    introduce a CSS framework. Object?
+    [ *] Agreed  [ ] Actually I want Tailwind  [ ] Other: ....................
+
+7.4 Testing — there's no test setup at all. Want any? (Even just a link-check
+    + schema-validation script in CI would catch the canonical/sitemap class
+    of bug automatically.)
+    [* ] Yes  [ ] No  [ ] Later
+
+7.5 Anything else technical I should know that I wouldn't find by reading
+    the repo?
+    if i did't give any questions answer or marked do;t know then you can search for that answer and ask me to connect versal to you or any other connector. or explain me that question so i can manually look for the answer and give it back to you...........................................................................
+
+
+===============================================================================
+ END — technical file. The business/content questions are in
+ SEO-QUESTIONS-OWNER.txt for the company owner.
+===============================================================================

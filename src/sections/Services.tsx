@@ -1,47 +1,56 @@
+import { Link } from 'react-router';
+import { Flame, Map, Factory, Cog, ClipboardList, Zap } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 import './Services.css';
-import contentData from '../assets/content.json';
-import { Building2, Map, ClipboardList, Cuboid, Zap } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { servicesByOrder } from '../data/services';
+
+// Icons live here rather than in services.ts so that the data module stays pure
+// — it is imported by react-router.config.ts, which runs in Node and must not
+// pull in React components.
+const SERVICE_ICONS: Record<string, LucideIcon> = {
+    'foundry-design': Flame,
+    'industrial-master-planning': Map,
+    'factory-design': Factory,
+    'precision-machining-facility-design': Cog,
+    'industrial-pmc': ClipboardList,
+    'structural-mep-design': Zap,
+};
 
 const Services = () => {
-    const services = contentData.services;
-
-    const serviceIcons: Record<string, React.ReactNode> = {
-        'architecture-design': <Building2 size={64} className="text-accent" />,
-        'urban-planning': <Map size={64} className="text-accent" />,
-        'project-management': <ClipboardList size={64} className="text-accent" />,
-        'bim-3d-modeling': <Cuboid size={64} className="text-accent" />,
-        'structural-mep': <Zap size={64} className="text-accent" />
-    };
-
     return (
         <section id="services" className="section-lg services-section">
-
             <div className="container">
                 <div className="section-header text-center">
-                    <h2 className="mb-4">Our <span className="text-primary">Services</span></h2>
+                    <h2 className="mb-4">
+                        What We <span className="text-primary">Do</span>
+                    </h2>
                     <p className="text-gray mb-8">
-                        End-to-End Planning, Design & Project Management for All-Scale Developments.
+                        Industrial facility design and delivery — from an empty plot to a
+                        plant in production.
                     </p>
                 </div>
 
                 <div className="services-grid">
-                    {services.map((service) => (
-                        <Link to={`/service/${service.id}`} key={service.id} className="service-card glass-card-gold block hover:border-accent transition-colors">
-                            <div className="service-icon">
-                                {serviceIcons[service.id]}
-                            </div>
-                            <h3>{service.title}</h3>
-                            <p className="service-description">{service.description}</p>
-                            {(service as any).subServices && (
-                                <ul className="service-sub-list">
-                                    {(service as any).subServices.slice(0, 3).map((sub: string, index: number) => (
-                                        <li key={index}>{sub}</li>
-                                    ))}
-                                </ul>
-                            )}
-                        </Link>
-                    ))}
+                    {servicesByOrder.map((service) => {
+                        const Icon = SERVICE_ICONS[service.slug] ?? Factory;
+
+                        return (
+                            <Link
+                                to={`/services/${service.slug}`}
+                                key={service.slug}
+                                className="service-card glass-card-gold block"
+                            >
+                                <div className="service-icon">
+                                    <Icon size={64} className="text-accent" strokeWidth={1.5} />
+                                </div>
+                                <h3>{service.title}</h3>
+                                <p className="service-description">{service.cardDescription}</p>
+                                <span className="service-link-cue" aria-hidden="true">
+                                    Read more →
+                                </span>
+                            </Link>
+                        );
+                    })}
                 </div>
             </div>
         </section>

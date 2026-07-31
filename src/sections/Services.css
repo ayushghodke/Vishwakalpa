@@ -64,28 +64,26 @@
     margin-bottom: var(--space-4);
 }
 
-.service-sub-list {
-    list-style: none;
-    padding: 0;
-    margin-top: var(--space-4);
+/* .service-sub-list removed — it styled a `subServices` field that no service
+   ever had, so the branch never rendered. `as any` was hiding it. */
+
+.service-card {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 0.3s ease;
 }
 
-.service-sub-list li {
-    padding: var(--space-2) 0;
+.service-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-accent);
+}
+
+.service-link-cue {
+    display: inline-block;
+    margin-top: var(--space-2);
     font-size: var(--text-sm);
-    color: var(--color-primary-light);
-    border-bottom: 1px solid rgba(249, 115, 22, 0.2);
-}
-
-.service-sub-list li:last-child {
-    border-bottom: none;
-}
-
-.service-sub-list li::before {
-    content: '✓';
+    font-weight: 600;
     color: var(--color-accent);
-    font-weight: bold;
-    margin-right: var(--space-3);
+    letter-spacing: 0.02em;
 }
 
 @media (max-width: 1024px) {

@@ -1,0 +1,472 @@
+===============================================================================
+ VISHWAKALPA DESIGN, PLANNING & MANAGEMENT PVT. LTD.
+ Website & Google Visibility — Information Needed
+===============================================================================
+
+We're rebuilding the website so it shows up on Google when factory owners and
+industrial developers search for consultants. To do that honestly and well, we
+need information that only you have.
+
+Please answer whatever you can. Rough notes are fine — we'll polish the
+wording. "I don't know" and "ask me later" are perfectly good answers.
+
+Questions marked ★ are the ones we genuinely cannot proceed without.
+
+HOW TO ANSWER: type on the dotted lines, and tick boxes like this: [x]
+
+-------------------------------------------------------------------------------
+ A NOTE ON WHY WE'RE ASKING SO MUCH
+-------------------------------------------------------------------------------
+ The SEO plan tells us which searches to target. It doesn't tell us what
+ Vishwakalpa actually does, or what's true.
+
+ We cannot write pages claiming services you don't offer. Google has become
+ very good at spotting this, and more importantly, it would bring you enquiries
+ you don't want and can't serve — which wastes your team's time and actually
+ makes your Google ranking worse, because people click and immediately leave.
+
+ The single most valuable thing you can give us is real detail about real
+ projects. One page describing an actual factory you designed — with the
+ client, the city, the size, and a photo — will outperform ten pages of
+ general writing about factory design. Google rewards specificity and so do
+ the people reading it.
+
+
+===============================================================================
+ SECTION A — WHAT WE ACTUALLY DO                                   ★ ESSENTIAL
+===============================================================================
+
+A1. ★ The SEO plan recommends targeting these services. Please tick the ones
+    Vishwakalpa genuinely delivers today — meaning if a factory owner called
+    tomorrow and asked for it, you'd take the job confidently.
+
+    [ ] Foundry design (steel plant, casting plant, melting shop)
+    [ ] Greenfield factory design (a complete new plant, starting from empty land)
+    [ ] Factory expansion or renovation of an existing plant
+    [ ] Factory layout planning (machine placement, material flow, process flow)
+    [ ] Industrial master planning (planning a whole multi-building campus)
+    [ ] DPR — Detailed Project Reports for manufacturing plants
+    [ ] Feasibility studies / project viability reports
+    [ ] PMC — Project Management Consultancy for industrial projects
+    [ ] Industrial MEP (HVAC, electrical, plumbing, compressed air, utilities)
+    [ ] Industrial structural design (PEB sheds, crane gantries, heavy foundations)
+    [ ] Warehouse / logistics building design
+    [ ] Factory approvals & licences (MIDC, factory licence, pollution NOC)
+    [ ] None of these — we're a general architecture practice
+
+    IMPORTANT — ABOUT FOUNDRY:
+    The SEO plan says "Foundry Design Consultant India" is your single biggest
+    opportunity, because very few firms compete for it and the people searching
+    it are ready to hire. But there is currently no mention of foundry work
+    anywhere on your website.
+
+    If you have done foundry work — please tell us about it in Section C. It
+    could be your strongest page.
+    If you haven't — just say so. We'll drop it and focus on what you can win.
+    There's no downside to saying no here.
+
+A2. ★ Do you do anything industrial that ISN'T on that list above?
+    ..........................................................................
+    ..........................................................................
+
+A3. ★ Which industries have you actually designed or built for? Tick, and add
+    roughly how many projects if you can remember:
+
+    [ ] Pharmaceutical .......................... roughly how many? .........
+    [ ] Automobile / auto parts ................. roughly how many? .........
+    [ ] Foundry / metals / casting .............. roughly how many? .........
+    [ ] Steel ................................... roughly how many? .........
+    [ ] Textile ................................. roughly how many? .........
+    [ ] Food processing ......................... roughly how many? .........
+    [ ] General engineering / manufacturing ..... roughly how many? .........
+    [ ] Warehousing / logistics ................. roughly how many? .........
+    [ ] Chemical ................................ roughly how many? .........
+    [ ] Other: ..........................        roughly how many? .........
+
+A4. ★ Which type of work is most profitable for you — or which would you
+    simply like more of?
+    (Whatever you pick gets the most prominent place on the website.)
+    ..........................................................................
+
+A5. Is there work you'd rather NOT receive enquiries about? For example small
+    home renovations, or anything below a certain project value.
+    ..........................................................................
+
+A6. ★ Right now your website presents Vishwakalpa as a general architecture
+    firm. The headline is "Let's Build Lasting Spaces Together" and the
+    services listed are Architecture & Design, Urban Planning, Project
+    Management, BIM, and Structural & MEP.
+
+    The SEO plan wants you positioned as an INDUSTRIAL consultancy — factories,
+    foundries, plants.
+
+    Which is closer to the truth about where you want the company to go?
+
+    [ ] Keep our general identity, but add a proper industrial section
+        (Our suggestion — lower risk, still captures the industrial searches)
+    [ ] Go fully industrial — rebuild the homepage around factories and plants
+        (Strongest results IF industrial is genuinely your future)
+    [ ] Leave the positioning alone, just fix the technical problems
+    [ ] Not sure — please explain the trade-off and recommend one
+
+A7. At some point "Planning & Master Planning" was renamed to "Urban Planning"
+    on the website, and master planning was dropped as a service. Was that a
+    deliberate decision, or did it get removed by mistake?
+    ..........................................................................
+
+
+===============================================================================
+ SECTION B — OUR CREDENTIALS                                       ★ ESSENTIAL
+===============================================================================
+ Why we're asking: Google gives a large ranking advantage to websites that
+ clearly prove a real, qualified expert is behind them. A page signed by a
+ registered architect with 15 years of foundry experience will outrank an
+ anonymous page saying exactly the same words. Your website currently names
+ no people and shows no credentials at all.
+
+B1. ★ Year the company was founded: .............
+
+B2. ★ How many people work at Vishwakalpa? Total: .............
+    Architects: ......   Engineers: ......   Other staff: ......
+
+B3. ★ Who can we name publicly on the website? Even 1-2 people makes a real
+    difference. (Name / Role / Qualification / Years of experience)
+    1. ........................................................................
+    2. ........................................................................
+    3. ........................................................................
+
+B4. Registrations and licences — tick what the company or its directors hold.
+    Registration numbers are helpful but optional.
+    [ ] COA — Council of Architecture .......... number: ....................
+    [ ] IIA — Indian Institute of Architects
+    [ ] Institution of Engineers (India)
+    [ ] MSME / Udyam registration ............... number: ....................
+    [ ] ISO 9001 or other ISO ................... which: .....................
+    [ ] GST registration ........................ number: ....................
+    [ ] CIN (company identification number) ..... number: ....................
+    [ ] Other: ...............................................................
+
+B5. Any awards, published work, magazine features, conference talks, or
+    industry association memberships?
+    ..........................................................................
+
+B6. ★ Roughly how many projects have you completed in total? .............
+    Total built-up area delivered, if you track it: ............. sq ft
+
+B7. Does the company carry professional indemnity insurance?
+    [ ] Yes  [ ] No  [ ] Not sure
+    (Worth stating publicly — large industrial clients look for it.)
+
+
+===============================================================================
+ SECTION C — OUR PROJECTS                                          ★ ESSENTIAL
+===============================================================================
+ Why we're asking — this is the most important section in this document.
+
+ Your website currently shows 6 projects with names like "Industrial
+ Development 1" and "Residential Building Complex 1", with almost no detail.
+ Two categories (Commercial and Institutional) show visitors nothing but the
+ words "Website is in progress".
+
+ Real project detail is what makes a page rank on Google AND what makes a
+ factory owner actually call you. Please give us as much as you're comfortable
+ making public.
+
+C1. ★ Please describe your best projects. Copy this block as many times as you
+    need. Bullet points and rough notes are completely fine.
+
+    ---- PROJECT ----
+    Project name: ............................................................
+    Client's name: ...........................................................
+    May we name the client publicly?
+        [ ] Yes
+        [ ] No
+        [ ] Only anonymously, e.g. "a leading pharmaceutical manufacturer"
+    City / location: .........................................................
+    Industry (pharma / auto / foundry / etc.): ...............................
+    Year started and finished: ...............................................
+    Size (square feet — or MW, or tonnes per year): ..........................
+    Approximate project value (optional — helps filter out small enquiries):
+    ..........................................................................
+    What did Vishwakalpa actually deliver?
+    (design only / design + project management / DPR / complete turnkey / other)
+    ..........................................................................
+    Was anything about it notable or difficult?
+    (finished early, saved cost, difficult site, unusual span, seismic zone,
+    cleanroom grade, heavy crane, tight approval timeline, etc.)
+    ..........................................................................
+    Do you have photographs?  [ ] Yes  [ ] No
+    Drawings or 3D renders?   [ ] Yes  [ ] No
+    ---- END PROJECT ----
+
+C2. ★ We need 2 detailed case studies. Which two projects are you proudest of,
+    or best represent the work you want more of?
+    1. ........................................................................
+    2. ........................................................................
+
+C3. Your website lists a "Pharmaceutical Manufacturing Complex" in Addis Ababa,
+    Ethiopia, and an "Industrial Development 1". Could you tell us the real
+    story behind each? Real names and details would improve these enormously.
+    ..........................................................................
+    ..........................................................................
+
+C4. The Commercial and Institutional sections of your portfolio currently show
+    only "Website is in progress" to visitors. Do you have projects for these?
+    [ ] Yes — I'll send details
+    [ ] No — please just hide those two sections for now
+
+C5. Do you have any client testimonials? Or clients who would be willing to
+    give you a short quote or a Google review?
+    ..........................................................................
+
+
+===============================================================================
+ SECTION D — WHERE WE WORK                                         ★ ESSENTIAL
+===============================================================================
+ Why we're asking — and an important warning:
+
+ The SEO plan asks us to create around 26 separate pages, one for each city:
+ Pune, Chakan, Talegaon, Ranjangaon, Nashik, Ahmedabad, Chennai, Hosur, and
+ so on.
+
+ We need to advise against this. Creating 26 nearly identical pages that only
+ swap the city name is something Google specifically classifies as "doorway
+ pages". It is one of the few things that triggers a manual penalty — meaning
+ a human at Google reviews the site and can remove it from search results
+ entirely. Firms do get delisted for exactly this.
+
+ Four city pages backed by real projects will rank better than twenty-six
+ thin ones, and carry no risk. So we need to know where Vishwakalpa is real.
+
+D1. ★ Cities or regions where you have ACTUALLY completed a project:
+    ..........................................................................
+    ..........................................................................
+
+D2. ★ Do you have an office, staff, or registered presence anywhere outside
+    Pune?
+    [ ] No — Pune only
+    [ ] Yes: .................................................................
+
+D3. ★ Where would you most like to win work? Please rank your top 5
+    (write 1 next to the most wanted, 2 next, and so on):
+
+    ..... Pune / PCMC              ..... Chakan / Talegaon / Ranjangaon (MIDC)
+    ..... Nashik                   ..... Chhatrapati Sambhajinagar (Aurangabad)
+    ..... Nagpur                   ..... Kolhapur / Satara / Sangli
+    ..... Ahmedabad / Sanand       ..... Vadodara / Surat / Rajkot
+    ..... Chennai / Hosur          ..... Bengaluru
+    ..... Hyderabad / Sri City     ..... Noida / Gurugram / Faridabad
+    ..... Indore                   ..... Raipur / Jamshedpur
+    ..... Somewhere else: ....................................................
+
+D4. Realistically, would you take a project in, say, Chennai or Hyderabad?
+    Or is there a practical distance limit for your team?
+    ..........................................................................
+
+D5. Do you have local partners or associates in any city who could work
+    alongside you on a project there?
+    ..........................................................................
+
+D6. Your website says you serve "India, Africa, and the USA". Is that still
+    accurate? What's the real story behind the Africa and USA work?
+    ..........................................................................
+
+
+===============================================================================
+ SECTION E — COMPANY DETAILS & GOOGLE LISTING                      ★ ESSENTIAL
+===============================================================================
+ Why we're asking: Google matches your website, your Google Business Profile,
+ and every business directory by comparing the exact text of your name,
+ address and phone number. If they don't match exactly — even a missing comma
+ or a different spelling — Google may treat you as two different businesses
+ and your local ranking gets split in half.
+
+ We've already found two mismatches.
+
+E1. ★ What is the EXACT legal company name?
+
+    Your website currently says:
+        Vishwakalpa Design Planning & Management Pvt Ltd
+    Your SEO document says:
+        Vishwakalpa Design, Planning & Management Pvt. Ltd.
+        (note the comma after "Design", and the full stops in "Pvt. Ltd.")
+
+    Which one matches your GST certificate and company registration?
+    ..........................................................................
+
+E2. ★ Your address is written as "Sangavi". The Pune suburb is usually spelled
+    "Sangvi" (as in New Sangvi / Pimple Gurav). Which spelling is on your GST
+    certificate and your Google listing?
+    ..........................................................................
+
+E3. ★ Please write your full address exactly as it appears on your Google
+    Business Profile (if you have one) or your letterhead:
+    ..........................................................................
+    ..........................................................................
+
+E4. ★ Do you have a Google Business Profile? (This is the listing that shows
+    your company on Google Maps and in the local results box.)
+    [ ] Yes, and it's verified — link: .......................................
+    [ ] Yes, but it's not verified
+    [ ] No
+    [ ] Don't know
+    [ ] Someone set it up for us and we've lost access to it
+
+E5. If you have one — what business CATEGORY is it set to?
+    (This is one of the strongest factors in local ranking, and most firms
+    have it set wrong. "Architect" vs "Structural Engineer" vs "Engineering
+    Consultant" produce completely different results.)
+    ..........................................................................
+
+E6. ★ Phone numbers:
+    Main number for enquiries: ...............................................
+    Landline, if you have one: ...............................................
+    Is +91 9175761066 the right number to display on every page?
+        [ ] Yes  [ ] No — use this instead: ..................................
+    WhatsApp number for enquiries: ...........................................
+    Would you like a WhatsApp button on the site? [ ] Yes  [ ] No
+
+E7. Office hours: ............................................................
+
+E8. ★ Social media profiles — please paste the full links. We currently have
+    none, and Google uses these to confirm your business is real and to
+    connect your website to your Google listing.
+    LinkedIn:  .................................................................
+    Instagram: .................................................................
+    Facebook:  .................................................................
+    YouTube:   .................................................................
+    Other:     .................................................................
+    [ ] We don't have any social media profiles
+
+E9. Are you already listed on any business directories? (JustDial, IndiaMART,
+    Sulekha, TradeIndia, architect directories, MIDC vendor lists, industry
+    association member lists)
+    ..........................................................................
+
+E10. Is info@vishwakalpa.com actually monitored? Should website enquiries go
+    to a different address?
+    ..........................................................................
+
+
+===============================================================================
+ SECTION F — OUR CLIENTS & COMPETITION
+===============================================================================
+ Why we're asking: the words your customers actually use are usually different
+ from the words in an SEO tool. This is often where the best opportunities
+ come from — and only you know them.
+
+F1. ★ Who are your top 3 competitors online? (names or website links)
+    1. ........................................................................
+    2. ........................................................................
+    3. ........................................................................
+
+F2. Is there anyone who consistently wins work you feel you should have won?
+    ..........................................................................
+
+F3. ★ When a new client calls you for the first time, what do they actually
+    SAY they need? Their exact words, not the technical term.
+    (For example: "I need someone to design a shed for my unit in Chakan")
+    ..........................................................................
+    ..........................................................................
+
+F4. ★ How do you win work today? Rough percentages are fine.
+    Referrals ......%    Repeat clients ......%    Tenders ......%
+    Google / online ......%    Social media ......%    Other ......%
+
+F5. ★ What's the ONE question every prospect asks you?
+    (e.g. "How much per square foot?" "How long will approvals take?")
+    These become the FAQ section on each page.
+    (Being straight with you: Google USED to show these as expandable answer
+    boxes in the results, and a lot of SEO advice still promises that. Google
+    restricted that feature to government and health websites in 2023, so it
+    won't happen for an architecture firm. We still want your FAQs — they
+    answer real buyer objections, they're what ChatGPT and similar tools
+    quote when someone asks them for a recommendation, and they keep people
+    on the page. Just not for the reason you may have been told.)
+    ..........................................................................
+    ..........................................................................
+
+F6. What do you know that your competitors don't? Any hard-won experience
+    that would make a genuinely useful article for a factory owner?
+    ..........................................................................
+    ..........................................................................
+
+
+===============================================================================
+ SECTION G — WHAT WE WANT FROM THE WEBSITE
+===============================================================================
+
+G1. ★ When someone lands on the website, what's the ideal outcome?
+    [ ] They phone us
+    [ ] They fill in the enquiry form
+    [ ] They message us on WhatsApp
+    [ ] They download something
+    [ ] Other: ...............................................................
+
+G2. What size of project do you want to attract?
+    (This helps us pitch the writing correctly — a ₹50 lakh shed and a ₹50
+    crore plant need very different pages.)
+    ..........................................................................
+
+G3. ★ The SEO plan calls for around 40,000 words of writing across the site,
+    plus 8-10 articles. Who should write it?
+    [ ] We'll draft it, you review it for accuracy
+    [ ] You write it, we'll check the facts
+    [ ] A mix — you write, we supply the technical details and numbers
+    [ ] Let's discuss
+
+G4. ★ Who approves content before it goes live? And is there anyone who would
+    object to naming clients or publishing project details?
+    ..........................................................................
+
+G5. Realistically, how much time can you give this each week?
+    ..........................................................................
+
+G6. Would you consider offering something free and genuinely useful — like a
+    "Factory Project Cost Checklist" PDF, or a rough cost calculator?
+    These are the single best way to earn links from other websites, which is
+    what Google uses to decide if you're trustworthy.
+    [ ] Yes, interested  [ ] No  [ ] Tell me more
+
+
+===============================================================================
+ SECTION H — ANYTHING ELSE
+===============================================================================
+
+H1. Is there anything about the company, your market, or the website that we
+    haven't asked about but should know?
+    ..........................................................................
+    ..........................................................................
+    ..........................................................................
+
+H2. Is there anything in the SEO plan you disagree with, or that felt wrong
+    to you? Your instinct about your own industry is worth more than a
+    keyword tool.
+    ..........................................................................
+
+H3. What would success look like in 6 months? A number of enquiries? A
+    particular kind of client? Showing up for a specific search?
+    ..........................................................................
+
+
+===============================================================================
+ ONE THING YOU SHOULD KNOW RIGHT NOW
+===============================================================================
+ Your website is currently showing the "We're building something great"
+ construction page to everybody — including Google.
+
+ Because of how it's set up, Google isn't treating this as temporary. It's
+ recording the construction page as your actual homepage. Every day this
+ continues, your position in Google's results gets a little worse.
+
+ We can fix this in two ways: either put the real website live, or add a
+ proper technical signal that tells Google "we're temporarily down, please
+ check back" so it holds your place instead.
+
+ Please let us know which you'd prefer, and roughly when you want the site
+ to go live. This is the most time-sensitive item in this document.
+
+===============================================================================
+ Thank you. Partial answers are genuinely fine — send back whatever you have
+ and we'll tell you what's still missing.
+===============================================================================

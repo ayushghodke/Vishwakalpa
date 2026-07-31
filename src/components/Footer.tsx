@@ -1,8 +1,15 @@
+import { Link } from 'react-router';
 import './Footer.css';
-import contentData from '../assets/content.json';
+import {
+    company,
+    formattedAddress,
+    mailtoUrl,
+    telUrl,
+    whatsappUrl,
+} from '../data/company';
+import { servicesByOrder } from '../data/services';
 
 const Footer = () => {
-    const { contact } = contentData.company;
     const currentYear = new Date().getFullYear();
 
     const scrollToTop = () => {
@@ -10,15 +17,18 @@ const Footer = () => {
     };
 
     return (
-        <footer id="contact" className="footer">
+        // id was "contact" here AND on the Contact section — invalid HTML, and
+        // the nav only worked because getElementById returned whichever came
+        // first in the document. Renamed; the Contact section keeps #contact.
+        <footer id="site-footer" className="footer">
             <div className="container">
                 <div className="footer-content">
-                    {/* Brand Column */}
+                    {/* Brand */}
                     <div className="footer-col">
                         <div className="footer-logo-container">
                             <img
                                 src="/images/Logo.webp"
-                                alt="Vishwakalpa Logo"
+                                alt="Vishwakalpa"
                                 className="footer-brand-logo"
                                 width="96"
                                 height="96"
@@ -28,22 +38,24 @@ const Footer = () => {
                             <h3 className="footer-logo">VISHWAKALPA</h3>
                         </div>
                         <p className="footer-tagline">
-                            Let's Build Lasting Spaces Together
+                            Industrial Facility Design &amp; Master Planning
                         </p>
                         <p className="footer-description">
-                            Technology-led Practice, Sustainable by Industry
+                            Foundries, factories and manufacturing campuses — designed,
+                            engineered and delivered.
                         </p>
                     </div>
 
-                    {/* Quick Links */}
+                    {/* Services — real internal links, which also spreads crawl
+                        equity to every service page from every page on the site. */}
                     <div className="footer-col">
-                        <h4>Quick Links</h4>
+                        <h4>Services</h4>
                         <ul className="footer-links">
-                            <li><a href="#home">Home</a></li>
-                            <li><a href="#industries">Industries</a></li>
-                            <li><a href="#portfolio">Portfolio</a></li>
-                            <li><a href="#services">Services</a></li>
-                            <li><a href="#contact">Contact</a></li>
+                            {servicesByOrder.map((service) => (
+                                <li key={service.slug}>
+                                    <Link to={`/services/${service.slug}`}>{service.shortTitle}</Link>
+                                </li>
+                            ))}
                         </ul>
                     </div>
 
@@ -51,24 +63,44 @@ const Footer = () => {
                     <div className="footer-col">
                         <h4>Contact Us</h4>
                         <ul className="footer-contact">
-                            <li>📍 {contact.address}</li>
-                            <li>📞 {contact.phone}</li>
-                            <li>📧 {contact.email}</li>
+                            <li>📍 {formattedAddress}</li>
+                            <li>
+                                📞 <a href={telUrl}>{company.phoneDisplay}</a>
+                            </li>
+                            <li>
+                                📧 <a href={mailtoUrl}>{company.email}</a>
+                            </li>
+                            <li>🕗 {company.openingHours.display}</li>
                         </ul>
                     </div>
 
                     {/* CTA */}
                     <div className="footer-col">
-                        <h4>Ready to Build?</h4>
-                        <p className="footer-description mb-6">Let's transform your vision into reality</p>
-                        <a href="#contact" className="btn btn-primary" style={{ display: 'inline-block', textAlign: 'center' }}>
-                            Get in Touch
+                        <h4>Planning a Facility?</h4>
+                        <p className="footer-description mb-6">
+                            Industrial projects from {company.engagement.minProjectValue} upward.
+                        </p>
+                        <a
+                            href={whatsappUrl}
+                            className="btn btn-primary"
+                            style={{ display: 'inline-block', textAlign: 'center' }}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Message on WhatsApp
                         </a>
                     </div>
                 </div>
 
                 <div className="footer-bottom">
-                    <p>&copy; {currentYear} Vishwakalpa Design Planning & Management Pvt Ltd. All rights reserved.</p>
+                    {/* Formal registered name. NAP matching compares exact
+                        characters against the Google Business Profile. */}
+                    <p>
+                        &copy; {currentYear} {company.legalName}. All rights reserved.
+                        <span className="footer-legal">
+                            CIN {company.identifiers.cin} · GSTIN {company.identifiers.gstin}
+                        </span>
+                    </p>
                     <button className="scroll-top-btn" onClick={scrollToTop}>
                         ↑ Back to Top
                     </button>

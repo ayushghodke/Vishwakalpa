@@ -1,22 +1,22 @@
+import { reactRouter } from '@react-router/dev/vite'
 import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
 
-// https://vite.dev/config/
+// @vitejs/plugin-react is deliberately absent. @react-router/dev ships its own
+// babel and react-refresh handling, and having both registered conflicts.
+//
+// manualChunks is also gone: React Router owns the Rollup output config in
+// framework mode and splits chunks per route, which is a better split than the
+// hand-written vendor/router/icons grouping it replaces.
+
 export default defineConfig({
-  plugins: [react()],
-  build: {
-    target: 'es2020',
-    cssCodeSplit: true,
-    sourcemap: false,
-    rollupOptions: {
-      output: {
-        manualChunks(id) {
-          if (!id.includes('node_modules')) return
-          if (id.includes('react-router')) return 'router'
-          if (id.includes('lucide-react')) return 'icons'
-          if (id.includes('react-dom') || id.includes('/react/')) return 'react-vendor'
-        },
-      },
+    plugins: [reactRouter()],
+    server: {
+        // Vite does not read PORT on its own — without this it silently picks
+        // the next free port, so any tooling that assigns one gets a dead URL.
+        port: Number(process.env.PORT) || 5173,
     },
-  },
+    build: {
+        target: 'es2020',
+        sourcemap: false,
+    },
 })

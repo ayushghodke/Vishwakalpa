@@ -1,0 +1,28 @@
+# https://www.vishwakalpa.com/robots.txt
+
+# Crawling is ALLOWED even while the site is behind the maintenance page.
+#
+# That is deliberate and it is the opposite of most people's instinct. While the
+# site is dark it is kept out of the index by an "X-Robots-Tag: noindex" header
+# in vercel.json — but a crawler can only see that header if it is allowed to
+# fetch the page. Blocking with "Disallow: /" would hide the noindex, and Google
+# can still index a URL it has never crawled if it finds a link to it elsewhere.
+# Blocking would therefore make the problem it appears to solve harder to fix.
+
+User-agent: *
+Allow: /
+
+# AI crawlers are explicitly welcome. They mostly do not execute JavaScript,
+# which is a large part of why this site is prerendered to static HTML — a
+# growing discovery channel, and one where a specialist firm can outrank a
+# generalist because the answer is more specific.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://www.vishwakalpa.com/sitemap.xml

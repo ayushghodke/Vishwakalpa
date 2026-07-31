@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { HardHat, Phone, Mail } from 'lucide-react';
-import content from '../assets/content.json';
+import { company, mailtoUrl, telUrl } from '../data/company';
 import './Maintenance.css';
 
 const Maintenance = () => {
@@ -28,8 +28,8 @@ const Maintenance = () => {
         };
     }, []);
 
-    const phone = content.company.contact.phone;
-    const email = content.company.contact.email;
+    const phone = company.phoneDisplay;
+    const email = company.email;
 
     return (
         <div className="maint" role="main">
@@ -114,17 +114,17 @@ const Maintenance = () => {
                 <div className="maint-contact">
                     <span className="maint-contact-label">Need us in the meantime?</span>
                     <div className="maint-contact-links">
-                        <a href={`tel:${phone.replace(/\s+/g, '')}`} className="maint-btn maint-btn--primary">
+                        <a href={telUrl} className="maint-btn maint-btn--primary">
                             <Phone size={16} /> {phone}
                         </a>
-                        <a href={`mailto:${email}`} className="maint-btn maint-btn--ghost">
+                        <a href={mailtoUrl} className="maint-btn maint-btn--ghost">
                             <Mail size={16} /> {email}
                         </a>
                     </div>
                 </div>
 
                 <footer className="maint-footer">
-                    © {content.company.name}
+                    © {company.legalName}
                 </footer>
             </div>
         </div>
