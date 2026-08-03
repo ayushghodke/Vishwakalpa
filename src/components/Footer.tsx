@@ -77,9 +77,9 @@ const Footer = () => {
                     {/* CTA */}
                     <div className="footer-col">
                         <h4>Planning a Facility?</h4>
-                        <p className="footer-description mb-6">
+                        {/* <p className="footer-description mb-6">
                             Industrial projects from {company.engagement.minProjectValue} upward.
-                        </p>
+                        </p> */}
                         <a
                             href={whatsappUrl}
                             className="btn btn-primary"
