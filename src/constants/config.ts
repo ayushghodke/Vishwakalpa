@@ -23,4 +23,4 @@ export const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
 //   3. remove the X-Robots-Tag header block from vercel.json
     // 4. true, false
 // ============================================
-export const MAINTENANCE_MODE = true;
+export const MAINTENANCE_MODE = false;
