@@ -41,7 +41,7 @@ const Footer = () => {
                             Industrial Facility Design &amp; Master Planning
                         </p>
                         <p className="footer-description">
-                            Foundries, factories and manufacturing campuses — designed,
+                            Factories and manufacturing campuses — designed,
                             engineered and delivered.
                         </p>
                     </div>

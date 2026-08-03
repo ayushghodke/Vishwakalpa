@@ -178,7 +178,7 @@ export const team: TeamMember[] = [
         bio: [
             'Mayur Khedekar is the Chief Human Resources Officer at Vishwakalpa, bringing over 12 years of experience in talent acquisition, strategic recruitment and people operations across international markets.',
             'Mayur holds a degree from KTH Royal Institute of Technology, Sweden — one of Europe\'s leading technical universities — a foundation giving him an uncommon advantage in industrial hiring: the ability to evaluate technical candidates on substance, not just credentials.',
-            'At Vishwakalpa, that technical grounding has been instrumental in building a team with the engineering depth industrial facility design demands. Where most design firms hire generalists and hope for the best, Vishwakalpa\'s ability to identify and attract specialists in foundry design, heavy structural engineering and industrial MEP coordination is a direct reflection of the rigour he brings to every hiring decision.',
+            'At Vishwakalpa, that technical grounding has been instrumental in building a team with the engineering depth industrial facility design demands. Where most design firms hire generalists and hope for the best, Vishwakalpa\'s ability to identify and attract specialists in heavy structural engineering and industrial MEP coordination is a direct reflection of the rigour he brings to every hiring decision.',
         ],
         photo: null,
         isLeadership: false,
