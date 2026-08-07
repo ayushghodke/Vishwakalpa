@@ -6,7 +6,7 @@ import Footer from '../components/Footer';
 import NotFound from './NotFound';
 import { getProject, clientLabel } from '../data/projects';
 import { getService } from '../data/services';
-import { whatsappUrl } from '../data/company';
+import { getWhatsAppUrl } from '../data/company';
 import { buildMeta } from '../utils/seo';
 import { projectSchema, breadcrumbSchema } from '../utils/schema';
 import './ProjectDetail.css';
@@ -200,7 +200,7 @@ const ProjectDetail = () => {
                                 Send an enquiry
                             </Link>
                             <a
-                                href={whatsappUrl}
+                                href={getWhatsAppUrl(`Hello! I would like to discuss a project similar to ${project.title}.`)}
                                 className="btn btn-secondary btn-lg"
                                 target="_blank"
                                 rel="noopener noreferrer"

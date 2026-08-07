@@ -129,7 +129,13 @@ export const sameAs: string[] = [
     company.social.instagram,
 ];
 
-export const whatsappUrl = `https://wa.me/${company.whatsapp}`;
+export const DEFAULT_WHATSAPP_MESSAGE = 'Hello! I would like to discuss a project with Vishwakalpa.';
+
+export function getWhatsAppUrl(message: string = DEFAULT_WHATSAPP_MESSAGE): string {
+    return `https://wa.me/${company.whatsapp}?text=${encodeURIComponent(message)}`;
+}
+
+export const whatsappUrl = getWhatsAppUrl();
 export const telUrl = `tel:${company.phone}`;
 export const mailtoUrl = `mailto:${company.email}`;
 

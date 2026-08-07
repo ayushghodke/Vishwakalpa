@@ -8,7 +8,7 @@ import NotFound from './NotFound';
 import { getService } from '../data/services';
 import { getProject, clientLabel } from '../data/projects';
 import { WEB3FORMS_ACCESS_KEY } from '../constants/config';
-import { company, whatsappUrl } from '../data/company';
+import { company, getWhatsAppUrl } from '../data/company';
 import { useWeb3Form } from '../hooks/useWeb3Form';
 import { buildMeta } from '../utils/seo';
 import { serviceSchema, faqSchema, breadcrumbSchema } from '../utils/schema';
@@ -153,7 +153,7 @@ const ServiceDetail = () => {
                                 projects from {company.engagement.minProjectValue} upward.
                             </p>
                             <a
-                                href={whatsappUrl}
+                                href={getWhatsAppUrl(`Hello! I would like to discuss a ${service.shortTitle} project with Vishwakalpa.`)}
                                 className="btn btn-secondary"
                                 target="_blank"
                                 rel="noopener noreferrer"
