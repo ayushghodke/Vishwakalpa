@@ -451,10 +451,7 @@ section[id] {
 
 /* ========== SPECIAL EFFECTS ========== */
 .accent-gradient-text {
-  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--color-accent);
 }
 
 /* ========== FORM POPUP ========== */

@@ -298,7 +298,7 @@
 .maint-progress-fill {
     height: 100%;
     border-radius: var(--radius-full);
-    background: linear-gradient(90deg, var(--color-accent-dark), var(--color-accent), var(--color-accent-light));
+    background: var(--color-accent);
     position: relative;
     overflow: hidden;
     transition: width 1.6s cubic-bezier(0.22, 1, 0.36, 1);
