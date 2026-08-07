@@ -69,3 +69,7 @@ temp/
 
 # React Router generated route types
 .react-router
+
+# Claude Code CLI directory
+.claude
+
