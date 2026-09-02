@@ -146,8 +146,7 @@ filename Vercel serves for unmatched URLs.
 These are factual constraints set by the company, not style preferences. They are
 documented in `src/data/services.ts` and must survive any copy edit:
 
-1. **MEP is not in-house.** It is delivered through a consultant partner. Always
-   "coordinated MEP design", never "our in-house MEP team".
+1. **MEP is in-house.** It is delivered by our dedicated in-house MEP design team.
 2. **Nestlé / Campa Cola / Everest / Havmor** are the founding team's *pre-Vishwakalpa*
    experience. Always "our team has delivered", never "Vishwakalpa has delivered".
 3. **The firm does not manage approvals.** It produces drawings and documentation that

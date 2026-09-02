@@ -20,8 +20,7 @@
 // HONESTY GUARDRAILS — these are not stylistic preferences, they are factual
 // constraints the owner set. Do not soften them when editing copy:
 //
-//   · MEP is delivered through a consultant partner, NOT in-house. Always
-//     "coordinated MEP design", never "our in-house MEP team".
+//   · MEP is delivered by our dedicated in-house MEP team.
 //   · Nestlé / Campa Cola / Everest / Havmor are the founding team's
 //     PRE-Vishwakalpa experience. Always "our team has delivered", never
 //     "Vishwakalpa has delivered".
@@ -310,10 +309,10 @@ export const services: Service[] = [
                 ],
             },
             {
-                heading: 'Coordinated MEP design',
+                heading: 'In-house MEP design & coordination',
                 body: [
-                    'MEP is delivered in coordination with our consultant partners rather than by an in-house team, and we would rather state that plainly than imply a capability we do not hold directly. What we do own is the coordination: electrical distribution, HVAC and ventilation, compressed air and utility piping, plumbing, drainage and firefighting systems are integrated into the same model as structure and process.',
-                    'Our senior technical authority on this side brings over forty years in MEP engineering, industrial piping and utility infrastructure, which is what makes the coordination meaningful rather than administrative.',
+                    'MEP design is delivered by our dedicated in-house team. Electrical distribution, HVAC and ventilation, compressed air and utility piping, plumbing, drainage and firefighting systems are integrated into the same model as structure and process.',
+                    'Our senior technical authority on this side brings over forty years in MEP engineering, industrial piping and utility infrastructure, ensuring precise engineering and unified execution from design through site installation.',
                 ],
             },
             {
@@ -338,7 +337,7 @@ export const services: Service[] = [
             {
                 question: 'Is your MEP team in-house?',
                 answer:
-                    'No. MEP design is delivered through our consultant partners, with coordination, integration and technical oversight held by us. We are explicit about this because the distinction matters when you are comparing proposals — some firms describe coordinated MEP as though it were in-house. What you get from us is a single point of accountability for the coordination, backed by a principal consultant with over forty years in industrial MEP and piping.',
+                    'Yes. We have a dedicated in-house MEP design team handling electrical distribution, HVAC, utility piping, plumbing, and firefighting systems. Our in-house team ensures complete integration and seamless coordination with our structural and architectural engineering, backed by senior technical leadership with over forty years of experience in industrial MEP and piping.',
             },
             {
                 question: 'Can you proof-check a PEB vendor\'s design?',

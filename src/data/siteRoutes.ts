@@ -18,6 +18,7 @@
 
 import { serviceSlugs } from './services';
 import { projectSlugs } from './projects';
+import { blogSlugs } from './blogs';
 
 export interface SiteRoute {
     path: string;
@@ -48,6 +49,16 @@ export const siteRoutes: SiteRoute[] = [
         changefreq: 'yearly' as const,
     })),
 
+    // Blog & Technical Insights index page.
+    { path: '/blogs', priority: 0.9, changefreq: 'weekly' },
+
+    // Individual in-depth engineering guides and blog articles.
+    ...blogSlugs.map((slug) => ({
+        path: `/blogs/${slug}`,
+        priority: 0.85,
+        changefreq: 'monthly' as const,
+    })),
+
     { path: '/team', priority: 0.7, changefreq: 'monthly' },
 
     // Prerendered so Vercel can serve a real branded 404, but deliberately kept
@@ -60,3 +71,4 @@ export const prerenderPaths = siteRoutes.map((r) => r.path);
 
 /** Everything that belongs in sitemap.xml. */
 export const sitemapRoutes = siteRoutes.filter((r) => !r.excludeFromSitemap);
+

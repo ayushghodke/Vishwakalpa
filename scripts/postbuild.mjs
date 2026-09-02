@@ -28,14 +28,18 @@ const SITEMAP_EXCLUDE = new Set(['/404']);
 function priorityFor(path) {
     if (path === '/') return '1.0';
     if (path.startsWith('/services/')) return '0.9';
+    if (path === '/blogs') return '0.9';
+    if (path.startsWith('/blogs/')) return '0.85';
     if (path.startsWith('/projects/')) return '0.8';
     return '0.7';
 }
 
 function changefreqFor(path) {
+    if (path === '/blogs') return 'weekly';
     if (path.startsWith('/projects/')) return 'yearly';
     return 'monthly';
 }
+
 
 async function findHtmlFiles(dir) {
     const found = [];

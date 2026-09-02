@@ -8,6 +8,7 @@ import Sectors from '../sections/Sectors'
 import Services from '../sections/Services'
 import Portfolio from '../sections/Portfolio'
 import About from '../sections/About'
+import BlogsSection from '../sections/BlogsSection'
 import Contact from '../sections/Contact'
 import { buildMeta } from '../utils/seo'
 
@@ -58,6 +59,7 @@ function Home() {
                 <Services />
                 <Sectors />
                 <Portfolio />
+                <BlogsSection />
                 <About />
                 <Contact />
             </main>
@@ -65,5 +67,6 @@ function Home() {
         </>
     )
 }
+
 
 export default Home

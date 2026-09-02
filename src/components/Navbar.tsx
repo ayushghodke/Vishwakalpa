@@ -27,6 +27,7 @@ const NAV_ITEMS: NavItem[] = [
     { label: 'Services', target: 'services' },
     { label: 'Industries', target: 'industries' },
     { label: 'Projects', target: 'portfolio' },
+    { label: 'Insights', target: '/blogs', isRoute: true },
     { label: 'Team', target: '/team', isRoute: true },
 ];
 

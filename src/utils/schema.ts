@@ -15,7 +15,9 @@ import { SITE_URL, company, sameAs } from '../data/company';
 import type { Service } from '../data/services';
 import type { TeamMember } from '../data/team';
 import type { Project } from '../data/projects';
+import type { BlogPost } from '../data/blogs';
 import { clientLabel } from '../data/projects';
+
 
 /** Stable identifier every other node points at, so Google reads one entity
  *  rather than a scattering of unrelated mentions. */
@@ -205,3 +207,60 @@ export function projectSchema(project: Project) {
         },
     };
 }
+
+export function blogPostingSchema(blog: BlogPost) {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'BlogPosting',
+        '@id': `${SITE_URL}/blogs/${blog.slug}#article`,
+        headline: blog.title,
+        description: blog.seoDescription,
+        articleSection: blog.category,
+        keywords: [blog.primaryKeyword, ...blog.secondaryKeywords].join(', '),
+        datePublished: blog.publishedDate,
+        dateModified: blog.modifiedDate,
+        image: `${SITE_URL}${blog.image}`,
+        inLanguage: 'en-IN',
+        mainEntityOfPage: {
+            '@type': 'WebPage',
+            '@id': `${SITE_URL}/blogs/${blog.slug}`,
+        },
+        author: {
+            '@type': 'Organization',
+            '@id': ORG_ID,
+            name: blog.author.name,
+        },
+        publisher: {
+            '@type': 'Organization',
+            '@id': ORG_ID,
+            name: company.legalName,
+            logo: {
+                '@type': 'ImageObject',
+                url: `${SITE_URL}/images/Logo.webp`,
+            },
+        },
+    };
+}
+
+export function blogListSchema(blogPosts: BlogPost[]) {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        '@id': `${SITE_URL}/blogs#collection`,
+        name: 'Technical Insights & Engineering Guides | Vishwakalpa',
+        description:
+            'Expert technical guides on industrial facility planning, CNC machine shop layouts, space calculations, and factory design.',
+        url: `${SITE_URL}/blogs`,
+        publisher: { '@id': ORG_ID },
+        mainEntity: {
+            '@type': 'ItemList',
+            itemListElement: blogPosts.map((b, index) => ({
+                '@type': 'ListItem',
+                position: index + 1,
+                url: `${SITE_URL}/blogs/${b.slug}`,
+                name: b.title,
+            })),
+        },
+    };
+}
+

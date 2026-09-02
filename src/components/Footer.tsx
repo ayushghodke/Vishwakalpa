@@ -5,9 +5,9 @@ import {
     formattedAddress,
     mailtoUrl,
     telUrl,
-    whatsappUrl,
 } from '../data/company';
 import { servicesByOrder } from '../data/services';
+import { blogs } from '../data/blogs';
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -59,6 +59,21 @@ const Footer = () => {
                         </ul>
                     </div>
 
+                    {/* Technical Insights & Guides */}
+                    <div className="footer-col">
+                        <h4><Link to="/blogs" style={{ color: 'inherit' }}>Insights</Link></h4>
+                        <ul className="footer-links">
+                            <li>
+                                <Link to="/blogs" style={{ fontWeight: 600 }}>All Technical Guides</Link>
+                            </li>
+                            {blogs.map((blog) => (
+                                <li key={blog.slug}>
+                                    <Link to={`/blogs/${blog.slug}`}>{blog.shortTitle}</Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
                     {/* Contact */}
                     <div className="footer-col">
                         <h4>Contact Us</h4>
@@ -73,24 +88,8 @@ const Footer = () => {
                             <li>🕗 {company.openingHours.display}</li>
                         </ul>
                     </div>
-
-                    {/* CTA */}
-                    <div className="footer-col">
-                        <h4>Planning a Facility?</h4>
-                        {/* <p className="footer-description mb-6">
-                            Industrial projects from {company.engagement.minProjectValue} upward.
-                        </p> */}
-                        <a
-                            href={whatsappUrl}
-                            className="btn btn-primary"
-                            style={{ display: 'inline-block', textAlign: 'center' }}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Message on WhatsApp
-                        </a>
-                    </div>
                 </div>
+
 
                 <div className="footer-bottom">
                     {/* Formal registered name. NAP matching compares exact
