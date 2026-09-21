@@ -76,7 +76,7 @@
    reads far better in a single measured column. */
 
 .sd-intro {
-    max-width: 70ch;
+    max-width: 980px;
     margin: 0 auto var(--block-gap);
 }
 
@@ -88,7 +88,7 @@
 }
 
 .sd-block {
-    max-width: 70ch;
+    max-width: 980px;
     margin: 0 auto var(--block-gap);
 }
 
@@ -106,7 +106,7 @@
 .sd-scope,
 .sd-related,
 .sd-faqs {
-    max-width: 70ch;
+    max-width: 980px;
     margin: 0 auto var(--block-gap);
 }
 
@@ -310,6 +310,8 @@
     gap: var(--block-gap);
     position: relative;
     z-index: 2;
+    max-width: 980px;
+    margin: 0 auto;
 }
 
 @media (min-width: 1024px) {
