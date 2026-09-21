@@ -120,7 +120,7 @@ const ServiceDetail = () => {
                                         {relatedProject.region}
                                         {relatedProject.durationMonths
                                             ? ` · ${relatedProject.durationMonths} months`
-                                            : ''}
+                                            : ` · ${relatedProject.status}`}
                                     </p>
                                 </div>
                                 <ArrowRight size={22} aria-hidden="true" />

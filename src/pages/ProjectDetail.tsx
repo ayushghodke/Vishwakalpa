@@ -95,7 +95,7 @@ const ProjectDetail = () => {
                     </p>
                     <h1 className="pd-title">{project.title}</h1>
                     <p className="pd-subtitle">
-                        Delivered for {clientLabel(project)}
+                        {project.status === 'Completed' ? 'Delivered' : 'Engineered and master-planned'} for {clientLabel(project)}
                         {project.durationMonths ? ` over ${project.durationMonths} months` : ''}.
                     </p>
 

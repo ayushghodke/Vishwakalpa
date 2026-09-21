@@ -93,14 +93,14 @@
 
 .leadership-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--space-6);
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .leadership-card {
-    padding: var(--space-6);
+    padding: var(--space-6) var(--space-4);
     text-align: center;
     transition: transform var(--transition-base);
 }
@@ -131,9 +131,14 @@
     margin: 0;
 }
 
+.leadership-cta {
+    margin-top: clamp(2.5rem, 4vw, 3.5rem);
+    text-align: center;
+}
+
 /* ========== WHERE WE WORK ========== */
 .locations-wrapper {
-    margin-top: clamp(2rem, 2vw + 2vmin, 4rem);
+    margin-top: clamp(3rem, 4.5vw, 5rem);
 }
 
 .locations-list {
@@ -179,6 +184,10 @@
         grid-template-columns: repeat(2, 1fr);
         max-width: 600px;
     }
+
+    .leadership-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
@@ -212,14 +221,16 @@
         font-size: var(--text-xs);
     }
 
-    .leadership-grid {
-        grid-template-columns: 1fr;
-    }
-
     /* margin-top is handled by the clamp above at every width. */
 
     .location-chip {
         font-size: var(--text-sm);
         padding: var(--space-2) var(--space-4);
+    }
+}
+
+@media (max-width: 640px) {
+    .leadership-grid {
+        grid-template-columns: 1fr;
     }
 }

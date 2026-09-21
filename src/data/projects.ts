@@ -41,8 +41,9 @@ export interface Project {
     clientDescriptor: string;
     city: string;
     region: string;
+    country?: string;
     industry: string;
-    status: 'Completed' | 'In progress';
+    status: 'Completed' | 'In progress' | 'Under Construction';
     durationMonths: number | null;
     plotArea: string;
     builtUpArea: string | null;
@@ -190,6 +191,149 @@ export const projects: Project[] = [
             'architecture-design',
         ],
         order: 2,
+    },
+
+    {
+        slug: 'r-pet-recycling-campus-krishnagiri',
+        title: 'R-PET Recycling Campus',
+        shortTitle: 'R-PET Recycling',
+        seoTitle: 'R-PET Recycling Campus | Vishwakalpa Case Study',
+        seoDescription:
+            'Inside a 20-acre R-PET recycling campus in Krishnagiri: 168.5m single-bay wash line, 7.5 MVA power across three HT transformers, and linear material flow.',
+        clientName: null,
+        clientDescriptor: 'a major post-consumer PET recycling manufacturer',
+        city: 'Krishnagiri',
+        region: 'Tamil Nadu',
+        country: 'India',
+        industry: 'Recycling — R-PET, post-consumer PET bottle processing',
+        status: 'Under Construction',
+        durationMonths: null,
+        plotArea: '20 acres (80,940 sqm)',
+        builtUpArea: 'approx. 10 acres (40,470 sqm / 4,35,600 sq ft)',
+        scope: [
+            'Master Planning',
+            'Architecture',
+            'Structural Coordination',
+            'Electrical & MEP Coordination',
+            'Project Management Consultancy',
+        ],
+        summary: [
+            'A recycling campus processing post-consumer PET bottles into R-PET flake and pellet, master-planned across a 20-acre site with roughly half the plot under roof — a coverage ratio that left room for the raw material yard, internal roads, water circulation infrastructure and future expansion, while still running a single linear process spine from intake to despatch.',
+            'Two problems shaped the design. Structurally and electrically, a wash line running 168.5m in a single bay needed uninterrupted power redundancy across three HT transformers feeding continuous washing, drying and pelletising loads, with no tolerance for a mid-process trip. Logistically, on a 20-acre plot large enough to invite an inefficient, spread-out layout, the raw material yard and the finished goods yard needed to sit at opposite ends of one deliberate linear flow, so incoming and outgoing material never crossed and the plant didn\'t waste its scale on unnecessary internal travel distance.',
+        ],
+        stats: [
+            { label: 'Wash line', value: '168.5m × 32.6m bay' },
+            { label: 'Storage split', value: 'RM 5.3k · FG 7.6k sqm' },
+            { label: 'HT power', value: '3 × 2.5 MVA (7.5 MVA)' },
+            { label: 'Plot scale', value: '20 acres, ~50% built' },
+        ],
+        verticals: [
+            {
+                number: '01',
+                discipline: 'Structural & Electrical',
+                heading: 'A 168-Metre Wash Line on Layered HT Power',
+                subheading:
+                    'Engineering continuous power redundancy across a single-bay process run that cannot tolerate a mid-cycle trip',
+                problem:
+                    'The wash line is a single continuous bay 168.5m long and 32.6m wide — effectively one uninterrupted process run from bale-breaking through washing to drying. A power trip partway along that line doesn\'t just stop one machine; it stalls material mid-wash across the whole bay, with wet PET flake sitting in line until power is restored. The plant needed HT supply capacity sized for this continuous load, split so that a fault on one transformer never takes down the whole line.',
+                solution:
+                    'Three 2.5 MVA transformers (TR-1, TR-2, TR-3) were positioned together at a dedicated transformer yard, feeding separate LT panel groups rather than one shared bus — so the wash line\'s load is distributed across independent supply paths. A DG yard sits adjacent for backup, with UPS provision at the panel room for control systems that cannot tolerate even a changeover gap. Multiple forklift charging bays were positioned directly along the raw material and finished goods storage runs, keeping material handling power local to where it\'s used rather than routed across the site.',
+                outcome:
+                    '7.5 MVA of HT capacity split across three independent transformer paths, so a single transformer fault reduces line capacity rather than halting the wash line entirely — keeping a 168-metre continuous process run protected from single points of electrical failure.',
+            },
+            {
+                number: '02',
+                discipline: 'Architecture & Master Planning',
+                heading: 'A 20-Acre Plot, Built to a Deliberate Half',
+                subheading: 'Using scale as an asset, not an excuse for an inefficient layout',
+                problem:
+                    'A 20-acre plot is large enough that a plant can be laid out carelessly and still fit — scattering buildings, over-sizing internal roads, and leaving material to travel unnecessary distances between process stages. With roughly half the plot committed to built structure, the other 10 acres of yard, road and buffer space needed a clear purpose rather than becoming leftover ground around the buildings.',
+                solution:
+                    'The master plan sequences Raw Material Storage (5,300 sqm) at one end, through the Wash Line (168.5m single bay), into FG Storage (7,590 sqm) at the opposite end — a straight-line process with no reversal, deliberately using the plot\'s length rather than its full width. The unbuilt half of the site was allocated with intent: raw material yard capacity for incoming bale trucks, a dedicated water circulation zone, internal roads sized for simultaneous inbound and outbound traffic, and clear room for the Phase 2 capacity this scale of plot was clearly bought to accommodate. Multiple loading ramps at 1:10 and 1:12 connect varying floor levels (FFL 100.65 to 101.70) across the site, letting the plant sit on its natural grade without a single expensive flat pad.',
+                outcome:
+                    'A 20-acre campus where the built 10 acres does the work of a tightly planned facility, not a sprawling one — and the unbuilt 10 acres is committed to yard capacity, traffic separation and expansion headroom rather than sitting idle as leftover plot.',
+            },
+        ],
+        image: '/images/projects/r-pet-recycling-campus-krishnagiri.webp',
+        relatedServices: [
+            'industrial-master-planning',
+            'structural-mep-design',
+            'industrial-pmc',
+            'architecture-design',
+        ],
+        order: 3,
+    },
+
+    {
+        slug: 'vaccine-manufacturing-campus-addis-ababa',
+        title: 'Vaccine Manufacturing Campus',
+        shortTitle: 'Vaccine Campus',
+        seoTitle: 'Vaccine Manufacturing Campus | Vishwakalpa Case Study',
+        seoDescription:
+            'Inside an 8-acre WHO-GMP vaccine manufacturing campus in Ethiopia: double-height glazed admin, elevated inter-block bridge, and stacked dense warehousing.',
+        clientName: null,
+        clientDescriptor: "Ethiopia's national vaccine manufacturing programme",
+        city: 'Kilinto Industrial Park',
+        region: 'Addis Ababa',
+        country: 'Ethiopia',
+        industry: 'Pharmaceutical — WHO-GMP vaccine manufacturing',
+        status: 'Under Construction',
+        durationMonths: null,
+        plotArea: '8 acres (32,375 sqm)',
+        builtUpArea: 'approx. 4.8 acres / ~2,09,000 sq ft',
+        scope: [
+            'Architecture',
+            'Master Planning',
+            'Interior Planning',
+            'MEP',
+            'Structural',
+        ],
+        summary: [
+            'A vaccine manufacturing campus where the architecture had to do two jobs at once — project Ethiopia\'s ambition to international regulators, delegations and global health partners walking through the front door, while running a fully validated, multi-block GMP production facility behind it. The design treats arrival and operation as one sequence, not two separate buildings bolted together.',
+            'Operating in Kilinto Industrial Park, the master plan coordinates double-height architectural glazing, an amphitheater for regulatory briefings, stacked dense warehousing, and an upper-level inter-block bridge that allows personnel and sterile materials to move seamlessly between production units under WHO Maturity Level 4 standards.',
+        ],
+        stats: [
+            { label: 'Plot scale', value: '8 acres, ~60% built' },
+            { label: 'Reception', value: 'Double-height glazing' },
+            { label: 'Admin features', value: 'Amphitheater & suites' },
+            { label: 'Connectivity', value: 'Elevated inter-block bridge' },
+        ],
+        verticals: [
+            {
+                number: '01',
+                discipline: 'Architecture & Frontage',
+                heading: 'An Arrival Sequence Built for What This Building Represents',
+                subheading:
+                    'Designing the Administration Block as the first impression of a national vaccine self-reliance programme',
+                problem:
+                    'The facility isn\'t a private factory visited by its own staff. It\'s a flagship facility that regulators, government delegations, UNICEF and AMA procurement teams, and international health partners walk through as evidence that Ethiopia can produce PQ-ready vaccines at WHO Maturity Level 4. The Administration Block had to read as credible and world-class in the first thirty seconds of arrival — before anyone reaches a single production suite — while still functioning as genuine working space for a technical, GMP-regulated organisation.',
+                solution:
+                    'Arrival opens into a double-height reception with full-height glazing — a deliberate first move that signals scale and transparency rather than a conventional low-ceilinged corporate lobby. From there, the block unfolds around two distinct kinds of space: working space (staff offices, the IT and digital backbone that runs the site\'s documentation and coordination systems) and gathering space, sized generously because this building expects visitors. Multiple conference suites of varying scale support everything from a routine internal review to a full stakeholder delegation, while an amphitheater gives the site a genuine assembly and presentation space — for regulatory briefings, training sessions, or the kind of announcement a national vaccine programme is built to make.',
+                outcome:
+                    'An Administration Block that functions as both the working front office of a GMP facility and the space Ethiopia uses to show the world what it has built — without either role compromising the other.',
+            },
+            {
+                number: '02',
+                discipline: 'Master Planning & Circulation',
+                heading: 'A Bridge, Stacked Storage, and a Campus That Moves Like One Building',
+                subheading:
+                    'Connecting production blocks and handling material at density, without treating either as an afterthought',
+                problem:
+                    'A multi-block campus rising to six levels in places creates two practical problems the moment people and material need to move through it. First, connecting separate blocks at height without routing every transfer back down to ground level and across an open yard — which is both inefficient and, on a GMP site, a contamination and security risk. Second, warehousing at the density this facility needed without simply building more footprint, when the plot was already committed to production and administration space.',
+                solution:
+                    'An elevated bridge connects two of the campus\'s production blocks directly at an upper level — letting personnel and controlled material move between buildings without descending to grade, crossing open site traffic, or passing through unnecessary security transitions. In the Warehouse Block, stacking storage was used deliberately rather than flat, single-layer racking, concentrating raw material and finished goods capacity into a smaller footprint — freeing plot area for what the campus actually needed more of: production floor and future expansion room. The warehouse\'s segregated intake and quarantine zones sit adjacent to this stacked storage, so material still moves through full traceability checks before release, regardless of where in the stack it\'s held.',
+                outcome:
+                    'A campus that behaves like a single connected building rather than seven separate ones — with the bridge removing an entire layer of ground-level movement, and stacked warehousing giving the site storage density without spending plot area it needed elsewhere.',
+            },
+        ],
+        image: '/images/projects/vaccine-manufacturing-campus-addis-ababa.webp',
+        relatedServices: [
+            'architecture-design',
+            'industrial-master-planning',
+            'structural-mep-design',
+            'bim-3d-modeling',
+        ],
+        order: 4,
     },
 ];
 

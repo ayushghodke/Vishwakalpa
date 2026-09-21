@@ -201,7 +201,7 @@ export function projectSchema(project: Project) {
                     '@type': 'PostalAddress',
                     addressLocality: project.city,
                     addressRegion: project.region,
-                    addressCountry: 'IN',
+                    addressCountry: project.country === 'Ethiopia' ? 'ET' : 'IN',
                 },
             },
         },

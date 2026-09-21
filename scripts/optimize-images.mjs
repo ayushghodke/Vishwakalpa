@@ -43,6 +43,8 @@ const targets = [
   { in: 'sectors/plastics-recycling-textiles.png',        webp: 'sectors/plastics-recycling-textiles.webp',        maxW: 1000, q: 80 },
   { in: 'projects/foundry-campus-ahmedabad.png',          webp: 'projects/foundry-campus-ahmedabad.webp',          maxW: 1400, q: 80 },
   { in: 'projects/precision-machining-facility-solapur.png', webp: 'projects/precision-machining-facility-solapur.webp', maxW: 1400, q: 80 },
+  { in: 'projects/r-pet-recycling-campus-krishnagiri.png', webp: 'projects/r-pet-recycling-campus-krishnagiri.webp', maxW: 1400, q: 82 },
+  { in: 'projects/vaccine-manufacturing-campus-addis-ababa.png', webp: 'projects/vaccine-manufacturing-campus-addis-ababa.webp', maxW: 1400, q: 82 },
 ];
 
 const fmt = (n) => (n / 1024).toFixed(1) + ' KB';

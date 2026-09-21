@@ -96,7 +96,7 @@ const About = () => {
                         ))}
                     </div>
 
-                    <div className="text-center mt-8">
+                    <div className="leadership-cta text-center">
                         <Link to="/team" className="btn btn-primary">
                             Meet the full team
                         </Link>

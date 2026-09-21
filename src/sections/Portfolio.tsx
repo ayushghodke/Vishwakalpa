@@ -35,8 +35,7 @@ const Portfolio = () => {
                         Selected <span className="text-accent">Projects</span>
                     </h2>
                     <p className="text-gray mb-8">
-                        Two facilities in detail — the engineering decisions, and why they
-                        were made.
+                        Flagship industrial facilities in detail — the engineering decisions, and why they were made.
                     </p>
                 </div>
 

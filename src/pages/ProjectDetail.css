@@ -126,7 +126,7 @@
 
 /* ========== SUMMARY & FACTS ========== */
 .pd-summary {
-    max-width: 70ch;
+    max-width: 980px;
     margin: 0 auto var(--block-gap);
 }
 
@@ -141,9 +141,9 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: var(--space-6);
-    max-width: 70ch;
+    max-width: 980px;
     margin: 0 auto var(--block-gap);
-    padding: var(--space-6);
+    padding: var(--space-8);
     background: #fafafa;
     border-radius: var(--radius-lg);
     border: 1px solid rgba(0, 0, 0, 0.06);
@@ -174,7 +174,7 @@
 
 /* ========== VERTICALS ========== */
 .pd-vertical {
-    max-width: 70ch;
+    max-width: 980px;
     margin: 0 auto var(--block-gap);
 }
 
@@ -250,7 +250,7 @@
 
 /* ========== RELATED SERVICES ========== */
 .pd-related {
-    max-width: 70ch;
+    max-width: 980px;
     margin: 0 auto var(--block-gap);
 }
 
@@ -261,9 +261,9 @@
 }
 
 .pd-related-grid {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-3);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-4);
 }
 
 .pd-related-card {
@@ -289,7 +289,7 @@
 
 /* ========== CTA ========== */
 .pd-cta {
-    max-width: 70ch;
+    max-width: 980px;
     margin: 0 auto;
     padding: var(--space-12);
     text-align: center;

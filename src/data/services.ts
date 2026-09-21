@@ -215,7 +215,7 @@ export const services: Service[] = [
             COST_FAQ,
             TIMELINE_FAQ,
         ],
-        relatedProject: 'precision-machining-facility-solapur',
+        relatedProject: 'vaccine-manufacturing-campus-addis-ababa',
         order: 2,
     },
 
@@ -486,7 +486,7 @@ export const services: Service[] = [
             },
             COST_FAQ,
         ],
-        relatedProject: 'foundry-campus-ahmedabad',
+        relatedProject: 'r-pet-recycling-campus-krishnagiri',
         order: 6,
     },
 ];

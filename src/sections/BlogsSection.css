@@ -173,6 +173,11 @@
   transform: translateX(4px);
 }
 
+.blogs-view-all {
+  margin-top: clamp(2.5rem, 4vw, 3.5rem);
+  text-align: center;
+}
+
 .blogs-view-all .btn {
   color: var(--color-primary);
   border-color: var(--color-primary);
