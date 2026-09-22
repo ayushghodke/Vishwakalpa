@@ -4,6 +4,7 @@ import type { MetaDescriptor } from 'react-router'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import Hero from '../sections/Hero'
+import Clients from '../sections/Clients'
 import Sectors from '../sections/Sectors'
 import Services from '../sections/Services'
 import Portfolio from '../sections/Portfolio'
@@ -56,6 +57,7 @@ function Home() {
             <Navbar />
             <main>
                 <Hero />
+                <Clients />
                 <Services />
                 <Sectors />
                 <Portfolio />

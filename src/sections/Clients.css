@@ -1,0 +1,180 @@
+/* ============================================
+   CLIENTS SECTION & HORIZONTAL CAROUSEL
+   ============================================ */
+
+.clients-section {
+  padding: clamp(2.5rem, 2.5vw + 2vmin, 4.5rem) 0;
+  background-color: var(--color-gray-50);
+  border-top: 1px solid var(--color-gray-200);
+  border-bottom: 1px solid var(--color-gray-200);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Header */
+.clients-header {
+  margin-bottom: clamp(1.75rem, 1.5vw + 1.5vmin, 2.75rem);
+}
+
+.clients-eyebrow {
+  display: inline-block;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-accent);
+  margin-bottom: var(--space-2);
+}
+
+.clients-title {
+  font-size: clamp(1.35rem, 0.75rem + 1.2vw, 2rem);
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: var(--space-2);
+  letter-spacing: -0.01em;
+}
+
+.clients-subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-gray-600);
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* Carousel Container */
+.clients-carousel-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: var(--space-2) 0;
+}
+
+.clients-marquee {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: var(--space-6);
+  width: 100%;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  /* Smooth edge fade masks for seamless entrance/exit */
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgb(0, 0, 0) 8%,
+    rgb(0, 0, 0) 92%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgb(0, 0, 0) 8%,
+    rgb(0, 0, 0) 92%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.clients-marquee::-webkit-scrollbar {
+  display: none;
+}
+
+.clients-marquee:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+/* Continuous Marquee Track */
+.clients-track {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: var(--space-6);
+  animation: marquee-scroll 45s linear infinite;
+  will-change: transform;
+}
+
+.clients-marquee:hover .clients-track,
+.clients-marquee:focus-within .clients-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% - var(--space-6)));
+  }
+}
+
+/* Client Card */
+.client-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  padding: 12px 24px;
+  min-width: 190px;
+  height: 82px;
+  box-shadow: 0 2px 6px -2px rgba(15, 23, 42, 0.05);
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base),
+    border-color var(--transition-base);
+  cursor: default;
+}
+
+.client-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(249, 115, 22, 0.4);
+  box-shadow: 0 8px 18px -4px rgba(15, 23, 42, 0.1);
+}
+
+/* Logo Image Styling */
+.client-logo {
+  max-height: 48px;
+  max-width: 140px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  /* High-end subtle tone by default */
+  filter: grayscale(100%) opacity(0.75);
+  transition:
+    filter var(--transition-base),
+    transform var(--transition-base);
+}
+
+.client-card:hover .client-logo {
+  /* Full brand reveal on hover */
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.05);
+}
+
+/* Ultra-gentle speed on reduced motion devices instead of abrupt freeze */
+@media (prefers-reduced-motion: reduce) {
+  .clients-track {
+    animation-duration: 80s;
+  }
+}
+
+/* Mobile & Small Screens */
+@media (max-width: 768px) {
+  .clients-track {
+    gap: var(--space-4);
+    animation-duration: 35s;
+  }
+
+  .client-card {
+    min-width: 155px;
+    height: 70px;
+    padding: 8px 16px;
+  }
+
+  .client-logo {
+    max-height: 38px;
+    max-width: 115px;
+  }
+}
