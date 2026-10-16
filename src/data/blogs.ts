@@ -1237,7 +1237,7 @@ export const blogs: BlogPost[] = [
             role: 'Industrial Facility Design & Master Planning Specialists',
             bio: 'Vishwakalpa specializes in end-to-end industrial master planning, architectural layout design, structural engineering, and PMC for precision manufacturing and foundry facilities across India.',
         },
-        image: '/images/portfolio/industrial/industry-1.webp',
+        image: '/images/blogs/what-is-industrial-architecture.webp',
         imageAlt: 'High-bay industrial manufacturing plant interior showcasing steel structure and clear span layout',
         imageCaption: 'Industrial architecture designs the factory around manufacturing processes, heavy logistics, and statutory safety.',
         summary: [
@@ -1412,7 +1412,7 @@ export const blogs: BlogPost[] = [
             role: 'Industrial Facility Design & Master Planning Specialists',
             bio: 'Vishwakalpa specializes in end-to-end industrial master planning, architectural layout design, structural engineering, and PMC for precision manufacturing and foundry facilities across India.',
         },
-        image: '/images/projects/foundry-campus-ahmedabad.webp',
+        image: '/images/blogs/how-to-plan-an-efficient-foundry-layout.webp',
         imageAlt: 'Heavy engineering foundry bay with melting furnaces and heavy EOT crane runway',
         imageCaption: 'Foundry planning demands strict physical separation between extreme molten thermal zones and finishing operations.',
         summary: [
@@ -1583,7 +1583,7 @@ export const blogs: BlogPost[] = [
             role: 'Industrial Facility Design & Master Planning Specialists',
             bio: 'Vishwakalpa specializes in end-to-end industrial master planning, architectural layout design, structural engineering, and PMC for precision manufacturing and foundry facilities across India.',
         },
-        image: '/images/projects/precision-machining-facility-solapur.webp',
+        image: '/images/blogs/manufacturing-plant-expansion-planning.webp',
         imageAlt: 'Modern industrial manufacturing campus layout highlighting expansion bays and internal road network',
         imageCaption: 'A successful brownfield plant expansion expands production capacity without compromising active factory operations.',
         summary: [
