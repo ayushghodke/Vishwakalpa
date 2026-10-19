@@ -109,6 +109,7 @@ def main():
     parser.add_argument("--sheet", default=DEFAULT_SHEET_PATH, help="Path to .xlsx file")
     parser.add_argument("--verify", action="store_true", help="Print summary of sheet without modifying")
     parser.add_argument("--week1-catchup", action="store_true", help="Update Week 1 (Oct 13 - Oct 16) tasks to completed")
+    parser.add_argument("--day5", action="store_true", help="Update Day 5 (Oct 19) Plastic Recycling Plant task")
 
     args = parser.parse_args()
     wb = load_workbook_safe(args.sheet)
@@ -117,8 +118,9 @@ def main():
         print_summary(wb)
         return
 
+    ws_sched = wb[wb.sheetnames[0]]
+
     if args.week1_catchup:
-        ws_sched = wb[wb.sheetnames[0]]
         # Day 1: Oct 13 - What Is Industrial Architecture?
         update_task_row(ws_sched, match_date="2026-10-13", status="Done", completion_pct=1.0, 
                         published_url=f"{SITE_BASE_URL}/blogs/what-is-industrial-architecture",
@@ -142,9 +144,15 @@ def main():
         # Update Friday KPI Review
         update_weekly_kpi(wb, week_ending_date="2026-10-16", blogs_published=4, case_studies_published=1)
 
-        wb.save(args.sheet)
-        print("\n[SUCCESS] Saved updates to:", args.sheet)
-        print_summary(wb)
+    if args.day5:
+        # Day 5: Oct 19 - Plastic Recycling Plant Design
+        update_task_row(ws_sched, match_date="2026-10-19", status="Done", completion_pct=1.0,
+                        published_url=f"{SITE_BASE_URL}/blogs/how-to-design-a-plastic-recycling-plant",
+                        notes="Published guide on plastic recycling plant layout, wash lines, closed-loop ETP & NBC fire zoning.")
+
+    wb.save(args.sheet)
+    print("\n[SUCCESS] Saved updates to:", args.sheet)
+    print_summary(wb)
 
 if __name__ == "__main__":
     main()

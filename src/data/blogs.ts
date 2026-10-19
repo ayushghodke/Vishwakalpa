@@ -1724,6 +1724,190 @@ export const blogs: BlogPost[] = [
         relatedProjects: ['precision-machining-facility-solapur', 'r-pet-recycling-campus-krishnagiri'],
     },
 
+
+    // =========================================================================
+    // BLOG 7: How to Design a Plastic Recycling Plant
+    // =========================================================================
+    {
+        id: 'how-to-design-a-plastic-recycling-plant',
+        slug: 'how-to-design-a-plastic-recycling-plant',
+        title: 'How to Design a Plastic Recycling Plant: Layout, Flow and Utilities',
+        shortTitle: 'Plastic Recycling Plant Design Guide',
+        seoTitle: 'Plastic Recycling Plant Design: Layout & Utilities | Guide',
+        seoDescription: 'Comprehensive guide to plastic recycling plant design. Plan bale storage, high-speed wash lines, extrusion, closed-loop ETP water, and fire safety.',
+        primaryKeyword: 'plastic recycling plant design',
+        secondaryKeywords: [
+            'r-pet plant layout',
+            'plastic washing line design',
+            'recycling facility planning',
+            'industrial plastic recycling',
+            'pet bottle recycling plant',
+        ],
+        publishedDate: '2026-10-19',
+        modifiedDate: '2026-10-19',
+        readTime: '12 min read',
+        category: 'Facility Planning',
+        author: {
+            name: 'Vishwakalpa Engineering Team',
+            role: 'Industrial Facility Design & Master Planning Specialists',
+            bio: 'Vishwakalpa specializes in end-to-end industrial master planning, architectural layout design, structural engineering, and PMC for precision manufacturing and foundry facilities across India.',
+        },
+        image: '/images/blogs/how-to-design-a-plastic-recycling-plant.webp',
+        imageAlt: 'Modern plastic recycling facility showing single-bay wash line and clean material handling layout',
+        imageCaption: 'Plastic recycling facility design requires linear material progression, heavy water treatment, and robust electrical redundancy.',
+        summary: [
+            'Designing an industrial plastic recycling and polymer reprocessing facility is an intensive multidisciplinary engineering challenge. Modern recycling plants—especially post-consumer PET bottle processing (R-PET), HDPE containers, and PP raffia—are no longer small scrap yards; they are multi-acre chemical and mechanical processing complexes operating continuous washing lines, intensive effluent recycling, and high-throughput extrusion.',
+            'A poorly planned recycling facility suffers from chronic contamination (dirt from incoming bales infiltrating clean finished flake), floor flooding from undersized drainage trenches, high fire insurance premiums from improper bale storage, and severe financial losses caused by electrical trips during continuous extrusion cycles.',
+        ],
+        keyTakeaways: [
+            'Adopt a strict unidirectional layout: raw bale receiving and finished food-grade resin dispatch must sit at opposite ends of the campus.',
+            'Continuous wash lines demand long-span, column-free PEB bays (often 150m to 180m length) with anti-corrosive epoxy flooring.',
+            'Water recirculation requires integrated underground gravity flumes, sludge dewatering centrifuges, and closed-loop ETP recycling.',
+            'High-voltage electrical supply must be partitioned across independent transformers (N+1 redundancy) so single faults never stall washing lines.',
+            'Outdoor plastic bale storage requires strict NBC 2016 fire separation barriers, perimeter hydrant loops, and 15m truck access roads.',
+        ],
+        tableOfContents: [
+            { id: 'planning-realities-and-site-scale', title: '1. Siting & Plot Scale Realities' },
+            { id: 'linear-unidirectional-flow', title: '2. Unidirectional Process Flow' },
+            { id: 'wash-line-bay-engineering', title: '3. Wash Line Single-Bay Architecture' },
+            { id: 'water-circulation-and-etp', title: '4. Closed-Loop Water & ETP Integration' },
+            { id: 'extrusion-and-pelletising', title: '5. Extrusion, Pelletising & Air Quality' },
+            { id: 'fire-safety-and-nbc-compliance', title: '6. High-Hazard Fire Safety & NBC 2016' },
+            { id: 'power-architecture-and-mep', title: '7. Multi-Megawatt HT Power Architecture' },
+            { id: 'area-and-utility-matrix', title: '8. Technical Area & Utility Matrix' },
+            { id: 'common-mistakes', title: '9. Critical Mistakes to Avoid' },
+            { id: 'faqs', title: '10. Frequently Asked Questions' },
+        ],
+        sections: [
+            {
+                id: 'planning-realities-and-site-scale',
+                number: 1,
+                heading: 'Siting & Plot Scale Realities for Large-Scale Recycling',
+                paragraphs: [
+                    'Unlike high-density machining plants where 60% to 70% of the land can be covered under roof, industrial plastic recycling facilities typically require a 40% to 50% ground coverage ratio on a 10 to 20-acre plot. The unbuilt area is not wasted space—it is vital operational infrastructure for raw material bale yards, truck weighbridges, multi-cell cooling towers, rainwater harvesting ponds, and an Effluent Treatment Plant (ETP).',
+                    'Positioning the plant requires evaluating regional prevailing winds. The raw material bale storage and shredder units (which generate dust, odour, and loose plastic debris) must be situated downwind of clean resin extrusion, testing laboratories, and administrative offices.',
+                ],
+            },
+            {
+                id: 'linear-unidirectional-flow',
+                number: 2,
+                heading: 'Unidirectional Process Flow Architecture',
+                paragraphs: [
+                    'The golden rule of recycling plant design is that contaminated post-consumer plastic and high-purity washed flakes must never share physical corridors, air handling systems, or material handling equipment. Material must flow in a single straight spine through distinct functional zones:',
+                ],
+                processSteps: [
+                    { step: 1, title: 'Bale Receiving & Inspection', description: 'Covered unloading dock, weighbridge, and moisture/contamination quality staging.' },
+                    { step: 2, title: 'De-baling & Optical Sorting', description: 'Automatic wire cutting, bale breaking, trommel screening, and NIR polymer sorting.' },
+                    { step: 3, title: 'Wet Granulation & Friction Wash', description: 'Heavy-duty wet shredders reducing bottles to 10-12mm flake with continuous caustic dosing.' },
+                    { step: 4, title: 'Sink-Float Separation', description: 'Density separation tanks separating polyolefin caps (floats) from PET body flakes (sinks).' },
+                    { step: 5, title: 'Hot Chemical Washing & Drying', description: 'Caustic hot wash removing glue, labels, and oils, followed by centrifugal mechanical dryers.' },
+                    { step: 6, title: 'Extrusion & SSP Pelletising', description: 'Vacuum degasification twin-screw extruders, strand pelletisers, and Solid State Polycondensation (SSP).' },
+                    { step: 7, title: 'Finished Goods Warehousing', description: 'Silo storage, 1-ton jumbo bag filling, and sealed clean-room container loading bays.' },
+                ],
+            },
+            {
+                id: 'wash-line-bay-engineering',
+                number: 3,
+                heading: 'Wash Line Single-Bay Architectural Engineering',
+                paragraphs: [
+                    'A state-of-the-art washing line from European or tier-1 manufacturers can stretch 140 to 180 meters in continuous length. Introducing intermediate building columns inside this process run severely compromises equipment placement, operator access, and maintenance crane reach.',
+                    'The washing bay should be engineered as a single-span Pre-Engineered Building (typically 28m to 36m clear span) with a minimum 10m to 12m clear eave height. Because the wash process operates with hot caustic soda (NaOH at 85°C–90°C), building rafters and purlins require heavy-duty epoxy polyamine coatings to resist corrosive steam vapours. Floors must feature laser-screeded concrete topped with chemical-resistant, anti-slip polyurea or polyurethane screed.',
+                ],
+            },
+            {
+                id: 'water-circulation-and-etp',
+                number: 4,
+                heading: 'Closed-Loop Process Water & Heavy Drainage Infrastructure',
+                paragraphs: [
+                    'Water is the primary processing medium in plastic recycling. A high-tonnage line consumes between 3,000 to 5,000 liters of water per ton of plastic processed. Fresh water cannot be continually drawn and discharged; facilities must operate closed-loop recycling with a Zero Liquid Discharge (ZLD) Effluent Treatment Plant.',
+                    'Drainage design requires deep, stainless-steel-grated floor flumes graded at a minimum 1.5% slope to convey wash effluent, heavy labels, and grit by gravity to primary rotary drum screens. Sump pits must feature heavy slurry pumps with duty/standby configurations to prevent catastrophic floor flooding during backwash cycles.',
+                ],
+            },
+            {
+                id: 'extrusion-and-pelletising',
+                number: 5,
+                heading: 'Extrusion, Pelletising & Air Quality Control',
+                paragraphs: [
+                    'In the extrusion and pelletising hall, dried flakes are melted, filtered through continuous backflush screen changers, degassed under high vacuum, and extruded into uniform pellets. For food-contact applications (e.g. bottle-to-bottle R-PET), the pellets enter SSP vacuum reactors to raise Intrinsic Viscosity (IV).',
+                    'Extruders release volatile thermal degradation fumes and odours. The architectural envelope must provide high-velocity source-capture hoods above die heads, ducting air through activated carbon bed scrubbers. The extrusion hall requires positive air pressure with filtered fresh air intake to maintain a clean-room classification.',
+                ],
+            },
+            {
+                id: 'fire-safety-and-nbc-compliance',
+                number: 6,
+                heading: 'High-Hazard Combustible Storage & NBC 2016 Fire Safety',
+                paragraphs: [
+                    'Post-consumer plastic bales are classified as high-hazard combustible materials under NBC 2016 Part 4. A plastic fire generates intense heat, toxic hydrogen cyanide/carbon monoxide gases, and rapid flame spread.',
+                    'Bale yards must be divided into discrete storage blocks (maximum 500 MT per block) separated by minimum 10m to 15m fire break aisles. Building envelopes must include roof-mounted automatic heat and smoke release vents (minimum 2% of floor area), double-interlocked pre-action sprinkler systems, and a dedicated 4-hour fire reservoir tank feeding ring hydrant networks.',
+                ],
+            },
+            {
+                id: 'power-architecture-and-mep',
+                number: 7,
+                heading: 'Multi-Megawatt HT Power Architecture & Load Distribution',
+                paragraphs: [
+                    'Plastic recycling facilities are major electrical consumers, commonly requiring 5 MVA to 10 MVA of incoming HT power. Continuous wash lines and multi-zone heated extrusion barrels cannot tolerate mid-cycle power trips; if power fails while an extruder is filled with molten PET, the plastic solidifies within minutes, resulting in days of downtime and tens of lakhs in clean-out losses.',
+                    'Power distribution must utilize multiple independent HT transformers (e.g. 3 x 2.5 MVA) feeding compartmentalized busducts rather than a single shared bus. Dedicated DG generator yards must provide instantaneous emergency backup for critical heating zones, water cooling pumps, and extruder barrel turning drives.',
+                ],
+            },
+            {
+                id: 'area-and-utility-matrix',
+                number: 8,
+                heading: 'Indicative Area & Utility Allocation Matrix (20-Acre Campus)',
+                paragraphs: [
+                    'Based on Vishwakalpa\'s engineering benchmarks for industrial plastic recycling campuses, spatial allocation typically aligns with the following matrix:',
+                ],
+                table: {
+                    headers: ['Functional Zone', 'Indicative Built Area', 'Key Structural & MEP Drivers'],
+                    rows: [
+                        ['Raw Bale Storage Yard', '5,000 to 7,000 sqm (covered/open)', 'Heavy RCC pavement, 15m fire break aisles, perimeter hydrants'],
+                        ['De-baling & Sorting Hall', '2,500 to 3,500 sqm', '8m eave height, acoustic enclosures for de-balers, dust extraction'],
+                        ['Continuous Wash Line Bay', '4,500 to 6,000 sqm (single span)', '12m eave, 160m+ column-free length, chemical polyurea floor'],
+                        ['Extrusion & SSP Hall', '3,000 to 4,500 sqm', 'Positive pressure air, overhead crane, chiller water piping'],
+                        ['Finished Goods Warehouse', '6,000 to 8,000 sqm', 'Heavy racking floor (50 kN/sqm), sealed clean container docks'],
+                        ['Effluent Treatment Plant (ETP)', '2,000 to 3,500 sqm (plot area)', 'Primary DAF, biological aeration tanks, RO, and MVR evaporators'],
+                        ['HT Substation & DG Yard', '1,000 to 1,500 sqm', 'Dedicated transformer yard (3x 2.5 MVA), HT kiosk, DG fuel tanks'],
+                    ],
+                },
+            },
+        ],
+        commonMistakes: [
+            { title: '1. Shared traffic routes for dirty bales and finished pellets', explanation: 'Allows dust, sand, and labels from incoming trucks to contaminate food-grade finished goods shipments.' },
+            { title: '2. Under-sizing wash bay floor drainage flumes', explanation: 'Causes wastewater back-up and caustic chemical pooling, creating severe safety and corrosion risks.' },
+            { title: '3. Connecting continuous wash lines to a single transformer', explanation: 'A localized electrical fault trips the entire 160m line, solidifying materials mid-process.' },
+            { title: '4. Lack of dedicated thermal separation in outdoor bale storage', explanation: 'Bales stacked without fire break walls can lead to catastrophic, uncontainable plant fires.' },
+            { title: '5. Overlooking chemical vapor ventilation in hot wash bays', explanation: 'Hot caustic steam condenses on uninsulated building roofs, causing rapid structural corrosion.' },
+        ],
+        faqs: [
+            {
+                question: 'How much land is required for an industrial plastic recycling plant?',
+                answer: 'A commercial multi-line recycling plant (processing 20,000 to 50,000 tons/year) typically requires 10 to 20 acres of land to balance raw bale storage yards, long-span washing sheds, extrusion halls, ETP recycling ponds, and truck traffic aprons.',
+            },
+            {
+                question: 'What clear height is needed for a plastic washing line shed?',
+                answer: 'A minimum clear eave height of 10.0m to 12.0m is recommended. This provides adequate headroom for vertical friction washers, elevated trommels, flake storage silos, and overhead utility distribution racks.',
+            },
+            {
+                question: 'How much water does an industrial plastic recycling plant consume?',
+                answer: 'A continuous wash line requires 3,000 to 5,000 liters per ton of plastic. However, with an integrated closed-loop ETP and RO water recycling system, net makeup water consumption is reduced to under 10% to 15%.',
+            },
+            {
+                question: 'How does Vishwakalpa assist with plastic recycling plant design?',
+                answer: 'Vishwakalpa provides end-to-end industrial master planning, single-bay wash line structural design, closed-loop MEP/ETP coordination, NBC fire safety layouts, and turnkey PMC supervision, proven in projects like our 20-acre R-PET Recycling Campus in Krishnagiri.',
+            },
+        ],
+        bottomLine: {
+            headline: 'Transforming Waste into High-Purity Polymer Demands Engineered Layouts',
+            paragraphs: [
+                'In high-volume plastic recycling, operational profitability hinges on flawless material flow, water recovery efficiency, and zero cross-contamination.',
+                'At Vishwakalpa Design Planning and Management, we combine process engineering coordination with robust industrial architecture to deliver scalable, compliant, and high-efficiency recycling facilities across India.',
+            ],
+            flowSequence: ['Bale Receiving', 'De-Baling', 'Sorting', 'Wet Wash', 'Flake Separation', 'Hot Wash', 'Extrusion', 'SSP', 'FG Storage'],
+        },
+        relatedServices: ['industrial-master-planning', 'structural-mep-design', 'industrial-pmc', 'architecture-design'],
+        relatedProjects: ['r-pet-recycling-campus-krishnagiri'],
+    },
+
 ];
 
 export const blogSlugs = blogs.map((b) => b.slug);
