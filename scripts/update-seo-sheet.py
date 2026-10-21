@@ -110,6 +110,7 @@ def main():
     parser.add_argument("--verify", action="store_true", help="Print summary of sheet without modifying")
     parser.add_argument("--week1-catchup", action="store_true", help="Update Week 1 (Oct 13 - Oct 16) tasks to completed")
     parser.add_argument("--day5", action="store_true", help="Update Day 5 (Oct 19) Plastic Recycling Plant task")
+    parser.add_argument("--days6-7", action="store_true", help="Update Day 6 (Oct 20) and Day 7 (Oct 21) tasks")
 
     args = parser.parse_args()
     wb = load_workbook_safe(args.sheet)
@@ -149,6 +150,17 @@ def main():
         update_task_row(ws_sched, match_date="2026-10-19", status="Done", completion_pct=1.0,
                         published_url=f"{SITE_BASE_URL}/blogs/how-to-design-a-plastic-recycling-plant",
                         notes="Published guide on plastic recycling plant layout, wash lines, closed-loop ETP & NBC fire zoning.")
+
+    if getattr(args, 'days6_7', False):
+        # Day 6: Oct 20 - Factory Master Planning Decisions
+        update_task_row(ws_sched, match_date="2026-10-20", status="Done", completion_pct=1.0,
+                        published_url=f"{SITE_BASE_URL}/blogs/factory-master-planning-decisions",
+                        notes="Published guide on 10 pre-construction master planning decisions, site logistics & expansion.")
+
+        # Day 7: Oct 21 - Material Flow Planning
+        update_task_row(ws_sched, match_date="2026-10-21", status="Done", completion_pct=1.0,
+                        published_url=f"{SITE_BASE_URL}/blogs/how-to-plan-material-flow-manufacturing-facility",
+                        notes="Published guide on material flow topologies (I/U/Cellular), WIP buffering & forklift safety.")
 
     wb.save(args.sheet)
     print("\n[SUCCESS] Saved updates to:", args.sheet)
