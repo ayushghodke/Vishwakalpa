@@ -62,7 +62,9 @@ def update_task_row(ws, match_date=None, match_title_substr=None, status="Done",
 
     return updated
 
-def update_weekly_kpi(wb, week_ending_date="2026-10-16", blogs_published=4, case_studies_published=1, notes="Week 1 catch-up complete. All scheduled technical guides and case study live."):
+def update_weekly_kpi(wb, week_ending_date="2026-10-16", blogs_published=4, case_studies_published=1, 
+                      tech_issues="None. All SEO checks passing (valid title, meta desc, schema, sitemap).",
+                      next_week_priority="Week 2 Focus: Plastics recycling plant guide, factory master planning, material flow."):
     if "Weekly KPI Tracker" not in wb.sheetnames:
         print("[WARN] Sheet 'Weekly KPI Tracker' not found.")
         return False
@@ -81,8 +83,8 @@ def update_weekly_kpi(wb, week_ending_date="2026-10-16", blogs_published=4, case
         if matched:
             ws.cell(row=row_idx, column=2).value = blogs_published
             ws.cell(row=row_idx, column=3).value = case_studies_published
-            ws.cell(row=row_idx, column=7).value = "None. All SEO checks passing (valid title, meta desc, schema, sitemap)."
-            ws.cell(row=row_idx, column=8).value = "Week 2 Focus: Plastics recycling plant guide, factory master planning, material flow."
+            ws.cell(row=row_idx, column=7).value = tech_issues
+            ws.cell(row=row_idx, column=8).value = next_week_priority
             print(f"[OK] Updated Weekly KPI Tracker for {week_ending_date}: Blogs={blogs_published}, CaseStudies={case_studies_published}")
             return True
 
@@ -111,6 +113,7 @@ def main():
     parser.add_argument("--week1-catchup", action="store_true", help="Update Week 1 (Oct 13 - Oct 16) tasks to completed")
     parser.add_argument("--day5", action="store_true", help="Update Day 5 (Oct 19) Plastic Recycling Plant task")
     parser.add_argument("--days6-7", action="store_true", help="Update Day 6 (Oct 20) and Day 7 (Oct 21) tasks")
+    parser.add_argument("--days8-9", action="store_true", help="Update Day 8 (Oct 22) and Day 9 (Oct 23) tasks + Week 2 KPI")
 
     args = parser.parse_args()
     wb = load_workbook_safe(args.sheet)
@@ -161,6 +164,22 @@ def main():
         update_task_row(ws_sched, match_date="2026-10-21", status="Done", completion_pct=1.0,
                         published_url=f"{SITE_BASE_URL}/blogs/how-to-plan-material-flow-manufacturing-facility",
                         notes="Published guide on material flow topologies (I/U/Cellular), WIP buffering & forklift safety.")
+
+    if getattr(args, 'days8_9', False):
+        # Day 8: Oct 22 - What Should a Factory Owner Ask Before Hiring an Industrial Design Consultant?
+        update_task_row(ws_sched, match_date="2026-10-22", status="Done", completion_pct=1.0,
+                        published_url=f"{SITE_BASE_URL}/blogs/what-to-ask-before-hiring-industrial-design-consultant",
+                        notes="Published guide on 10 due diligence questions before hiring an industrial design consultant.")
+
+        # Day 9: Oct 23 - Case Study Upload 2: Industrial Facility Planning / Master Planning
+        update_task_row(ws_sched, match_date="2026-10-23", status="Done", completion_pct=1.0,
+                        published_url=f"{SITE_BASE_URL}/projects/r-pet-recycling-campus-krishnagiri",
+                        notes="Published Case Study 2: 20-acre R-PET recycling campus, 168.5m wash line bay, 7.5 MVA HT power.")
+
+        # Update Friday KPI Review for Week 2 (2026-10-23)
+        update_weekly_kpi(wb, week_ending_date="2026-10-23", blogs_published=8, case_studies_published=2,
+                          tech_issues="None. All SEO checks passing (24 prerendered pages, valid title/meta, schema, sitemap).",
+                          next_week_priority="Week 3 Focus: Industrial warehouse planning, pharma facility planning, utilities design, and Case Study 3.")
 
     wb.save(args.sheet)
     print("\n[SUCCESS] Saved updates to:", args.sheet)
