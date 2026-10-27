@@ -114,6 +114,7 @@ def main():
     parser.add_argument("--day5", action="store_true", help="Update Day 5 (Oct 19) Plastic Recycling Plant task")
     parser.add_argument("--days6-7", action="store_true", help="Update Day 6 (Oct 20) and Day 7 (Oct 21) tasks")
     parser.add_argument("--days8-9", action="store_true", help="Update Day 8 (Oct 22) and Day 9 (Oct 23) tasks + Week 2 KPI")
+    parser.add_argument("--days10-11", action="store_true", help="Update Day 10 (Oct 26) and Day 11 (Oct 27) tasks")
 
     args = parser.parse_args()
     wb = load_workbook_safe(args.sheet)
@@ -180,6 +181,17 @@ def main():
         update_weekly_kpi(wb, week_ending_date="2026-10-23", blogs_published=8, case_studies_published=2,
                           tech_issues="None. All SEO checks passing (24 prerendered pages, valid title/meta, schema, sitemap).",
                           next_week_priority="Week 3 Focus: Industrial warehouse planning, pharma facility planning, utilities design, and Case Study 3.")
+
+    if getattr(args, 'days10_11', False):
+        # Day 10: Oct 26 - How to Plan an Industrial Warehouse for Efficient Logistics
+        update_task_row(ws_sched, match_date="2026-10-26", status="Done", completion_pct=1.0,
+                        published_url=f"{SITE_BASE_URL}/blogs/how-to-plan-an-industrial-warehouse",
+                        notes="Published guide on warehouse logistics, dock aprons, FM2 floors, and ESFR fire safety.")
+
+        # Day 11: Oct 27 - Pharmaceutical Facility Planning: Layout, GMP and Utility Coordination
+        update_task_row(ws_sched, match_date="2026-10-27", status="Done", completion_pct=1.0,
+                        published_url=f"{SITE_BASE_URL}/blogs/pharmaceutical-facility-planning-gmp",
+                        notes="Published guide on cGMP cleanroom zoning, PAL/MAL airlocks, pressure cascades, and pure utilities.")
 
     wb.save(args.sheet)
     print("\n[SUCCESS] Saved updates to:", args.sheet)
