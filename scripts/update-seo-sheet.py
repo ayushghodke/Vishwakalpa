@@ -115,6 +115,7 @@ def main():
     parser.add_argument("--days6-7", action="store_true", help="Update Day 6 (Oct 20) and Day 7 (Oct 21) tasks")
     parser.add_argument("--days8-9", action="store_true", help="Update Day 8 (Oct 22) and Day 9 (Oct 23) tasks + Week 2 KPI")
     parser.add_argument("--days10-11", action="store_true", help="Update Day 10 (Oct 26) and Day 11 (Oct 27) tasks")
+    parser.add_argument("--day12", action="store_true", help="Update Day 12 (Oct 28) Manufacturing Plant Utilities task")
 
     args = parser.parse_args()
     wb = load_workbook_safe(args.sheet)
@@ -192,6 +193,12 @@ def main():
         update_task_row(ws_sched, match_date="2026-10-27", status="Done", completion_pct=1.0,
                         published_url=f"{SITE_BASE_URL}/blogs/pharmaceutical-facility-planning-gmp",
                         notes="Published guide on cGMP cleanroom zoning, PAL/MAL airlocks, pressure cascades, and pure utilities.")
+
+    if getattr(args, 'day12', False):
+        # Day 12: Oct 28 - How to Plan Utilities for a New Manufacturing Plant
+        update_task_row(ws_sched, match_date="2026-10-28", status="Done", completion_pct=1.0,
+                        published_url=f"{SITE_BASE_URL}/blogs/how-to-plan-utilities-new-manufacturing-plant",
+                        notes="Published guide on electrical load calculation, HT substations, compressed air ring mains, and cooling loops.")
 
     wb.save(args.sheet)
     print("\n[SUCCESS] Saved updates to:", args.sheet)
