@@ -116,6 +116,7 @@ def main():
     parser.add_argument("--days8-9", action="store_true", help="Update Day 8 (Oct 22) and Day 9 (Oct 23) tasks + Week 2 KPI")
     parser.add_argument("--days10-11", action="store_true", help="Update Day 10 (Oct 26) and Day 11 (Oct 27) tasks")
     parser.add_argument("--day12", action="store_true", help="Update Day 12 (Oct 28) Manufacturing Plant Utilities task")
+    parser.add_argument("--days13-14", action="store_true", help="Update Day 13 (Oct 29) and Day 14 (Oct 30) tasks + Week 3 Friday KPI")
 
     args = parser.parse_args()
     wb = load_workbook_safe(args.sheet)
@@ -199,6 +200,22 @@ def main():
         update_task_row(ws_sched, match_date="2026-10-28", status="Done", completion_pct=1.0,
                         published_url=f"{SITE_BASE_URL}/blogs/how-to-plan-utilities-new-manufacturing-plant",
                         notes="Published guide on electrical load calculation, HT substations, compressed air ring mains, and cooling loops.")
+
+    if getattr(args, 'days13_14', False):
+        # Day 13: Oct 29 - Industrial Building Design: What Manufacturers Should Decide Before the First Drawing
+        update_task_row(ws_sched, match_date="2026-10-29", status="Done", completion_pct=1.0,
+                        published_url=f"{SITE_BASE_URL}/blogs/industrial-building-design-guide",
+                        notes="Published guide on inside-out industrial building design, 24-30m PEB spans, crane stack heights, and DISH/NBC rules.")
+
+        # Day 14: Oct 30 - Case Study Upload 3: Sector-Specific Facility Project (Foundry Campus Ahmedabad)
+        update_task_row(ws_sched, match_date="2026-10-30", status="Done", completion_pct=1.0,
+                        published_url=f"{SITE_BASE_URL}/projects/foundry-campus-ahmedabad",
+                        notes="Published Case Study 3: 4,00,000 sq ft grinding media foundry campus, 30 MT cranes, 11 kV HT power. Local SEO NAP audit verified.")
+
+        # Update Friday KPI Review for Week 3 (2026-10-30)
+        update_weekly_kpi(wb, week_ending_date="2026-10-30", blogs_published=10, case_studies_published=3,
+                          tech_issues="None. All SEO checks passing (27 prerendered pages, valid title/meta, schema, sitemap).",
+                          next_week_priority="Week 4 Focus: Industrial architect selection, BIM coordination, industrial PMC deliverables, food processing facility planning, and Case Study 4.")
 
     wb.save(args.sheet)
     print("\n[SUCCESS] Saved updates to:", args.sheet)
