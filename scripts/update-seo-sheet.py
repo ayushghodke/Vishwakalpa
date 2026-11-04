@@ -117,6 +117,7 @@ def main():
     parser.add_argument("--days10-11", action="store_true", help="Update Day 10 (Oct 26) and Day 11 (Oct 27) tasks")
     parser.add_argument("--day12", action="store_true", help="Update Day 12 (Oct 28) Manufacturing Plant Utilities task")
     parser.add_argument("--days13-14", action="store_true", help="Update Day 13 (Oct 29) and Day 14 (Oct 30) tasks + Week 3 Friday KPI")
+    parser.add_argument("--days15-17", action="store_true", help="Update Day 15 (Nov 2), Day 16 (Nov 3), and Day 17 (Nov 4) tasks")
 
     args = parser.parse_args()
     wb = load_workbook_safe(args.sheet)
@@ -216,6 +217,22 @@ def main():
         update_weekly_kpi(wb, week_ending_date="2026-10-30", blogs_published=10, case_studies_published=3,
                           tech_issues="None. All SEO checks passing (27 prerendered pages, valid title/meta, schema, sitemap).",
                           next_week_priority="Week 4 Focus: Industrial architect selection, BIM coordination, industrial PMC deliverables, food processing facility planning, and Case Study 4.")
+
+    if getattr(args, 'days15_17', False):
+        # Day 15: Nov 2 - How to Choose an Industrial Architect or Factory Design Consultant in India
+        update_task_row(ws_sched, match_date="2026-11-02", status="Done", completion_pct=1.0,
+                        published_url=f"{SITE_BASE_URL}/blogs/how-to-choose-an-industrial-architect-india",
+                        notes="Published guide on evaluating industrial architects: process layout, PEB spans, 3D BIM, and DISH bylaws.")
+
+        # Day 16: Nov 3 - What Is BIM Coordination and Why Does It Matter in Industrial Projects?
+        update_task_row(ws_sched, match_date="2026-11-03", status="Done", completion_pct=1.0,
+                        published_url=f"{SITE_BASE_URL}/blogs/what-is-bim-coordination-industrial-projects",
+                        notes="Published guide on federated 3D BIM coordination, hard/soft clash detection, and construction prefabrication.")
+
+        # Day 17: Nov 4 - Industrial Project Management: Key Deliverables from Design to Handover
+        update_task_row(ws_sched, match_date="2026-11-04", status="Done", completion_pct=1.0,
+                        published_url=f"{SITE_BASE_URL}/blogs/industrial-project-management-deliverables-handover",
+                        notes="Published guide on industrial PMC project controls: Master Drawing Registers (GFC), RFIs, ITPs, and plant handover.")
 
     wb.save(args.sheet)
     print("\n[SUCCESS] Saved updates to:", args.sheet)
