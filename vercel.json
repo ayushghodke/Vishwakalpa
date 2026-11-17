@@ -1,5 +1,16 @@
 {
   "outputDirectory": "dist/client",
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/industrial-architects-pune",
+      "destination": "/blogs/industrial-architects-pune",
+      "permanent": true
+    },
+    {
+      "source": "/industrial-architects-pune/",
+      "destination": "/blogs/industrial-architects-pune",
+      "permanent": true
+    }
+  ]
 }
-
